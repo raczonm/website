@@ -1,0 +1,12 @@
+{
+  "name": "website",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "reset-css": "~2.02"
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "mocha": "~2.4.5"
+  }
+}

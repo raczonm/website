@@ -1,0 +1,122 @@
+@import 'bower_components/reset-css/_reset';
+
+@import 'elements';
+@import 'globals';
+
+//HEADER
+
+.header {
+    padding-top: 5vw;
+    overflow: visible;
+
+    &-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 120vh;
+        width: 100%;
+        z-index: -1;
+        background: #333;
+        overflow: hidden;
+
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            width: 70%;
+            height: 40vh;
+            right: 50%;
+            bottom: -25.7vh;
+            @include rotate(11);
+            background: $white;
+        }
+
+        &:after {
+          right: auto;
+          left: 50%;
+          @include rotate(-11)
+        }
+    }
+}
+
+.logo {
+    text-indent: 2000px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 20vw;
+    height: 10vw;
+    background: red;
+    margin: 0 auto 7vw;
+}
+
+.subtitle {
+    font-size: 1.5vw;
+    font-style: italic;
+    color: $white;
+    opacity: 0.7;
+    margin-bottom: 5vw;
+}
+
+//ROOMS
+
+.section-rooms {
+    margin-top: 10vw;
+    padding-top: 3vw;
+}
+
+.rooms-columns {
+    margin: 4vw auto 4vw;
+}
+
+.rooms-column {
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+
+    &:after {
+      content: "";
+      background: $white;
+      width: 6%;
+      position: absolute;
+      top:0;
+      left: 96.5%;
+      height: 120%;
+      z-index: 10;
+      @include skew(-5, 0);
+    }
+
+    &:last-child:after {
+        content: none;
+    }
+
+    &-image {
+        background: #333;
+        width: 100%;
+        height: 20vw;
+    }
+
+    &-label {
+        background: $main-red;
+        font-size: 1.5vw;
+        padding: 0.5vw 2vw;
+        opacity:0.7;
+        color: $white;
+        text-align: center;
+        font-style: italic;
+        position: absolute;
+        bottom: 20%;
+        overflow-x: visible;
+        &:after {
+            content: "";
+          	right: -5%;
+            top: 0;
+            background: $main-red;
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 2vw;
+            @include skew(-15, 0);
+        }
+
+
+    }
+}

@@ -1,0 +1,39 @@
+//colors
+$black: #000000;
+$white: #ffffff;
+$main-red: red;
+$white-transparent: rgba(255,255,255,0.7);
+
+@mixin red-transparent-bgr($opacity) {
+    background-color: rgba(255,0,0,$opacity);
+}
+
+@mixin rounded($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin scale($scale) {
+	 @include transform(scale($scale));
+}
+
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
