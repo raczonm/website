@@ -3,7 +3,8 @@
   "private": true,
   "dependencies": {
     "jquery": "~2.1.1",
-    "reset-css": "~2.02"
+    "panelsnap": "~0.15.1",
+    "reset-css": "~2.0.2"
   },
   "devDependencies": {
     "chai": "~3.5.0",
