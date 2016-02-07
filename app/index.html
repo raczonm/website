@@ -24,7 +24,20 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <header class="header">
+    <nav class="fixed-navs">
+        <a class="fixed-navs-item book-now sans">Book now</a>
+        <a class="fixed-navs-item toggle-menu">
+            <span class="toggle-menu-line"></span>
+        </a>
+        <div class="fixed-navs-item scroll-nav">
+            <a class="scroll-nav-item scroll-nav-top" data-panel="header">Top</a>
+            <a class="scroll-nav-item scroll-nav-up">Up</a>
+            <a class="scroll-nav-item scroll-nav-down">Down</a>
+            <a class="scroll-nav-item scroll-nav-bottom">Bottom</a>
+        </div>
+    </nav>
+    <div class="splash-menu"></div>
+    <header class="header panel" data-panel="header">
         <div class="background header-background"></div>
         <h1 class="logo">It's a trap</h1>
         <div class="wrapper">
@@ -64,8 +77,8 @@
             </div>
         </div>
     </header>
-    <main>
-        <section class="section section-rooms">
+
+        <section class="section section-rooms panel" data-panel="rooms">
             <h2 class="section-header">About the <span class="section-header-span">Rooms</span></h2>
             <div class="wrapper">
                 <div class="outer-rooms-columns">
@@ -99,7 +112,7 @@
                 </p>
             </div>
         </section>
-        <section class="section room-section sans room-section-pirates">
+        <section class="section room-section sans room-section-pirates panel" data-panel="pirates">
             <h2 class="room-section-header">
                 <span class="room-section-header-span">01</span>
                 Pirates Treasure
@@ -143,7 +156,7 @@
                 <a class="button">Book now</a>
             </div>
         </section>
-        <section class="section room-section sans room-section-attic">
+        <section class="section room-section sans room-section-attic panel" data-panel="attic">
             <h2 class="room-section-header">
                 <span class="room-section-header-span">02</span>
                 Something like Attic
@@ -187,7 +200,7 @@
                 <a class="button">Book now</a>
             </div>
         </section>
-        <section class="section room-section sans room-section-garden">
+        <section class="section room-section sans room-section-garden panel" data-panel="garden">
             <h2 class="room-section-header">
                 <span class="room-section-header-span">03</span>
                 Mymymymysterious garden
@@ -231,8 +244,8 @@
                 <a class="button">Book now</a>
             </div>
         </section>
-        <section class="section section-us">
-            <h2 class="section-header">About the <span class="section-header-span">Rooms</span></h2>
+        <section class="section section-us panel" data-panel="us">
+            <h2 class="section-header">About the <span class="section-header-span">Team</span></h2>
             <div class="wrapper">
                 <p class="paragraph paragraph-us">
                     Lorem ipsum dolor sit amet, <strong class="red-strong">consectetur</strong> adipiscing elit.
@@ -279,7 +292,7 @@
                 <a class="button">Join the Crew</a>
             </div>
         </section>
-    </main>
+
     <footer>
     </footer>
 

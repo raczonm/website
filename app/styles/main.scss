@@ -7,6 +7,67 @@
     font-size: 100px;
 }
 
+//FIXED NAVS
+.fixed-navs {
+    &-item {
+        position: fixed;
+        font-size: 0.2em;
+        top: 5%;
+        color: $white;
+        z-index: 11;
+
+        &.book-now {
+            left: 3%;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        &.toggle-menu {
+            right: 3%;
+            display: inline-block;
+            width: 1.6em;
+            padding: 0.5em 0;
+            height: 1.2em;
+            cursor: pointer;
+
+            .toggle-menu-line {
+                background: $white;
+                height: 0.2em;
+                width: 1.6em;
+                display: block;
+
+                &:before, &:after {
+                    content: "";
+                    position: absolute;
+                    background: $white;
+                    height: 0.2em;
+                    width: 1.6em;
+                    top: 0;
+                    display: block;
+                }
+
+                &:after {
+                    top: auto;
+                    bottom: 0;
+                }
+            }
+
+        }
+
+        &.scroll-nav {
+            top: auto;
+            bottom: 5%;
+            right: 3%;
+
+            .scroll-nav-item {
+                display: block;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
 //HEADER
 
 .header {
@@ -185,5 +246,5 @@
 }
 
 .outer-us-columns {
-    margin: 0.7em 0 0.3em ; 
+    margin: 0.7em 0 0.3em ;
 }
