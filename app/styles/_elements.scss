@@ -38,3 +38,23 @@ $white-transparent: rgba(255,255,255,0.7);
 @mixin translate ($x, $y) {
    @include transform(translate($x, $y));
 }
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@mixin blur($blur) {
+    -webkit-filter: blur(#{$blur}px);
+    -moz-filter: blur(#{$blur}px);
+    -o-filter: blur(#{$blur}px);
+    -ms-filter: blur(#{$blur}px);
+    filter: blur(#{$blur}px);
+}
+
+@mixin font-sans() {
+    font-family: 'Anton', sans-serif;
+    font-weight: 700;
+}

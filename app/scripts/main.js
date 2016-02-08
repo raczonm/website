@@ -1,6 +1,29 @@
 function prepareApp() {
     var app = {};
 
+    app.ui = {
+        body: $('body'),
+        scrollNav: $('.scroll-nav'),
+        snapNext: $('.scroll-nav-down'),
+        snapPrev: $('.scroll-nav-up'),
+        menuLink: $('.toggle-menu'),
+        fixedBookLink: $('.fixed-navs-item.book-now'),
+        fixedNavs: $('.fixed-navs'),
+        splashMenu: $('.splash-menu')
+    }
+
+    app.bindEvents = function() {
+        this.ui.menuLink.on('click', function(e) {
+            this.ui.menuLink.toggleClass('active');
+            this.ui.body.toggleClass('with-splash');
+        }.bind(this));
+
+        this.ui.splashMenu.on('click', 'a', function(e) {
+              this.ui.menuLink.removeClass('with-splash');
+              this.ui.body.removeClass('with-splash');
+        }.bind(this));
+    }
+
     app.checkProportions = function() {
         var windowWidth = $(window).width(),
             windowHeight = $(window).height(),
@@ -12,22 +35,33 @@ function prepareApp() {
         }
     }
 
-    app.setPanelSnap = function(){
+    app.setPanelSnap = function() {
+        var self = this
         var options = {
-           $menu: $('.scroll-nav'),
-           menuSelector: '.scroll-nav-top, scroll-nav-bottom',
-           navigation: {
+            $menu: $('.splash-menu, .scroll-nav'),
+            menuSelector: '[data-panel]',
+            navigation: {
                 buttons: {
-                    $nextButton: $('.scroll-nav-up'),
-                    $prevButton: $('.scroll-nav-down')
+                    $nextButton: self.ui.snapNext,
+                    $prevButton: self.ui.snapPrev
                 }
-           },
-           panelSelector: '.panel',
-           namespace: '.panelSnap',
-           onSnapStart: function(){},
-           onSnapFinish: function(){},
-           directionThreshold: 30,
-           slideSpeed: 300
+            },
+            panelSelector: '.panel',
+            namespace: '.panelSnap',
+            onSnapStart: function(panel) {
+                self.ui.fixedNavs.removeClass('visible');
+            },
+            onSnapFinish: function(panel) {
+                self.ui.fixedNavs.addClass('visible');
+
+                if (panel.data('nav-class') === 'dark'){
+                    self.ui.fixedNavs.addClass('dark');
+                } else {
+                    self.ui.fixedNavs.removeClass('dark');
+                }
+            },
+            directionThreshold: 30,
+            slideSpeed: 300
         }
 
         $('body').panelSnap(options);
@@ -40,6 +74,7 @@ $(document).ready(function(){
     var app = prepareApp();
     app.checkProportions();
     app.setPanelSnap();
+    app.bindEvents();
 
     $(window).on('resize', function(){
         app.checkProportions();

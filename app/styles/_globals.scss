@@ -4,6 +4,10 @@
   -moz-box-sizing: border-box;
 }
 
+.sans {
+    @include font-sans();
+}
+
 .header, .section {
     height: 100vh;
     position: relative;
@@ -50,6 +54,7 @@
 }
 
 .circle-icon {
+    @include font-sans();
     width: 2em;
     height: 2em;
     line-height: 2em;
@@ -61,9 +66,11 @@
 }
 
 .circle-label {
+    @include font-sans();
     font-size: 0.25em;
     line-height: 1em;
     margin-top: 1em;
+    color: $white;
     text-transform: uppercase;
 
     &-strong, &-span {
@@ -72,13 +79,14 @@
     }
 
     &-strong {
-        font-size: 2em;
-        line-height: 0.7em;
+        color: $main-red;
+        font-size: 2.3em;
+        line-height: 0.8em;
     }
 
     &-span {
         text-align: left;
-        line-height: 0.7em;
+        line-height: 0.9em;
     }
 }
 
@@ -118,6 +126,7 @@
     padding-top: 0.5em;
 
     &-header {
+        @include font-sans();
         font-size: 0.5em;
         text-align: center;
         text-transform: uppercase;
@@ -131,6 +140,7 @@
 }
 
 .button {
+    @include font-sans();
     font-size: 0.3em;
     text-transform: uppercase;
     opacity: 0.8;

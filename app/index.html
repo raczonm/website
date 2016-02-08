@@ -17,6 +17,7 @@
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Anton&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
 
   </head>
@@ -24,7 +25,7 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <nav class="fixed-navs">
+    <nav class="fixed-navs visible">
         <a class="fixed-navs-item book-now sans">Book now</a>
         <a class="fixed-navs-item toggle-menu">
             <span class="toggle-menu-line"></span>
@@ -36,8 +37,19 @@
             <a class="scroll-nav-item scroll-nav-bottom">Bottom</a>
         </div>
     </nav>
-    <div class="splash-menu"></div>
-    <header class="header panel" data-panel="header">
+    <div class="splash">
+        <nav class="splash-menu text-center">
+            <a class="splash-menu-item" data-panel="header">Top</a>
+            <a class="splash-menu-item" data-panel="rooms">Rooms</a>
+            <a class="splash-menu-item" data-panel="pirates">Pirate's treasure</a>
+            <a class="splash-menu-item" data-panel="attic">Dark Attic</a>
+            <a class="splash-menu-item" data-panel="garden">Myesterious Garden</a>
+            <a class="splash-menu-item" data-panel="us">About Us</a>
+            <a class="splash-menu-item" data-panel="header">Contact</a>
+            <a class="button splash-menu-book">Book a room</a>
+        </nav>
+    </div>
+    <header class="header panel" data-panel="header" data-nav-class="light">
         <div class="background header-background"></div>
         <h1 class="logo">It's a trap</h1>
         <div class="wrapper">
@@ -71,227 +83,227 @@
                     </div>
                     <h3 class="circle-label header-circle-label">
                         <strong class="circle-label-strong">119</strong>
-                        <span class="circle-label-span">Payment <br />for whole group</span>
+                        <span class="circle-label-span">Payment for <br />whole group</span>
                     </h3>
                 </div>
             </div>
         </div>
     </header>
 
-        <section class="section section-rooms panel" data-panel="rooms">
-            <h2 class="section-header">About the <span class="section-header-span">Rooms</span></h2>
-            <div class="wrapper">
-                <div class="outer-rooms-columns">
-                    <div class="columns rooms-columns">
-                        <a class="column rooms-column">
-                            <img class="rooms-column-image" src="" alt="Pirates Treasure" />
-                            <div class="rooms-column-label">
-                                <div class="rooms-column-label-inner">
-                                  Pirates Treasure
-                                </div>
+    <section class="section section-rooms panel" data-panel="rooms" data-nav-class="dark">
+        <h2 class="section-header">About the <span class="section-header-span">Rooms</span></h2>
+        <div class="wrapper">
+            <div class="outer-rooms-columns">
+                <div class="columns rooms-columns">
+                    <a class="column rooms-column">
+                        <img class="rooms-column-image" src="" alt="Pirates Treasure" />
+                        <div class="rooms-column-label">
+                            <div class="rooms-column-label-inner">
+                              Pirates Treasure
                             </div>
-                        </a>
-                        <a class="column rooms-column">
-                            <img class="rooms-column-image" src="" alt="Pirates Treasure" />
-                            <div class="rooms-column-label"> Pirates Treasure </div>
-                        </a>
-                        <a class="column rooms-column">
-                            <img class="rooms-column-image" src="" alt="Pirates Treasure" />
-                            <div class="rooms-column-label"> Pirates Treasure </div>
-                        </a>
+                        </div>
+                    </a>
+                    <a class="column rooms-column">
+                        <img class="rooms-column-image" src="" alt="Pirates Treasure" />
+                        <div class="rooms-column-label"> Pirates Treasure </div>
+                    </a>
+                    <a class="column rooms-column">
+                        <img class="rooms-column-image" src="" alt="Pirates Treasure" />
+                        <div class="rooms-column-label"> Pirates Treasure </div>
+                    </a>
+                </div>
+            </div>
+            <p class="paragraph">
+                Lorem ipsum dolor sit amet, <strong class="red-strong">consectetur</strong> adipiscing elit.
+                Sed dui nisi, pellentesque quis lobortis vel, ultricies eu libero. Nunc condimentum
+                , quam in <strong class="red-strong">blandit dapibus</strong>, turpis lacus viverra leo, non consequat nisi t
+                urpis non massa. In ut lacus interdum, malesuada turpis nec, malesuada nunc. Ut i
+                aculis ex in mauris venenatis iaculis. Nam imperdiet enim a ex pellentesque mollis.
+                <strong class="red-strong">Vestibulum magna</strong> sem, volutpat sit amet mollis sed, tempus in ex. Sed vel ante ac lorem f
+                ermentum elementum. In in augue quam. Morbi le
+            </p>
+        </div>
+    </section>
+    <section class="section room-section room-section-pirates panel" data-panel="pirates" data-nav-class="dark">
+        <h2 class="room-section-header">
+            <span class="room-section-header-span">01</span>
+            Pirates Treasure
+        </h2>
+        <div class="wrapper">
+            <div class="outer-room-columns sans">
+                <div class="columns room-columns ">
+                    <div class="column room-column">
+                        <div class="circle-icon room-circle-icon">
+                            19%
+                        </div>
+                        <h3 class="circle-label room-circle-label">
+                            <span class="circle-label-span">escaped <br />the room</span>
+                        </h3>
+                    </div>
+                    <div class="column room-column">
+                        <div class="circle-icon room-circle-icon">
+                            28'
+                        </div>
+                        <h3 class="circle-label room-circle-label">
+                            <span class="circle-label-span">With <br />best time</span>
+                        </h3>
+                    </div>
+                    <div class="column room-column">
+                        <div class="circle-icon room-circle-icon">
+                            55'
+                        </div>
+                        <h3 class="circle-label room-circle-label">
+                            <span class="circle-label-span">Average <br />time</span>
+                        </h3>
                     </div>
                 </div>
-                <p class="paragraph">
-                    Lorem ipsum dolor sit amet, <strong class="red-strong">consectetur</strong> adipiscing elit.
-                    Sed dui nisi, pellentesque quis lobortis vel, ultricies eu libero. Nunc condimentum
-                    , quam in <strong class="red-strong">blandit dapibus</strong>, turpis lacus viverra leo, non consequat nisi t
-                    urpis non massa. In ut lacus interdum, malesuada turpis nec, malesuada nunc. Ut i
-                    aculis ex in mauris venenatis iaculis. Nam imperdiet enim a ex pellentesque mollis.
-                    <strong class="red-strong">Vestibulum magna</strong> sem, volutpat sit amet mollis sed, tempus in ex. Sed vel ante ac lorem f
-                    ermentum elementum. In in augue quam. Morbi le
-                </p>
             </div>
-        </section>
-        <section class="section room-section sans room-section-pirates panel" data-panel="pirates">
-            <h2 class="room-section-header">
-                <span class="room-section-header-span">01</span>
-                Pirates Treasure
-            </h2>
-            <div class="wrapper">
-                <div class="outer-room-columns">
-                    <div class="columns room-columns ">
-                        <div class="column room-column">
-                            <div class="circle-icon room-circle-icon">
-                                19%
-                            </div>
-                            <h3 class="circle-label room-circle-label">
-                                <span class="circle-label-span">escaped <br />the room</span>
-                            </h3>
+            <p class="paragraph room-paragraph">
+                Lorem ipsum dolor sit amet, <strong class="red-strong">consectetur</strong> adipiscing elit.
+                Sed dui nisi, pellentesque quis lobortis vel, ultricies eu libero. Nunc condimentum
+                , quam in <strong class="red-strong">blandit dapibus</strong>, turpis lacus viverra leo, non consequat nisi t
+                urpis non massa. In ut lacus interdum, malesuada turpis nec, malesuada nunc. Ut i
+                aculis ex in mauris venenatis iaculis. Nam imperdiet enim
+            </p>
+            <a class="button">Book now</a>
+        </div>
+    </section>
+    <section class="section room-section sans room-section-attic panel" data-panel="attic" data-nav-class="dark">
+        <h2 class="room-section-header">
+            <span class="room-section-header-span">02</span>
+            Something like Attic
+        </h2>
+        <div class="wrapper">
+            <div class="outer-room-columns">
+                <div class="columns room-columns ">
+                    <div class="column room-column">
+                        <div class="circle-icon room-circle-icon">
+                            19%
                         </div>
-                        <div class="column room-column">
-                            <div class="circle-icon room-circle-icon">
-                                28'
-                            </div>
-                            <h3 class="circle-label room-circle-label">
-                                <span class="circle-label-span">With <br />best time</span>
-                            </h3>
+                        <h3 class="circle-label room-circle-label">
+                            <span class="circle-label-span">escaped <br />the room</span>
+                        </h3>
+                    </div>
+                    <div class="column room-column">
+                        <div class="circle-icon room-circle-icon">
+                            28'
                         </div>
-                        <div class="column room-column">
-                            <div class="circle-icon room-circle-icon">
-                                55'
-                            </div>
-                            <h3 class="circle-label room-circle-label">
-                                <span class="circle-label-span">Average <br />time</span>
-                            </h3>
+                        <h3 class="circle-label room-circle-label">
+                            <span class="circle-label-span">With <br />best time</span>
+                        </h3>
+                    </div>
+                    <div class="column room-column">
+                        <div class="circle-icon room-circle-icon">
+                            55'
                         </div>
+                        <h3 class="circle-label room-circle-label">
+                            <span class="circle-label-span">Average <br />time</span>
+                        </h3>
                     </div>
                 </div>
-                <p class="paragraph room-paragraph">
-                    Lorem ipsum dolor sit amet, <strong class="red-strong">consectetur</strong> adipiscing elit.
-                    Sed dui nisi, pellentesque quis lobortis vel, ultricies eu libero. Nunc condimentum
-                    , quam in <strong class="red-strong">blandit dapibus</strong>, turpis lacus viverra leo, non consequat nisi t
-                    urpis non massa. In ut lacus interdum, malesuada turpis nec, malesuada nunc. Ut i
-                    aculis ex in mauris venenatis iaculis. Nam imperdiet enim
-                </p>
-                <a class="button">Book now</a>
             </div>
-        </section>
-        <section class="section room-section sans room-section-attic panel" data-panel="attic">
-            <h2 class="room-section-header">
-                <span class="room-section-header-span">02</span>
-                Something like Attic
-            </h2>
-            <div class="wrapper">
-                <div class="outer-room-columns">
-                    <div class="columns room-columns ">
-                        <div class="column room-column">
-                            <div class="circle-icon room-circle-icon">
-                                19%
-                            </div>
-                            <h3 class="circle-label room-circle-label">
-                                <span class="circle-label-span">escaped <br />the room</span>
-                            </h3>
+            <p class="paragraph room-paragraph">
+                Lorem ipsum dolor sit amet, <strong class="red-strong">consectetur</strong> adipiscing elit.
+                Sed dui nisi, pellentesque quis lobortis vel, ultricies eu libero. Nunc condimentum
+                , quam in <strong class="red-strong">blandit dapibus</strong>, turpis lacus viverra leo, non consequat nisi t
+                urpis non massa. In ut lacus interdum, malesuada turpis nec, malesuada nunc. Ut i
+                aculis ex in mauris venenatis iaculis. Nam imperdiet enim
+            </p>
+            <a class="button">Book now</a>
+        </div>
+    </section>
+    <section class="section room-section sans room-section-garden panel" data-panel="garden" data-nav-class="dark">
+        <h2 class="room-section-header">
+            <span class="room-section-header-span">03</span>
+            Mymymymysterious garden
+        </h2>
+        <div class="wrapper">
+            <div class="outer-room-columns">
+                <div class="columns room-columns ">
+                    <div class="column room-column">
+                        <div class="circle-icon room-circle-icon">
+                            19%
                         </div>
-                        <div class="column room-column">
-                            <div class="circle-icon room-circle-icon">
-                                28'
-                            </div>
-                            <h3 class="circle-label room-circle-label">
-                                <span class="circle-label-span">With <br />best time</span>
-                            </h3>
+                        <h3 class="circle-label room-circle-label">
+                            <span class="circle-label-span">escaped <br />the room</span>
+                        </h3>
+                    </div>
+                    <div class="column room-column">
+                        <div class="circle-icon room-circle-icon">
+                            28'
                         </div>
-                        <div class="column room-column">
-                            <div class="circle-icon room-circle-icon">
-                                55'
-                            </div>
-                            <h3 class="circle-label room-circle-label">
-                                <span class="circle-label-span">Average <br />time</span>
-                            </h3>
+                        <h3 class="circle-label room-circle-label">
+                            <span class="circle-label-span">With <br />best time</span>
+                        </h3>
+                    </div>
+                    <div class="column room-column">
+                        <div class="circle-icon room-circle-icon">
+                            55'
                         </div>
+                        <h3 class="circle-label room-circle-label">
+                            <span class="circle-label-span">Average <br />time</span>
+                        </h3>
                     </div>
                 </div>
-                <p class="paragraph room-paragraph">
-                    Lorem ipsum dolor sit amet, <strong class="red-strong">consectetur</strong> adipiscing elit.
-                    Sed dui nisi, pellentesque quis lobortis vel, ultricies eu libero. Nunc condimentum
-                    , quam in <strong class="red-strong">blandit dapibus</strong>, turpis lacus viverra leo, non consequat nisi t
-                    urpis non massa. In ut lacus interdum, malesuada turpis nec, malesuada nunc. Ut i
-                    aculis ex in mauris venenatis iaculis. Nam imperdiet enim
-                </p>
-                <a class="button">Book now</a>
             </div>
-        </section>
-        <section class="section room-section sans room-section-garden panel" data-panel="garden">
-            <h2 class="room-section-header">
-                <span class="room-section-header-span">03</span>
-                Mymymymysterious garden
-            </h2>
-            <div class="wrapper">
-                <div class="outer-room-columns">
-                    <div class="columns room-columns ">
-                        <div class="column room-column">
-                            <div class="circle-icon room-circle-icon">
-                                19%
+            <p class="paragraph room-paragraph">
+                Lorem ipsum dolor sit amet, <strong class="red-strong">consectetur</strong> adipiscing elit.
+                Sed dui nisi, pellentesque quis lobortis vel, ultricies eu libero. Nunc condimentum
+                , quam in <strong class="red-strong">blandit dapibus</strong>, turpis lacus viverra leo, non consequat nisi t
+                urpis non massa. In ut lacus interdum, malesuada turpis nec, malesuada nunc. Ut i
+                aculis ex in mauris venenatis iaculis. Nam imperdiet enim
+            </p>
+            <a class="button">Book now</a>
+        </div>
+    </section>
+    <section class="section section-us panel" data-panel="us" data-nav-class="dark">
+        <h2 class="section-header">About the <span class="section-header-span">Team</span></h2>
+        <div class="wrapper">
+            <p class="paragraph paragraph-us">
+                Lorem ipsum dolor sit amet, <strong class="red-strong">consectetur</strong> adipiscing elit.
+                Sed dui nisi, pellentesque quis lobortis vel, ultricies eu libero. Nunc condimentum
+                , quam in <strong class="red-strong">blandit dapibus</strong>, turpis lacus viverra leo, non consequat nisi t
+                urpis non massa. In ut lacus interdum, ma
+            </p>
+            <div class="outer-us-columns">
+                <div class="columns rooms-columns">
+                    <a class="column column-4 rooms-column">
+                        <img class="rooms-column-image" src="" alt="Pirates Treasure" />
+                        <div class="rooms-column-label">
+                            <div class="rooms-column-label-inner">
+                              Michał Raczoń
                             </div>
-                            <h3 class="circle-label room-circle-label">
-                                <span class="circle-label-span">escaped <br />the room</span>
-                            </h3>
                         </div>
-                        <div class="column room-column">
-                            <div class="circle-icon room-circle-icon">
-                                28'
+                    </a>
+                    <a class="column column-4 rooms-column">
+                        <img class="rooms-column-image" src="" alt="Pirates Treasure" />
+                        <div class="rooms-column-label">
+                            <div class="rooms-column-label-inner">
+                              Michał Raczoń
                             </div>
-                            <h3 class="circle-label room-circle-label">
-                                <span class="circle-label-span">With <br />best time</span>
-                            </h3>
                         </div>
-                        <div class="column room-column">
-                            <div class="circle-icon room-circle-icon">
-                                55'
+                    </a>
+                    <a class="column column-4 rooms-column">
+                        <img class="rooms-column-image" src="" alt="Pirates Treasure" />
+                        <div class="rooms-column-label">
+                            <div class="rooms-column-label-inner">
+                              Michał Raczoń
                             </div>
-                            <h3 class="circle-label room-circle-label">
-                                <span class="circle-label-span">Average <br />time</span>
-                            </h3>
                         </div>
-                    </div>
+                    </a>
+                    <a class="column column-4 rooms-column">
+                        <img class="rooms-column-image" src="" alt="Pirates Treasure" />
+                        <div class="rooms-column-label">
+                            <div class="rooms-column-label-inner">
+                              Michał Raczoń
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <p class="paragraph room-paragraph">
-                    Lorem ipsum dolor sit amet, <strong class="red-strong">consectetur</strong> adipiscing elit.
-                    Sed dui nisi, pellentesque quis lobortis vel, ultricies eu libero. Nunc condimentum
-                    , quam in <strong class="red-strong">blandit dapibus</strong>, turpis lacus viverra leo, non consequat nisi t
-                    urpis non massa. In ut lacus interdum, malesuada turpis nec, malesuada nunc. Ut i
-                    aculis ex in mauris venenatis iaculis. Nam imperdiet enim
-                </p>
-                <a class="button">Book now</a>
             </div>
-        </section>
-        <section class="section section-us panel" data-panel="us">
-            <h2 class="section-header">About the <span class="section-header-span">Team</span></h2>
-            <div class="wrapper">
-                <p class="paragraph paragraph-us">
-                    Lorem ipsum dolor sit amet, <strong class="red-strong">consectetur</strong> adipiscing elit.
-                    Sed dui nisi, pellentesque quis lobortis vel, ultricies eu libero. Nunc condimentum
-                    , quam in <strong class="red-strong">blandit dapibus</strong>, turpis lacus viverra leo, non consequat nisi t
-                    urpis non massa. In ut lacus interdum, ma
-                </p>
-                <div class="outer-us-columns">
-                    <div class="columns rooms-columns">
-                        <a class="column column-4 rooms-column">
-                            <img class="rooms-column-image" src="" alt="Pirates Treasure" />
-                            <div class="rooms-column-label">
-                                <div class="rooms-column-label-inner">
-                                  Michał Raczoń
-                                </div>
-                            </div>
-                        </a>
-                        <a class="column column-4 rooms-column">
-                            <img class="rooms-column-image" src="" alt="Pirates Treasure" />
-                            <div class="rooms-column-label">
-                                <div class="rooms-column-label-inner">
-                                  Michał Raczoń
-                                </div>
-                            </div>
-                        </a>
-                        <a class="column column-4 rooms-column">
-                            <img class="rooms-column-image" src="" alt="Pirates Treasure" />
-                            <div class="rooms-column-label">
-                                <div class="rooms-column-label-inner">
-                                  Michał Raczoń
-                                </div>
-                            </div>
-                        </a>
-                        <a class="column column-4 rooms-column">
-                            <img class="rooms-column-image" src="" alt="Pirates Treasure" />
-                            <div class="rooms-column-label">
-                                <div class="rooms-column-label-inner">
-                                  Michał Raczoń
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <a class="button">Join the Crew</a>
-            </div>
-        </section>
+            <a class="button">Join the Crew</a>
+        </div>
+    </section>
 
     <footer>
     </footer>
