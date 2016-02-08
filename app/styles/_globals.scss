@@ -15,7 +15,7 @@
 }
 
 .wrapper {
-    width: 10em;
+    width: 9em;
     margin-left: auto;
     margin-right: auto;
 }
@@ -31,7 +31,7 @@
 
 .columns {
     font-size: 0;
-    padding: 0 10%;
+    padding: 0 5%;
 }
 
 .column {
@@ -55,22 +55,24 @@
 
 .circle-icon {
     @include font-sans();
-    width: 2em;
-    height: 2em;
-    line-height: 2em;
-    font-size: 0.7em;
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    font-size: 0.55em;
     color: $white-transparent;
     background: $main-red;
     display: inline-block;
+    @include radial-gradient(rgba(188, 40, 37, 0.1), rgba(188, 40, 37, 1));
     @include rounded(50%);
 }
 
 .circle-label {
     @include font-sans();
-    font-size: 0.25em;
+    font-size: 0.27em;
     line-height: 1em;
-    margin-top: 1em;
+    margin-top: 1.2em;
     color: $white;
+    font-weight: normal;
     text-transform: uppercase;
 
     &-strong, &-span {
@@ -82,11 +84,13 @@
         color: $main-red;
         font-size: 2.3em;
         line-height: 0.8em;
+        opacity:0.9
     }
 
     &-span {
         text-align: left;
         line-height: 0.9em;
+        opacity: 0.7;
     }
 }
 

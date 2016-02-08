@@ -1,6 +1,5 @@
 @import 'bower_components/reset-css/_reset';
 
-@import 'fonts';
 @import 'elements';
 @import 'globals';
 
@@ -12,7 +11,7 @@
 .fixed-navs {
     color: $white;
     opacity: 0;
-    @include transition(all 0.5s  ease);
+    @include transition(all 0.5s ease);
 
     &.visible {
         opacity: 1;
@@ -25,7 +24,7 @@
     &-item {
         position: fixed;
         font-size: 0.2em;
-        top: 5%;
+        top: 4%;
         z-index: 11;
 
         &.book-now {
@@ -33,8 +32,18 @@
             text-transform: uppercase;
             cursor: pointer;
             opacity: 0.2;
-            font-size: 0.3em;
+            font-size: 0.2em;
+            font-weight: normal;
             @include transition(all 0.2s  ease);
+
+            .book-now-icon {
+                vertical-align: middle;
+                font-size: 0.8em;
+                display: inline-block;
+                border: 0.15em solid $white;
+                padding: 0.4em;
+                @include rounded(50%);
+            }
 
             &:hover {
                 opacity: 1;
@@ -44,9 +53,9 @@
         &.toggle-menu {
             right: 3%;
             display: inline-block;
-            width: 1.6em;
-            padding: 0.5em 0;
-            height: 1.2em;
+            width: 1.8em;
+            padding: 0.6em 0;
+            height: 1.4em;
             z-index: 15;
             opacity:0.3;
             cursor: pointer;
@@ -59,7 +68,7 @@
             .toggle-menu-line {
                 background: $white;
                 height: 0.2em;
-                width: 1.6em;
+                width: 1.8em;
                 display: block;
                 @include transition(all 0.5s  ease);
 
@@ -68,7 +77,7 @@
                     position: absolute;
                     background: $white;
                     height: 0.2em;
-                    width: 1.6em;
+                    width: 1.8em;
                     top: 0;
                     display: block;
                     @include transition(all 0.5s ease);
@@ -94,10 +103,10 @@
                     background: rgba(255,255,255,0);
 
                     &:before {
-                        @include transform(rotate(45deg) translate(0.5em, 0.2em));
+                        @include transform(rotate(45deg) translate(0.5em, 0.3em));
                     }
                     &:after {
-                        @include transform(rotate(-45deg) translate(0.5em, -0.20em));
+                        @include transform(rotate(-45deg) translate(0.5em, -0.3em));
                     }
                 }
             }
@@ -163,7 +172,8 @@
         height: 120vh;
         width: 100%;
         z-index: -1;
-        background: #333;
+        background: url('../images/woodBgr.jpg');
+        background-size: cover;
         overflow: hidden;
 
         &:before, &:after {
@@ -187,11 +197,13 @@
 
 .logo {
     text-indent: 2000px;
+    background: url('../images/logo.png') center center no-repeat;
+    background-size: 100%;
+    opacity: 0.9;
     white-space: nowrap;
     overflow: hidden;
-    width: 2.5em;
-    height: 1.25em;
-    background: red;
+    width: 2.6em;
+    height: 1.15em;
     margin: 0 auto 0.7em
 }
 
@@ -200,7 +212,8 @@
     line-height: 1.5em;
     font-style: italic;
     color: $white;
-    opacity: 0.7;
+    opacity: 0.9;
+    text-shadow: 0 0 1em $black;
     margin-bottom: 5em;
 }
 

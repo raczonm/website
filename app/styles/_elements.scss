@@ -1,9 +1,9 @@
 //colors
 $black: #000000;
 $white: #ffffff;
-$main-red: red;
+$main-red: #BC2825;
 $main-pirates: yellow;
-$white-transparent: rgba(255,255,255,0.7);
+$white-transparent: rgba(255,255,255,0.8);
 
 @mixin red-transparent-bgr($opacity) {
     background-color: rgba(255,0,0,$opacity);
@@ -57,4 +57,14 @@ $white-transparent: rgba(255,255,255,0.7);
 @mixin font-sans() {
     font-family: 'Anton', sans-serif;
     font-weight: 700;
+}
+
+@mixin radial-gradient($from, $to) {
+	background: -moz-radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $from), color-stop(100%, $to));
+	background: -webkit-radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background: -o-radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background: -ms-radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background: radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background-color: $from;
 }

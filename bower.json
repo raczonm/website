@@ -4,7 +4,8 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "panelsnap": "~0.15.1",
-    "reset-css": "~2.0.2"
+    "reset-css": "~2.0.2",
+    "fontawesome": "~4.5.0"
   },
   "devDependencies": {
     "chai": "~3.5.0",
