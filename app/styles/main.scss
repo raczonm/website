@@ -3,12 +3,6 @@
 @import 'elements';
 @import 'globals';
 
-
-.body {
-    font-size: 100px;
-    overflow-x:hidden;
-}
-
 //FIXED NAVS
 .fixed-navs {
     color: $white;
@@ -420,7 +414,6 @@
 }
 
 //SINGLE ROOM
-
 .outer-room-columns {
     margin: 0.5em 0;
 }
@@ -452,56 +445,39 @@
 }
 
 //PIRATES
-
 .room-section-pirates {
-    .room-section-background:after {
-        background: url('../images/pirates-bgr.jpg');
-        background-size: cover;
-    }
-
-    .room-section-header {
-        &-span {
-            color: $main-pirates;
-        }
-    }
-
-    .red-strong {
-        color: $main-pirates;
-    }
-
-    .button {
-        background: $main-pirates;
-    }
-
-    .room-circle-icon {
-        @include linear-gradient-left(rgba(232,175,6,0.2), rgba(232,175,6,0.6));
-    }
+    @include room-customization($main-pirates, '../images/pirates-bgr.jpg', rgba(232,175,6,0.2), rgba(232,175,6,0.6));
 }
 
 //ATTIC
-
 .room-section-attic {
-    .room-section-background:after {
-        background: url('../images/attic-bgr.jpg');
-        background-size: cover;
-    }
+    @include room-customization($main-attic, '../images/attic-bgr.jpg', rgba(25,83,183,0.2), rgba(25,83,183,0.6));
 }
 
 //GARDEN
-
 .room-section-garden {
-  .room-section-background:after {
-      background: url('../images/garden-bgr.jpg');
-      background-size: cover;
-  }
+    @include room-customization($main-garden, '../images/garden-bgr.jpg', rgba(0,124,6,0.2), rgba(0,124,6,0.6));
+
+    .room-section-background {
+        height: 120%;
+    }
 }
 
 // US
+
+.section-us {
+    margin-top: 10vw;
+    padding-top: 0.1em;
+}
 
 .paragraph-us {
     margin-top: 3em
 }
 
 .outer-us-columns {
-    margin: 0.7em 0 0.3em ;
+    margin: 0.7em 0 0.1em ;
+}
+
+.column-4 .rooms-column-image {
+    background-size: cover;
 }

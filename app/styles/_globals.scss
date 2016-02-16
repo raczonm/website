@@ -4,6 +4,12 @@
   -moz-box-sizing: border-box;
 }
 
+.body {
+    font-size: 100px;
+    overflow-x:hidden;
+}
+
+
 .sans {
     @include font-sans();
 }
@@ -180,6 +186,10 @@
         color: $white;
         opacity:0.8;
         font-size: 0.22em;
+
+        .red-strong {
+            text-shadow: 0 0 1em $black;
+        }
     }
 }
 

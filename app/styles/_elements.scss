@@ -3,6 +3,8 @@ $black: #000000;
 $white: #ffffff;
 $main-red: #BC2825;
 $main-pirates: #e8af06;
+$main-attic: #1953b7;
+$main-garden: #007c06;
 $white-transparent: rgba(255,255,255,0.8);
 
 @mixin red-transparent-bgr($opacity) {
@@ -79,4 +81,30 @@ $white-transparent: rgba(255,255,255,0.8);
     background-image:      -o-linear-gradient(left, $start-colour, $end-colour);
     background-image:         linear-gradient(left, $start-colour, $end-colour);
     filter:            progid:DXImageTransform.Microsoft.gradient(start-colourStr='#{$start-colour}', end-colourStr='#{$end-colour}', gradientType='1');
+}
+
+
+@mixin room-customization($color, $bgr, $gradient1, $gradient2) {
+    .room-section-background:after {
+        background: url($bgr);
+        background-size: cover;
+    }
+
+    .room-section-header {
+        &-span {
+            color: $color;
+        }
+    }
+
+    .red-strong {
+        color: $color;
+    }
+
+    .button {
+        background: $color;
+    }
+
+    .room-circle-icon {
+        @include linear-gradient-left($gradient1, $gradient2);
+    }
 }
