@@ -78,6 +78,12 @@
         app.checkProportions();
         app.setPanelSnap();
         app.bindEvents();
+        console.log('no kurwsa maćććć@!!!!!! gówno');
+        //console.log("ia");
+        // setTimeout(function(){
+        //     console.log("ia");
+        //     $('body').addClass('loaded');
+        // }, 300);
 
         $(window).on('resize', function(){
             app.checkProportions();

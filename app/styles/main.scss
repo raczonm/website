@@ -3,6 +3,37 @@
 @import 'elements';
 @import 'globals';
 
+//LOADER
+.loader {
+    background: url('../images/blur.jpg') center center;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 101;
+    opacity: 1;
+
+    &-logo {
+        display: block;
+        width: 5em;
+        height: 2.13em;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -2.5em;
+        margin-top: -1.065em;
+
+    }
+
+    .loading & {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
 //FIXED NAVS
 .fixed-navs {
     color: $white;
@@ -601,7 +632,7 @@
 .address {
     color: $white;
     text-align: left;
-    margin-left: 1%;
+    margin-left: 2%;
     font-style: italic;
     opacity: 0.8;
 
