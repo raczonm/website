@@ -481,3 +481,137 @@
 .column-4 .rooms-column-image {
     background-size: cover;
 }
+
+
+//FOOTER
+
+
+.footer {
+    overflow: hidden;
+    margin-top: 5vh;
+    height: 100vh;
+    background: url('../images/contact-bgr.jpg');
+    background-size: cover;
+
+    &-header {
+        @include font-sans();
+        font-style: normal;
+        text-transform: uppercase;
+        margin-top: 1em;
+        font-size: 0.45em;
+        color: $white;
+        opacity: 0.8;
+    }
+
+    &-copy {
+        position: absolute;
+        background: rgba(0,0,0,0.5);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: $white-transparent;
+        height: 1.4em;
+        text-align: left;
+
+        &-paragraph {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 5em 0;
+            font-size: 0.13em;
+            font-weight: 100;
+        }
+
+        &-button {
+            margin: 1.5em 0;
+            font-size: 0.25em;
+            background: rgba(255, 255, 255, 0.2);
+            float:right;
+            vertical-align: middle;
+
+            &:hover {
+                background: $main-red;
+            }
+        }
+    }
+}
+
+.form, .address {
+    font-size: 0.5em;
+    margin-top: 2em;
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+}
+
+.form {
+    &-label {
+        color: $white;
+        opacity: 0.8;
+        font-style: italic;
+        text-align: right;
+        display: block;
+        margin-bottom: 0.5em;
+        font-size: 0.4em
+    }
+
+    &-field {
+        margin-bottom: 0.2em;
+    }
+
+    &-input {
+        margin: 0;
+        @include rounded(5px);
+        border: none;
+        padding: 0.7em;
+        width: 100%;
+        font-size: 0.3em;
+        font-weight: 100;
+        font-style: italic;
+        color: $white-transparent;
+        letter-spacing: 0;
+        display: block;
+        font-family: "Times New Roman";
+        background: rgba(255, 255, 255, 0.1);
+        outline: none;
+        @include transition(background 0.3s ease);
+
+        &:focus {
+              background: rgba(255, 255, 255, 0.3);
+        }
+    }
+
+    &-text {
+        height: 5em;
+        resize: vertical;
+        max-height: 10em;
+    }
+
+    &-button {
+        margin-top: 0.4em;
+        opacity: 0.5;
+        display: inline-block;
+        float: right;
+        font-size: 0.45em;
+        &:hover {
+            @include scale(1);
+        }
+    }
+}
+
+.address {
+    color: $white;
+    text-align: left;
+    margin-left: 1%;
+    font-style: italic;
+    opacity: 0.8;
+
+    &-header {
+        font-size:0.4em;
+        margin-bottom:0.5em;
+    }
+
+    &-paragraph {
+      font-size: 0.3em;
+      margin-bottom: 1.3em;
+    }
+}

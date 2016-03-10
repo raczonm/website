@@ -9,12 +9,11 @@
     overflow-x:hidden;
 }
 
-
 .sans {
     @include font-sans();
 }
 
-.header, .section {
+.header, .section, .footer {
     height: 100vh;
     position: relative;
     text-align: center;
