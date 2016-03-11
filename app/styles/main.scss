@@ -15,6 +15,8 @@
     text-align: center;
     z-index: 101;
     opacity: 1;
+    @include transition(all 0.5s linear);
+    @include translate(0, 0);
 
     &-logo {
         display: block;
@@ -25,12 +27,12 @@
         top: 50%;
         margin-left: -2.5em;
         margin-top: -1.065em;
-
     }
 
-    .loading & {
-        opacity: 0;
+    .loaded & {
+        opacity: 0.5;
         z-index: -1;
+        @include translate(100%, 0);
     }
 }
 
@@ -153,10 +155,14 @@
 
         &.scroll-nav {
             top: auto;
+            display: none;
             bottom: 5%;
             right: 3%;
             @include transition(opacity 0.2s linear);
 
+            .full-page & {
+                display: block;
+            }
             .scroll-nav-item {
                 display: block;
                 cursor: pointer;
@@ -233,24 +239,36 @@
     padding-top: 0.7em;
     overflow: visible;
 
+    @media #{$media-tablet} {
+        padding-top: 1.2em;
+    }
+
     &-background {
         position: absolute;
         top: 0;
         left: 0;
-        height: 120vh;
+        height: 130%;
         width: 100%;
         z-index: -1;
         background: url('../images/woodBgr.jpg');
         background-size: cover;
         overflow: hidden;
 
+        @media #{$media-tablet} {
+            height: 125%;
+        }
+
+        .full-page & {
+            height: 120vh;
+        }
+
         &:before, &:after {
             content: "";
             position: absolute;
             width: 70%;
-            height: 40vh;
+            height: 4em;
             right: 50%;
-            bottom: -25.7vh;
+            bottom: -3em;
             @include rotate(11);
             background: $white;
         }
@@ -308,7 +326,13 @@
     overflow: hidden;
     width: 2.6em;
     height: 1.15em;
-    margin: 0 auto 0.7em
+    margin: 0 auto 0.7em;
+
+    @media #{$media-tablet} {
+        width: 4em;
+        height: 1.7em;
+        margin: 0 auto 1.3em;
+    }
 }
 
 .subtitle {
@@ -319,13 +343,21 @@
     opacity: 0.9;
     text-shadow: 0 0 1em $black;
     margin-bottom: 5em;
+
+    @media #{$media-tablet} {
+        font-size: 0.25em;
+    }
 }
 
 //ROOMS
 
 .section-rooms {
-    margin-top: 10vw;
+    margin-top: 1.5em;
     padding-top: 0.1em;
+
+    @media #{$media-tablet} {
+        margin-top: 2.5em;
+    }
 }
 
 .outer-rooms-columns {
@@ -429,6 +461,11 @@
             position: absolute;
             bottom: 20%;
             overflow-x: visible;
+
+            @media #{$media-tablet} {
+                font-size: 0.2em;
+            }
+
             &:after {
                 content: "";
                 right: -5%;
@@ -520,9 +557,9 @@
 .footer {
     overflow: hidden;
     margin-top: 5vh;
-    height: 100vh;
     background: url('../images/contact-bgr.jpg');
     background-size: cover;
+    padding-bottom: 2em;
 
     &-header {
         @include font-sans();
@@ -631,6 +668,7 @@
 
 .address {
     color: $white;
+    width: 45%;
     text-align: left;
     margin-left: 2%;
     font-style: italic;

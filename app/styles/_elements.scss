@@ -8,6 +8,10 @@ $main-attic: #1953b7;
 $main-garden: #007c06;
 $white-transparent: rgba(255,255,255,0.8);
 
+$media-tablet: "only screen and (max-width : 1024px)";
+$media-phone: "only screen and (max-width : 767px)";
+
+
 @mixin red-transparent-bgr($opacity) {
     background-color: rgba(188,40,37,$opacity);
 }

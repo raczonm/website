@@ -17,9 +17,14 @@
   -moz-box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 .body {
-    font-size: 100px;
+    font-size: 0px;
     overflow-x:hidden;
+    background: $white;
 }
 
 .sans {
@@ -27,9 +32,14 @@
 }
 
 .header, .section, .footer {
-    height: 100vh;
+    height: auto;
     position: relative;
     text-align: center;
+
+
+    .full-page & {
+        height: 100vh;
+    }
 }
 
 .wrapper {
@@ -50,6 +60,10 @@
 .columns {
     font-size: 0;
     padding: 0 5%;
+
+    @media #{$media-tablet} {
+        padding: 0;
+    }
 }
 
 .column {
@@ -83,6 +97,13 @@
     overflow: hidden;
     @include linear-gradient-left(rgba(188,40,37,0.3), rgba(188,40,37,0.8));
     @include rounded(50%);
+
+    @media #{$media-tablet} {
+        width: 2.5em;
+        height: 2.5em;
+        line-height: 2.5em;
+        font-size: 0.65em;
+    }
 }
 
 .circle-label {
@@ -93,6 +114,10 @@
     color: $white;
     font-weight: normal;
     text-transform: uppercase;
+
+    @media #{$media-tablet} {
+        font-size: 0.30em;
+    }
 
     &-strong, &-span {
         vertical-align: top;
@@ -122,6 +147,10 @@
     margin: 0 auto;
     padding-bottom: 0.5em;
 
+    @media #{$media-tablet} {
+        font-size: 0.7em;
+    }
+
     &-span {
         color: $main-red;
     }
@@ -143,11 +172,15 @@
     text-align: center;
     font-size: 0.19em;
     line-height: 1.5em;
+
+    @media #{$media-tablet} {
+        font-size: 0.25em;
+    }
 }
 
 .room-section {
     padding-top: 0.3em;
-    margin-top: 20vh;
+    margin-top: 1.5em;
 
     &-background {
         position: absolute;
