@@ -83,6 +83,14 @@ html {
             width: 25%;
         }
     }
+
+    @media #{$media-phone} {
+        width: 100%;
+
+        &-4, &:last-child {
+            width: 100%;
+        }
+    }
 }
 
 .circle-icon {
@@ -104,6 +112,13 @@ html {
         line-height: 2.5em;
         font-size: 0.65em;
     }
+
+    @media #{$media-phone} {
+        width: 2.5em;
+        height: 2.5em;
+        line-height: 2.5em;
+        font-size: 2em;
+    }
 }
 
 .circle-label {
@@ -117,6 +132,11 @@ html {
 
     @media #{$media-tablet} {
         font-size: 0.30em;
+    }
+
+    @media #{$media-phone} {
+        font-size: 1em;
+        margin: 0.6em 0 2em;
     }
 
     &-strong, &-span {
@@ -151,6 +171,10 @@ html {
         font-size: 0.7em;
     }
 
+    @media #{$media-phone} {
+        font-size: 1.2em;
+    }
+
     &-span {
         color: $main-red;
     }
@@ -174,13 +198,21 @@ html {
     line-height: 1.5em;
 
     @media #{$media-tablet} {
-        font-size: 0.25em;
+        font-size: 0.3em;
+    }
+
+    @media #{$media-phone} {
+        font-size: 0.6em;
     }
 }
 
 .room-section {
     padding-top: 0.3em;
     margin-top: 1.5em;
+
+    @media #{$media-tablet} {
+        padding-bottom: 2em
+    }
 
     &-background {
         position: absolute;
@@ -220,6 +252,10 @@ html {
         opacity: 0.8;
         text-transform: uppercase;
 
+        @media #{$media-tablet} {
+            font-size: 0.8em;
+        }
+
         &-span {
             display: block;
             font-size: 1.3em;
@@ -253,7 +289,11 @@ html {
 
     &:hover {
         @include scale(1.1);
-        opacity:0.8
+        opacity:0.8;
+    }
+
+    @media #{$media-tablet} {
+        font-size: 0.5em;
     }
 
 }

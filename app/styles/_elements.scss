@@ -9,7 +9,7 @@ $main-garden: #007c06;
 $white-transparent: rgba(255,255,255,0.8);
 
 $media-tablet: "only screen and (max-width : 1024px)";
-$media-phone: "only screen and (max-width : 767px)";
+$media-phone: "only screen and (max-width : 500px)";
 
 
 @mixin red-transparent-bgr($opacity) {

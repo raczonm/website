@@ -60,14 +60,30 @@
         top: 4%;
         z-index: 11;
 
+        @media #{$media-tablet} {
+            font-size: 0.35em;
+        }
+
+        @media #{$media-phone} {
+            font-size: 0.8em;
+            top: 1.3em;
+        }
+
         &.book-now {
             left: 3%;
             text-transform: uppercase;
             cursor: pointer;
             opacity: 0.2;
-            font-size: 0.2em;
             font-weight: normal;
             @include transition(opacity 0.2s  ease);
+
+            @media #{$media-tablet} {
+                position: absolute;
+            }
+
+            @media #{$media-phone} {
+                left: 1em;
+            }
 
             .book-now-icon {
                 vertical-align: middle;
@@ -97,6 +113,10 @@
             opacity:0.3;
             cursor: pointer;
             @include transition(opacity 0.5s  ease);
+
+            @media #{$media-phone} {
+                right: 1em;
+            }
 
             &:hover {
                 opacity: 0.6;
@@ -193,7 +213,6 @@
     @include linear-gradient-left(rgba(0,0,0,0.85), rgba(0,0,0,0.75));
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    //background: rgba(0,0,0,0.95);
     color: $white;
 
     .with-splash & {
@@ -243,6 +262,10 @@
         padding-top: 1.2em;
     }
 
+    @media #{$media-phone} {
+        padding-top: 3.5em;
+    }
+
     &-background {
         position: absolute;
         top: 0;
@@ -256,6 +279,10 @@
 
         @media #{$media-tablet} {
             height: 125%;
+        }
+
+        @media #{$media-phone} {
+            height: 105%;
         }
 
         .full-page & {
@@ -333,6 +360,12 @@
         height: 1.7em;
         margin: 0 auto 1.3em;
     }
+
+    @media #{$media-phone} {
+        width: 8em;
+        height: 3.4em;
+        margin: 0 auto 1.3em;
+    }
 }
 
 .subtitle {
@@ -347,6 +380,11 @@
     @media #{$media-tablet} {
         font-size: 0.25em;
     }
+
+    @media #{$media-phone} {
+        font-size: 0.65em;
+        margin-bottom: 3em;
+    }
 }
 
 //ROOMS
@@ -358,10 +396,22 @@
     @media #{$media-tablet} {
         margin-top: 2.5em;
     }
+
+    @media #{$media-phone} {
+        margin-top: 4.5em;
+    }
 }
 
 .outer-rooms-columns {
     margin: 0.7em 0;
+
+    @media #{$media-phone} {
+          margin: 1.3em 0;
+    }
+
+    @media #{$media-phone} {
+          margin-bottom: 0.5em;
+    }
 }
 
 .rooms-columns {
@@ -383,6 +433,10 @@
       height: 120%;
       z-index: 10;
       @include skew(-5, 0);
+
+      @media #{$media-phone} {
+          content: none;
+      }
     }
 
     &:last-child:after {
@@ -396,6 +450,11 @@
         height: 2em;
         @include transition(all 0.5s ease);
         overflow: hidden;
+
+        @media #{$media-phone} {
+            height: 6.5em;
+            margin-bottom:1em;
+        }
 
         &:before {
             position: absolute;
@@ -466,6 +525,10 @@
                 font-size: 0.2em;
             }
 
+            @media #{$media-phone} {
+                font-size: 0.6em;
+            }
+
             &:after {
                 content: "";
                 right: -5%;
@@ -484,6 +547,10 @@
 //SINGLE ROOM
 .outer-room-columns {
     margin: 0.5em 0;
+
+    @media #{$media-tablet} {
+          margin: 1.2em 0;
+    }
 }
 
 .room-columns {
@@ -492,6 +559,10 @@
 
 .room-column {
     text-align: left;
+
+    @media #{$media-tablet} {
+        text-align: center;
+    }
 }
 
 .room-circle-icon {
@@ -500,21 +571,35 @@
     width: 3.2em;
     height: 3.2em;
     text-align: center;
+
+    @media #{$media-tablet} {
+        font-size: 0.7em;
+    }
 }
 
 .room-circle-label {
     display: inline-block;
     vertical-align: top;
     margin-top: 1.5em;
+
+    @media #{$media-tablet} {
+        font-size: 0.5em;
+        margin-top: 0.4em;
+    }
 }
 
-.room-paragraph {
-    font-size: 0.25em;
+.room-section .room-paragraph {
+    @media #{$media-tablet} {
+        font-size: 0.35em;
+    }
 }
 
 //PIRATES
 .room-section-pirates {
     @include room-customization($main-pirates, '../images/pirates-bgr.jpg', rgba(232,175,6,0.2), rgba(232,175,6,0.6));
+    @media #{$media-tablet} {
+        margin-top: 3.5em;
+    }
 }
 
 //ATTIC
@@ -528,13 +613,17 @@
 
     .room-section-background {
         height: 120%;
+
+        @media #{$media-tablet} {
+            height: 110%;
+        }
     }
 }
 
 // US
 
 .section-us {
-    margin-top: 10vw;
+    margin-top: 1.5em;
     padding-top: 0.1em;
 }
 
@@ -550,16 +639,18 @@
     background-size: cover;
 }
 
-
 //FOOTER
-
-
 .footer {
     overflow: hidden;
-    margin-top: 5vh;
+    margin-top: 1em;
     background: url('../images/contact-bgr.jpg');
     background-size: cover;
     padding-bottom: 2em;
+
+    @media #{$media-tablet} {
+        margin-top: 1.5em;
+        padding-bottom: 3em;
+    }
 
     &-header {
         @include font-sans();
@@ -569,6 +660,10 @@
         font-size: 0.45em;
         color: $white;
         opacity: 0.8;
+
+        @media #{$media-tablet} {
+            font-size: 0.7em;
+        }
     }
 
     &-copy {
@@ -581,12 +676,21 @@
         height: 1.4em;
         text-align: left;
 
+        @media #{$media-tablet} {
+            height: 2em;
+        }
+
         &-paragraph {
             display: inline-block;
             vertical-align: middle;
             padding: 5em 0;
             font-size: 0.13em;
             font-weight: 100;
+
+            @media #{$media-tablet} {
+                font-size: 0.3em;
+                padding: 3em 0;
+            }
         }
 
         &-button {
@@ -595,6 +699,11 @@
             background: rgba(255, 255, 255, 0.2);
             float:right;
             vertical-align: middle;
+
+            @media #{$media-tablet} {
+                font-size: 0.4em;
+                margin: 1.3em 0;
+            }
 
             &:hover {
                 background: $main-red;
@@ -609,6 +718,11 @@
     display: inline-block;
     width: 48%;
     vertical-align: top;
+
+    @media #{$media-tablet} {
+        font-size: 0.9em;
+        margin-top: 1em;
+    }
 }
 
 .form {
