@@ -38,7 +38,7 @@
             <a class="scroll-nav-item scroll-nav-down"><i class="fa fa-chevron-circle-down scroll-nav-item-icon"></i></a>
         </div>
     </nav>
-    <div class="splash sans">
+    <div class="splash sans splash-nav">
         <nav class="splash-menu text-center">
             <a class="splash-menu-item" data-panel="header">Top</a>
             <a class="splash-menu-item" data-panel="rooms">Rooms</a>
@@ -50,6 +50,7 @@
             <a class="button splash-menu-book">Book a room</a>
         </nav>
     </div>
+    <div class="splash sans splash-bookjs" id="bookingjs"></div>
     <header class="header panel" data-panel="header" data-nav-class="light">
         <div class="background header-background"></div>
         <h1 class="logo">It's a trap</h1>
@@ -363,6 +364,38 @@
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main2.js"></script>
+    <script type="text/javascript" src="http://cdn.timekit.io/booking-js/v1/booking.min.js" defer></script>
+    <script type="text/javascript">
+        window.timekitBookingConfig = {
+            name: 'REZERWUJ TERMIN - MROCZNY STRYCH',
+            email: 'itsatrapescape@gmail.com',
+            apiToken: '3D7sVhBPvB9X2iXcpEgQ0KtnGJhMJ6Dz',
+            calendar: '43c56a63-1886-423d-ad3f-6d9ea02241df',
+            avatar: 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg',
+            timekitFindTime: {
+                filters: {
+                    and: [
+                        { "specific_time": {"start": 13, "end": 23} }
+                    ]
+                },
+                future: "6 months",
+                length: "1 hours, 30 minutes",
+                ignore_all_day_events: true
+            },
+            fullCalendar: {
+                businessHours: false,
+                height: "auto",
+                contentHeight: "auto",
+                minTime: "13:00:00",
+                maxTime: "23:00:00",
+                firstDay: "1",
+                nowIndicator: false
+            },
+            localization: {
+                showTimezoneHelper: false, // Should the timezone difference helper (bottom) be shown?
+            }
+        }
+    </script>
     <!-- endbuild -->
   </body>
 </html>

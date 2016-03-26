@@ -1,0 +1,78 @@
+.body {
+   .bookingjs {
+        margin: 0;
+        background: rgba(0,0,0,0.95);
+        @include linear-gradient-left(rgba(0,0,0,0.85), rgba(0,0,0,0.75));
+        font-size: 0.15em;
+        position: fixed;
+        z-index: 12;
+
+        &.show {
+          @include transition(all 0.5s ease);
+          @include translate(100%, 0);
+        }
+        
+        &-avatar {
+            display: none;
+        }
+
+        &-displayname {
+            font-size: 2em;
+            @include font-sans();
+            margin: 1.2em;
+            padding: 0;
+            color: rgba(255,255,255,0.7)
+        }
+    }
+
+    .fc {
+
+        table {
+            border-collapse: separate;
+        }
+        .fc-view-container {
+            margin: 3em 2em;
+            background: none;
+        }
+
+        .fc-toolbar {
+            border-bottom: none;
+        }
+
+        .fc-axis, .fc-bg {
+            display: none;
+        }
+
+        .fc-time-grid .fc-slats {
+            margin-top: 10px;
+        }
+
+        .fc-row.fc-widget-header .fc-day-header {
+            background: rgba(255,255,255,0.3);
+            border: 10px solid rgba(0,0,0,0.95);;
+            padding: 15px;
+        }
+
+        .fc-event {
+            background: rgba(255,255,255,0.7);
+            border-left: 5px solid $main-attic;
+            text-align: center;
+            margin: 0 10px 20px;
+
+            &:hover {
+                background: $main-attic;
+            }
+        }
+
+        .fc-time-grid-event .fc-time {
+            padding: 17px;
+            @include font-sans();
+        }
+    }
+
+    .fc-unthemed .fc-divider, .fc-unthemed .fc-popover, .fc-unthemed .fc-row, .fc-unthemed tbody,
+    .fc-unthemed td, .fc-unthemed th, .fc-unthemed thead, .fc-content-skeleton, .fc-time-grid .fc-slats td {
+        border-color: transparent;
+    }
+
+}

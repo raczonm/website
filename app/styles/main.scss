@@ -2,6 +2,7 @@
 
 @import 'elements';
 @import 'globals';
+@import 'calendar';
 
 //LOADER
 .loader {
@@ -202,7 +203,7 @@
 
 .splash {
     @include transition(all 0.5s ease);
-    @include translate(100%, 0)
+    @include translate(100%, 0);
     position: fixed;
     opacity: 1;
     z-index: 12;
@@ -215,7 +216,12 @@
     -webkit-backface-visibility: hidden;
     color: $white;
 
-    .with-splash & {
+    .with-splash-menu &.splash-nav {
+        opacity: 1;
+        @include translate(0, 0);
+    }
+
+    .with-splash-book &.splash-bookjs {
         opacity: 1;
         @include translate(0, 0);
     }

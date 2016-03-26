@@ -17,20 +17,27 @@
             snapNext: $('.scroll-nav-down'),
             snapPrev: $('.scroll-nav-up'),
             menuLink: $('.toggle-menu'),
+            bookLink: $('.book-now'),
             fixedBookLink: $('.fixed-navs-item.book-now'),
             fixedNavs: $('.fixed-navs'),
             splashMenu: $('.splash-menu')
         };
 
         app.bindEvents = function() {
+            this.ui.bookLink.on('click', function() {
+                this.ui.menuLink.toggleClass('active');
+                this.ui.body.toggleClass('with-splash-book');
+                this.ui.fixedNavs.removeClass('visible');
+            }.bind(this));
+
             this.ui.menuLink.on('click', function() {
                 this.ui.menuLink.toggleClass('active');
-                this.ui.body.toggleClass('with-splash');
+                this.ui.body.toggleClass('with-splash-menu').removeClass('with-splash-book');
             }.bind(this));
 
             this.ui.splashMenu.on('click', 'a', function() {
-                  this.ui.menuLink.removeClass('with-splash');
-                  this.ui.body.removeClass('with-splash');
+                  this.ui.menuLink.removeClass('active');
+                  this.ui.body.removeClass('with-splash-menu');
             }.bind(this));
         };
 
