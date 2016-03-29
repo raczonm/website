@@ -9,7 +9,7 @@
                return true;
             }
             return false;
-        }
+        };
 
         app.ui = {
             body: $('body'),
@@ -25,9 +25,9 @@
 
         app.bindEvents = function() {
             this.ui.bookLink.on('click', function() {
-                this.ui.menuLink.toggleClass('active');
-                this.ui.body.toggleClass('with-splash-book');
-                this.ui.fixedNavs.removeClass('visible');
+                this.ui.menuLink.removeClass('active');
+                this.ui.body.addClass('with-splash-book');
+                this.ui.fixedNavs.addClass('hidden');
             }.bind(this));
 
             this.ui.menuLink.on('click', function() {
@@ -39,6 +39,11 @@
                   this.ui.menuLink.removeClass('active');
                   this.ui.body.removeClass('with-splash-menu');
             }.bind(this));
+        };
+
+        app.closeBooking = function(){
+            this.ui.body.removeClass('with-splash-book');
+            this.ui.fixedNavs.removeClass('hidden');
         };
 
         app.checkProportions = function() {
@@ -90,6 +95,59 @@
             $('body').panelSnap(options);
         };
 
+        app.booking = new TimekitBooking();
+        app.bookingConfig = {
+            name: 'Strych - Rezerwacja',
+            email: 'itsatrapescape@gmail.com',
+            apiToken: '3D7sVhBPvB9X2iXcpEgQ0KtnGJhMJ6Dz',
+            calendar: '43c56a63-1886-423d-ad3f-6d9ea02241df',
+            avatar: 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg',
+            timekitFindTime: {
+                filters: {
+                    and: [
+                        { 'specific_time': {'start': 13, 'end': 23} }
+                    ]
+                },
+                future: '6 months',
+                length: '1 hours, 30 minutes',
+                ignore_all_day_events: true // eslint-disable-line no-use-before-define
+            },
+            fullCalendar: {
+                businessHours: false,
+                height: 'auto',
+                contentHeight: 'auto',
+                minTime: '13:00:00',
+                maxTime: '23:00:00',
+                timeFormat: 'H:mm',
+                dayNames: ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'],
+                dayNamesShort: ['NIE', 'PON', 'WT', 'ŚR', 'CZW', 'PT', 'SOB'],
+                monthNames: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipies', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'],
+                monthNamesShort: [ 'Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze', 'Lip', 'Sie', 'Wrz', 'Paź', 'Lis', 'Gru'],
+                views: {
+                   agenda: {
+                       columnFormat: 'ddd \n DD MMM'
+                   }
+                },
+                firstDay: '1',
+                nowIndicator: false,
+                customButtons: {
+                    closeButton: {
+                        text: 'Zamknij',
+                        click: function() {
+                            app.closeBooking();
+                        }
+                    }
+
+                },
+                header: {
+                   right: 'today, prev, next, closeButton'
+                }
+            },
+            localization: {
+                showTimezoneHelper: false, // Should the timezone difference helper (bottom) be shown?
+            }
+        };
+
         return app;
     }
 
@@ -99,6 +157,7 @@
         app.setPanelSnap();
         app.checkProportions();
         app.bindEvents();
+        app.booking.init(app.bookingConfig);
 
         setTimeout(function(){
             $('body').addClass('loaded');

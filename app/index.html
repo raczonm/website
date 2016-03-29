@@ -361,41 +361,9 @@
     <script src="/bower_components/panelsnap/jquery.panelSnap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
+    <script type="text/javascript" src="http://cdn.timekit.io/booking-js/v1/booking.min.js" defer></script>
     <!-- build:js scripts/main.js -->
     <script src="scripts/main2.js"></script>
-    <script type="text/javascript" src="http://cdn.timekit.io/booking-js/v1/booking.min.js" defer></script>
-    <script type="text/javascript">
-        window.timekitBookingConfig = {
-            name: 'REZERWUJ TERMIN - MROCZNY STRYCH',
-            email: 'itsatrapescape@gmail.com',
-            apiToken: '3D7sVhBPvB9X2iXcpEgQ0KtnGJhMJ6Dz',
-            calendar: '43c56a63-1886-423d-ad3f-6d9ea02241df',
-            avatar: 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg',
-            timekitFindTime: {
-                filters: {
-                    and: [
-                        { "specific_time": {"start": 13, "end": 23} }
-                    ]
-                },
-                future: "6 months",
-                length: "1 hours, 30 minutes",
-                ignore_all_day_events: true
-            },
-            fullCalendar: {
-                businessHours: false,
-                height: "auto",
-                contentHeight: "auto",
-                minTime: "13:00:00",
-                maxTime: "23:00:00",
-                firstDay: "1",
-                nowIndicator: false
-            },
-            localization: {
-                showTimezoneHelper: false, // Should the timezone difference helper (bottom) be shown?
-            }
-        }
-    </script>
     <!-- endbuild -->
   </body>
 </html>

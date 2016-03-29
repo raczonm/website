@@ -45,7 +45,13 @@
 
     &.visible {
         opacity: 1;
+
+        &.hidden {
+            opacity: 0;
+        }
+
     }
+
 
     &.dark {
         color: $black;
