@@ -1,0 +1,157 @@
+{
+    "hints": {
+        "attic": {
+            "active": 0,
+            "language": "pl",
+            "timer": "60:00",
+            "started": false,
+            "adhoc": "",
+            "list": [{
+                    "id": 1,
+                    "type": "text",
+                    "name": "Podpowiedź1",
+                    "img": "",
+                    "text": "JO żem jest podpowiedz 1",
+                    "text_eng": "I am da hint 1"
+                }, {
+                    "id": 2,
+                    "type": "text",
+                    "name": "Podpowiedź2",
+                    "img": "",
+                    "text": "JO żem jest podpowiedz 2",
+                    "text_eng": "I am da hint 2"
+                }, {
+                    "id": 3,
+                    "type": "text",
+                    "name": "Podpowiedź3",
+                    "img": "",
+                    "text": "JO żem jest podpowiedz 3",
+                    "text_eng": "I am da hint 3"
+                }, {
+                    "id": 4,
+                    "type": "image",
+                    "name": "Podpowiedź4",
+                    "img": "images/logo.png",
+                    "text": "JO żem jest podpowiedz 4",
+                    "text_eng": "I am da hint 4"
+                }, {
+                    "id": 5,
+                    "type": "image",
+                    "name": "Podpowiedź5",
+                    "img": "images/logo-grey.png",
+                    "text": "JO żem jest podpowiedz 5",
+                    "text_eng": "I am da hint 5"
+                }, {
+                    "id": 6,
+                    "type": "image",
+                    "name": "Podpowiedź6",
+                    "img": "images/menu-attic.jpg",
+                    "text": "JO żem jest podpowiedz 6",
+                    "text_eng": "I am da hint 6"
+                }
+            ]
+        },
+        "pirates": {
+            "active": 0,
+            "language": "pl",
+            "timer": "60:00",
+            "started": false,
+            "adhoc": "",
+            "list": [{
+                    "id": 1,
+                    "type": "text",
+                    "name": "11111Podpowiedź1",
+                    "img": "",
+                    "text": "JO żem jest podpowiedz 1",
+                    "text_eng": "I am da hint 1"
+                }, {
+                    "id": 2,
+                    "type": "text",
+                    "name": "11111Podpowiedź2",
+                    "img": "",
+                    "text": "JO żem jest podpowiedz 2",
+                    "text_eng": "I am da hint 2"
+                }, {
+                    "id": 3,
+                    "type": "text",
+                    "name": "11111Podpowiedź3",
+                    "img": "",
+                    "text": "JO żem jest podpowiedz 3",
+                    "text_eng": "I am da hint 3"
+                }, {
+                    "id": 4,
+                    "type": "image",
+                    "name": "11111Podpowiedź4",
+                    "img": "images/logo.png",
+                    "text": "JO żem jest podpowiedz 4",
+                    "text_eng": "I am da hint 4"
+                }, {
+                    "id": 5,
+                    "type": "image",
+                    "name": "11111Podpowiedź5",
+                    "img": "images/logo-grey.png",
+                    "text": "JO żem jest podpowiedz 5",
+                    "text_eng": "I am da hint 5"
+                }, {
+                    "id": 6,
+                    "type": "image",
+                    "name": "1111Podpowiedź6",
+                    "img": "images/menu-attic.jpg",
+                    "text": "JO żem jest podpowiedz 6",
+                    "text_eng": "I am da hint 6"
+                }
+            ]
+        },
+        "garden": {
+            "active": 0,
+            "language": "pl",
+            "timer": "60:00",
+            "started": false,
+            "adhoc": "",
+            "list": [{
+                    "id": 1,
+                    "type": "text",
+                    "name": "2221Podpowiedź1",
+                    "img": "",
+                    "text": "JO żem jest podpowiedz 1",
+                    "text_eng": "I am da hint 1"
+                }, {
+                    "id": 2,
+                    "type": "text",
+                    "name": "222211Podpowiedź2",
+                    "img": "",
+                    "text": "JO żem jest podpowiedz 2",
+                    "text_eng": "I am da hint 2"
+                }, {
+                    "id": 3,
+                    "type": "text",
+                    "name": "222211Podpowiedź3",
+                    "img": "",
+                    "text": "JO żem jest podpowiedz 3",
+                    "text_eng": "I am da hint 3"
+                }, {
+                    "id": 4,
+                    "type": "image",
+                    "name": "2222111Podpowiedź4",
+                    "img": "images/logo.png",
+                    "text": "JO żem jest podpowiedz 4",
+                    "text_eng": "I am da hint 4"
+                }, {
+                    "id": 5,
+                    "type": "image",
+                    "name": "2222111Podpowiedź5",
+                    "img": "images/logo-grey.png",
+                    "text": "JO żem jest podpowiedz 5",
+                    "text_eng": "I am da hint 5"
+                }, {
+                    "id": 6,
+                    "type": "image",
+                    "name": "22221Podpowiedź6",
+                    "img": "images/menu-attic.jpg",
+                    "text": "JO żem jest podpowiedz 6",
+                    "text_eng": "I am da hint 6"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,259 @@
+@import 'bower_components/reset-css/_reset';
+
+@import 'elements';
+
+@font-face {
+    font-family: 'anton';
+    src: url('../fonts/anton-webfont.eot');
+    src: url('../fonts/anton-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/anton-webfont.woff2') format('woff2'),
+         url('../fonts/anton-webfont.woff') format('woff'),
+         url('../fonts/anton-webfont.ttf') format('truetype'),
+         url('../fonts/anton-webfont.svg#antonregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin active-button(){
+    position: absolute;
+    top: 20px;
+    font-size: 17px;
+    right: 30px;
+    width: 160px;
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    @include font-sans();
+    color: rgba(255,255,255,0.5);
+    padding: 32px;
+    cursor:pointer;
+    @include linear-gradient-left(rgba(25,83,183,0.2), rgba(25,83,183,0.6));
+
+    &:hover {
+          @include linear-gradient-left(rgba(25,83,183,0.4), rgba(25,83,183,0.8));
+          color:rgba(255,255,255,0.8);
+    }
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+
+html {
+    height: 100%;
+    background: url('../images/blur.jpg') center center no-repeat;
+    background-size:  cover;
+    background-attachment: fixed;
+}
+
+.body {
+    //@include linear-gradient-left(rgba(0,0,0,0.65), rgba(0,0,0,0.45));
+    font-size: 0;
+    min-height: 100%;
+    background-attachment: fixed;
+}
+
+.title {
+    font-size: 80px;
+    padding: 40px;
+    text-align: center;
+    color: $white;
+    @include font-sans();
+    text-transform: uppercase;
+    font-weight: normal;
+    opacity: 0.7;
+
+    &-strong {
+        color: $main-red;
+    }
+}
+
+.hints {
+    display: inline-block;
+    width: 33.33%;
+    min-height:100%;
+    font-size: 10vw;
+    vertical-align: top;
+    position: relative;
+    height: 100vh;
+    padding-top: 210px;
+    border-right: 3px solid rgba(255,255,255,0.3);
+
+    &-header {
+        height: 210px;
+        background:rgba(0,0,0,0.5);
+        border-bottom: 3px solid rgba(255,255,255,0.3);
+        position:absolute;
+        width:100%;
+        top: 0;
+
+        &-title {
+            color: rgba(255,255,255,0.7);
+            padding: 15px 30px 20px;
+            text-transform: uppercase;
+            font-size: 50px;
+            @include font-sans();
+            border-bottom: 3px solid rgba(255,255,255,0.3);
+        }
+
+        &-timer {
+            padding-left: 1em;
+            font-size:0.8em;
+            display:inline-block;
+            vertical-align: top;
+            padding-top:0.1em;
+            color: rgba(25,83,183,0.5);
+        }
+
+        &-switch {
+            display: inline-block;
+            float:right;
+            padding: 0.5em;
+            border: 3px solid rgba(255,255,255,0.7);
+            font-size: 0.5em;
+            cursor: pointer;
+            @include rounded(5px);
+
+            &:hover {
+                background-color: rgba(255,255,255,0.2);
+            }
+        }
+        &-adhoc {
+            padding: 20px 220px 20px 30px;
+            position: relative;
+            font-size: 20px;;
+
+            &-text {
+                border:1px solid rgba(255,255,255,0.5);
+                background: rgba(255,255,255,0.1);
+                height: 80px;
+                padding: 10px;
+                @include box-sizing;
+                width:100%;
+                color: rgba(255,255,255,0.7);
+                font-size: 16px;
+
+                &:focus {
+                    color: rgba(255,255,255,0.8);
+                    border:1px solid rgba(255,255,255,0.8);
+                    background: rgba(255,255,255,0.3);
+                }
+            }
+
+            &-button {
+                @include active-button();
+            }
+        }
+    }
+
+    &-list {
+        color: $white;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        top: 210px;
+        overflow:auto;
+        font-size: 20px;
+        @include font-sans();
+
+        &-item {
+            @include linear-gradient-left(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+            padding: 20px 220px 20px 30px;
+            vertical-align: middle;
+            min-height: 120px;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &.active {
+                @include linear-gradient-left(rgba(0,0,0,0.1), rgba(0,0,0,0.63));
+
+                .hints-list-item-button {
+                    display: none;
+                }
+            }
+
+            &-title {
+                display: block;
+                text-transform: uppercase;
+                font-size: 28px;
+                padding-bottom: 20px;
+                color: rgba(255,255,255,0.8);
+            }
+
+            &-text {
+                font-size: 18px;
+                color: rgba(255,255,255,0.7);
+            }
+
+            &-image {
+
+                width:50%;
+                max-width: 200px;
+            }
+
+            &-button {
+                @include active-button();
+            }
+        }
+    }
+
+    &.attic {
+        @include linear-gradient-left(rgba(25,83,183,0.2), rgba(25,83,183,0.6));
+    }
+
+    &.pirates {
+        @include linear-gradient-left(rgba(232,175,6,0.2), rgba(232,175,6,0.6));
+
+        .hints-header {
+            &-timer {
+                color: rgba(232,175,6,0.5);
+            }
+
+            &-adhoc-button {
+                @include linear-gradient-left(rgba(232,175,6,0.2), rgba(232,175,6,0.6));
+                &:hover {
+                      @include linear-gradient-left(rgba(232,175,6,0.4), rgba(232,175,6,0.8));
+                }
+            }
+        }
+
+        .hints-list-item-button {
+            @include linear-gradient-left(rgba(232,175,6,0.2), rgba(232,175,6,0.6));
+            &:hover {
+                  @include linear-gradient-left(rgba(232,175,6,0.4), rgba(232,175,6,0.8));
+            }
+        }
+    }
+
+    &.garden {
+        width: 33.34%;
+        @include linear-gradient-left(rgba(0,124,6,0.2), rgba(0,124,6,0.6));
+
+        .hints-header {
+            &-timer {
+                color: rgba(0,124,6,0.5);
+            }
+
+            &-adhoc-button {
+                @include linear-gradient-left(rgba(0,124,6,0.2), rgba(0,124,6,0.6));
+                &:hover {
+                      @include linear-gradient-left(rgba(0,124,6,0.4), rgba(0,124,6,0.8));
+                }
+            }
+        }
+
+        .hints-list-item-button {
+            @include linear-gradient-left(rgba(0,124,6,0.2), rgba(0,124,6,0.6));
+            &:hover {
+                  @include linear-gradient-left(rgba(0,124,6,0.4), rgba(0,124,6,0.8));
+            }
+        }
+    }
+}

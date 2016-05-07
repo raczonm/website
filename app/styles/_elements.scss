@@ -16,6 +16,12 @@ $media-phone: "only screen and (max-width : 500px)";
     background-color: rgba(188,40,37,$opacity);
 }
 
+@mixin box-sizing(){
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
 @mixin rounded($radius) {
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;
@@ -76,7 +82,6 @@ $media-phone: "only screen and (max-width : 500px)";
   	background-color: $from;
 }
 
-
 @mixin linear-gradient-left($start-colour, $end-colour) {
     background-color: $start-colour;
     background-image: -webkit-gradient(linear, left top, right top, from($start-colour), to($end-colour));
@@ -87,7 +92,6 @@ $media-phone: "only screen and (max-width : 500px)";
     background-image:         linear-gradient(left, $start-colour, $end-colour);
     filter:            progid:DXImageTransform.Microsoft.gradient(start-colourStr='#{$start-colour}', end-colourStr='#{$end-colour}', gradientType='1');
 }
-
 
 @mixin room-customization($color, $bgr, $gradient1, $gradient2) {
     .room-section-background:after {

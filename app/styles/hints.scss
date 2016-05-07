@@ -1,0 +1,54 @@
+@import 'bower_components/reset-css/_reset';
+
+@import 'elements';
+
+html {
+    height: 100%;
+}
+
+.body {
+    background: url('../images/blur.jpg') center center no-repeat;
+    height: 100%;
+    font-size: 15vh;
+    background-size:  cover;
+}
+
+.hint {
+    height: 100%;
+    @include linear-gradient-left(rgba(0,0,0,0.65), rgba(0,0,0,0.45));
+
+    &-logo {
+        text-indent: 2000px;
+        background: url('../images/logo.png') center center no-repeat;
+        background-size: 100%;
+        opacity: 0.9;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 2em;
+        height: 0.9em;
+        top: 13%;
+        left: 12%;
+        position: absolute;
+        z-index: 11;
+
+    }
+
+    &-bgr {
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        background: rgba(255,255,255, 0.05);
+        border: 3px solid  rgba(188,40,37,0.5);
+        @include rounded(0.1em);
+    }
+    
+    &-text {
+      color: white;
+      font-style: oblique;
+      font-size: 0.4em;
+      text-align: center;
+      margin-top: 5.5em;
+    }
+}

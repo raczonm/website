@@ -1,4 +1,4 @@
- /* global $ */
+ /* global $ Snap */
 'use strict';
 (function () {
     function prepareApp() {
@@ -87,7 +87,17 @@
                     } else {
                         self.ui.fixedNavs.removeClass('dark');
                     }
+
+                    if (panel.data('panel') == 'attic') {
+                        console.log("A");
+                    }
                 },
+               onActivate: function(panel){
+                 console.log(panel);
+                 if (panel.data('panel') == 'attic') {
+                     console.log("B");
+                 }
+               },
                 directionThreshold: 30,
                 slideSpeed: 300
             };
@@ -95,7 +105,62 @@
             $('body').panelSnap(options);
         };
 
-        app.booking = new TimekitBooking();
+        //Playing with SVG
+        app.animateAttic = function() {
+            var animSnap = Snap;
+            var svg = animSnap('.atticSvgContainer');
+            animSnap.load('/images/svg/attic-icon.svg', function (icon){
+                //debugger;
+                svg.append(icon.select('#styles'));
+                svg.append(icon.select('#icon'));
+                svg.append(icon.select('#text'));
+
+                svg.select('#innerCircle').attr({mask: icon.select('#clipTriangle')});
+                svg.select('#bigTriangles').attr({mask: icon.select('#clipSmallCircles')});
+                svg.select('#angleLines').attr({mask: icon.select('#clipSmallCircles2')});
+                svg.select('#icon').attr({mask: icon.select('#clipKey')});
+
+                setTimeout(function(){
+                    svg.select('#outerCircle').animate({'stroke-dashoffset': 0}, 5250);
+                    setTimeout(function(){ svg.select('#bigLine1').animate({'stroke-dashoffset': 0}, 1500); }, 750);
+                    setTimeout(function(){ svg.select('#bigLine2').animate({'stroke-dashoffset': 0}, 1500); }, 1500);
+                    setTimeout(function(){ svg.select('#bigLine3').animate({'stroke-dashoffset': 0}, 1500); }, 2250);
+
+                    setTimeout(function(){ svg.select('#bigLine4').animate({'stroke-dashoffset': 0}, 1500); }, 750);
+                    setTimeout(function(){ svg.select('#bigLine5').animate({'stroke-dashoffset': 0}, 1500); }, 1500);
+                    setTimeout(function(){ svg.select('#bigLine6').animate({'stroke-dashoffset': 0}, 1500); }, 2250);
+
+                    setTimeout(function(){svg.select('#innerCircle').animate({'stroke-dashoffset': 0}, 2250); }, 1500);
+
+                    setTimeout(function(){svg.select('#angleLine1').animate({'stroke-dashoffset': 0}, 750); }, 3000);
+                    setTimeout(function(){svg.select('#angleLine2').animate({'stroke-dashoffset': 0}, 750); }, 3000);
+                    setTimeout(function(){svg.select('#angleLine3').animate({'stroke-dashoffset': 0}, 750); }, 3000);
+
+                    setTimeout(function(){svg.select('#smallCircle2').animate({'stroke-dashoffset': 0}, 450); }, 1125);
+                    setTimeout(function(){svg.select('#smallCircle5').animate({'stroke-dashoffset': 0}, 450); }, 1125);
+                    setTimeout(function(){svg.select('#smallCircle1').animate({'stroke-dashoffset': 0}, 450); }, 1875);
+                    setTimeout(function(){svg.select('#smallCircle4').animate({'stroke-dashoffset': 0}, 450); }, 1875);
+                    setTimeout(function(){svg.select('#smallCircle3').animate({'stroke-dashoffset': 0}, 450); }, 2625);
+                    setTimeout(function(){svg.select('#smallCircle6').animate({'stroke-dashoffset': 0}, 450); }, 2625);
+
+                    setTimeout(function(){svg.select('#smallLine2').animate({'stroke-dashoffset': 0}, 1500); }, 1425);
+                    setTimeout(function(){svg.select('#smallLine5').animate({'stroke-dashoffset': 0}, 1500); }, 1425);
+                    setTimeout(function(){svg.select('#smallLine3').animate({'stroke-dashoffset': 0}, 1500); }, 2125);
+                    setTimeout(function(){svg.select('#smallLine4').animate({'stroke-dashoffset': 0}, 1500); }, 2125);
+                    setTimeout(function(){svg.select('#smallLine1').animate({'stroke-dashoffset': 0}, 1500); }, 2925);
+                    setTimeout(function(){svg.select('#smallLine6').animate({'stroke-dashoffset': 0}, 1500); }, 2925);
+
+                    setTimeout(function(){svg.select('#middleCircle').animate({'stroke-dashoffset': 0}, 450); }, 2250);
+                    setTimeout(function(){svg.select('#key').animate({'opacity': 1}, 1000); }, 3000);
+                    setTimeout(function(){svg.select('#clipKeyPath').animate({'opacity': 1}, 500); }, 3000);
+                    setTimeout(function(){svg.select('#textBgr').animate({'opacity': 1}, 500); }, 3500);
+                    setTimeout(function(){svg.select('#text').animate({'opacity': 1}, 500); }, 3700);
+
+                }, 5000);
+            });
+        };
+
+        //app.booking = new TimekitBooking();
         app.bookingConfig = {
             name: 'Strych - Rezerwacja',
             email: 'itsatrapescape@gmail.com',
@@ -109,8 +174,8 @@
                     ]
                 },
                 future: '6 months',
-                length: '1 hours, 30 minutes',
-                ignore_all_day_events: true // eslint-disable-line no-use-before-define
+                length: '1 hours, 30 minutes'
+              //  ignore_all_day_events: true // eslint-disable-line no-use-before-define
             },
             fullCalendar: {
                 businessHours: false,
@@ -144,7 +209,7 @@
                 }
             },
             localization: {
-                showTimezoneHelper: false, // Should the timezone difference helper (bottom) be shown?
+                showTimezoneHelper: false // Should the timezone difference helper (bottom) be shown?
             }
         };
 
@@ -152,23 +217,20 @@
     }
 
     $(document).ready(function(){
-
+        $(window).scrollTop();
         var app = prepareApp();
         app.setPanelSnap();
         app.checkProportions();
         app.bindEvents();
-        app.booking.init(app.bookingConfig);
+
+        //app.booking.init(app.bookingConfig);
 
         setTimeout(function(){
             $('body').addClass('loaded');
         }, 3000);
 
         $(window).on('resize', function(){
-            //$('body').removeClass('loaded');
             app.checkProportions();
-            // setTimeout(function(){
-            //     $('body').addClass('loaded');
-            // }, 3000);
         });
     });
 })();

@@ -399,9 +399,19 @@
     }
 }
 
+//ABOUT
+.section-about {
+    &-first-paragraph {
+        margin: 2em 0;
+    }
+    &-last-paragraph {
+        margin: 1em 0 0;
+    }
+}
+
 //ROOMS
 
-.section-rooms {
+.section-rooms, .section-about {
     margin-top: 1.5em;
     padding-top: 0.1em;
 
@@ -563,6 +573,10 @@
     @media #{$media-tablet} {
           margin: 1.2em 0;
     }
+
+    @media #{$media-tablet} {
+          margin: 2em 0 1em;
+    }
 }
 
 .room-columns {
@@ -574,6 +588,10 @@
 
     @media #{$media-tablet} {
         text-align: center;
+    }
+
+    @media #{$media-phone} {
+        margin-bottom: 0.5em
     }
 }
 
@@ -587,6 +605,10 @@
     @media #{$media-tablet} {
         font-size: 0.7em;
     }
+
+    @media #{$media-phone} {
+        font-size: 1.2em;
+    }
 }
 
 .room-circle-label {
@@ -598,11 +620,21 @@
         font-size: 0.5em;
         margin-top: 0.4em;
     }
+
+    @media #{$media-phone} {
+        margin-top: 1em;
+        margin-left: 0.4em;
+        font-size: 1em;
+    }
 }
 
 .room-section .room-paragraph {
     @media #{$media-tablet} {
         font-size: 0.35em;
+    }
+
+    @media #{$media-phone} {
+        font-size: 0.8em;
     }
 }
 
@@ -617,6 +649,17 @@
 //ATTIC
 .room-section-attic {
     @include room-customization($main-attic, '../images/attic-bgr.jpg', rgba(25,83,183,0.2), rgba(25,83,183,0.6));
+    .room-section-background {
+        height: 120%;
+
+        @media #{$media-tablet} {
+            height: 110%;
+        }
+
+        @media #{$media-phone} {
+            height: 103%;
+        }
+    }
 }
 
 //GARDEN
@@ -629,6 +672,10 @@
         @media #{$media-tablet} {
             height: 110%;
         }
+
+        @media #{$media-phone} {
+            height: 103%;
+        }
     }
 }
 
@@ -637,10 +684,23 @@
 .section-us {
     margin-top: 1.5em;
     padding-top: 0.1em;
+
+    @media #{$media-phone} {
+        margin-top: 3em;
+
+        .button {
+            font-size: 0.9em;
+            margin-top: 1em
+        }
+    }
 }
 
 .paragraph-us {
-    margin-top: 3em
+    margin-top: 3em;
+
+    @media #{$media-phone} {
+        margin: 2em 0;
+    }
 }
 
 .outer-us-columns {
@@ -664,6 +724,10 @@
         padding-bottom: 3em;
     }
 
+    @media #{$media-phone} {
+        padding-bottom: 6em;
+    }
+
     &-header {
         @include font-sans();
         font-style: normal;
@@ -675,6 +739,10 @@
 
         @media #{$media-tablet} {
             font-size: 0.7em;
+        }
+
+        @media #{$media-phone} {
+            font-size: 1.3em;
         }
     }
 
@@ -692,6 +760,10 @@
             height: 2em;
         }
 
+        @media #{$media-phone} {
+            height: 5em;
+        }
+
         &-paragraph {
             display: inline-block;
             vertical-align: middle;
@@ -702,6 +774,11 @@
             @media #{$media-tablet} {
                 font-size: 0.3em;
                 padding: 3em 0;
+            }
+
+            @media #{$media-phone} {
+                font-size: 0.5em;
+                padding: 1.5em 0 1em;
             }
         }
 
@@ -715,6 +792,13 @@
             @media #{$media-tablet} {
                 font-size: 0.4em;
                 margin: 1.3em 0;
+            }
+
+            @media #{$media-phone} {
+                font-size: 0.9em;
+                margin: 0.3em 0;
+                width: 100%;
+                text-align: center;
             }
 
             &:hover {
@@ -733,6 +817,12 @@
 
     @media #{$media-tablet} {
         font-size: 0.9em;
+        margin-top: 1em;
+    }
+
+    @media #{$media-phone} {
+        font-size: 2em;
+        width: 100%;
         margin-top: 1em;
     }
 }
@@ -800,13 +890,26 @@
     font-style: italic;
     opacity: 0.8;
 
+    @media #{$media-tablet} {
+        width: 100%;
+        margin-left: 0;
+    }
+
     &-header {
         font-size:0.4em;
         margin-bottom:0.5em;
+
+        @media #{$media-tablet} {
+            font-size: 0.45em;
+        }
     }
 
     &-paragraph {
-      font-size: 0.3em;
-      margin-bottom: 1.3em;
+        font-size: 0.3em;
+        margin-bottom: 1.3em;
+
+        @media #{$media-tablet} {
+            font-size: 0.35em;
+        }
     }
 }
