@@ -10,7 +10,7 @@ html {
     background: url('../images/blur.jpg') center center no-repeat;
     height: 100%;
     font-size: 15vh;
-    background-size:  cover;
+    background-size: cover;
 }
 
 .hint {
@@ -43,7 +43,7 @@ html {
         border: 3px solid  rgba(188,40,37,0.5);
         @include rounded(0.1em);
     }
-    
+
     &-text {
       color: white;
       font-style: oblique;
