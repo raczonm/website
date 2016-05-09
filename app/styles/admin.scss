@@ -54,6 +54,7 @@ html {
     font-size: 0;
     min-height: 100%;
     background-attachment: fixed;
+    @include font-sans();
 }
 
 .title {
@@ -61,7 +62,6 @@ html {
     padding: 40px;
     text-align: center;
     color: $white;
-    @include font-sans();
     text-transform: uppercase;
     font-weight: normal;
     opacity: 0.7;
@@ -103,7 +103,6 @@ html {
             padding: 15px 30px 20px;
             text-transform: uppercase;
             font-size: 50px;
-            @include font-sans();
             border-bottom: 3px solid rgba(255,255,255,0.3);
         }
 
@@ -164,7 +163,10 @@ html {
         &-adhoc {
             padding: 20px 220px 20px 30px;
             position: relative;
-            font-size: 20px;;
+            font-size: 20px;
+            &.active {
+                @include linear-gradient-left(rgba(255,255,255,0.05), rgba(255,255,255,0.1));
+            }
 
             &-text {
                 border:1px solid rgba(255,255,255,0.5);
@@ -185,6 +187,82 @@ html {
 
             &-button {
                 @include active-button();
+
+                &:before {
+                    content: "Set Active";
+                }
+
+                &:after {
+                    content: "Change";
+                    display: none;
+                }
+
+                .active & {
+                    @include linear-gradient-left(rgba(25,83,183,0.4), rgba(25,83,183,0.8));
+
+                    &:hover {
+                          @include linear-gradient-left(rgba(25,83,183,0.6), rgba(25,83,183,1));
+                          color:rgba(255,255,255,0.8);
+                    }
+
+                    &:before {
+                        display: none;
+                    }
+
+                    &:after {
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+    &-footer {
+        background: rgba(0,0,0,0.5);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        font-size: 30px;
+        text-align: center;
+        z-index:11;
+
+        &-language-button {
+            display: inline-block;
+            padding: 16px;
+            margin-top:22px;
+            border: 3px solid rgba(255,255,255,0.7);
+            font-size: 20px;
+            width: 250px;
+            text-transform: uppercase;
+            color: $white;
+            cursor: pointer;
+            @include rounded(5px);
+            overflow: hidden;
+            opacity:  0.7;
+            @include transition(all 0.2s linear);
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &:before {
+                content: "switch to english";
+            }
+
+            &:after {
+                content: "switch to polish";
+                display:none;
+            }
+
+            &.eng {
+                &:before {
+                    display: none;
+                }
+
+                &:after {
+                    display: inline;
+                }
             }
         }
     }
@@ -193,11 +271,10 @@ html {
         color: $white;
         position: absolute;
         width: 100%;
-        bottom: 0;
+        bottom: 100px;
         top: 210px;
         overflow:auto;
         font-size: 20px;
-        @include font-sans();
 
         &-item {
             @include linear-gradient-left(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
@@ -230,6 +307,13 @@ html {
             &-text {
                 font-size: 18px;
                 color: rgba(255,255,255,0.7);
+
+                &-small {
+                    display: block;
+                    font-size:10px;
+                    margin-top:5px;
+                    color: rgba(255,255,255,0.5);
+                }
             }
 
             &-image {
