@@ -76,27 +76,12 @@
                 },
                 panelSelector: '.panel',
                 namespace: '.panelSnap',
-                onSnapStart: function() {
-                    self.ui.fixedNavs.removeClass('visible');
-                },
+                onSnapStart: function() {},
                 onSnapFinish: function(panel) {
-                    self.ui.fixedNavs.addClass('visible');
-
-                    if (panel.data('nav-class') === 'dark'){
-                        self.ui.fixedNavs.addClass('dark');
-                    } else {
-                        self.ui.fixedNavs.removeClass('dark');
+                    if (panel.data('panel') == 'attic' && !panel.hasClass('jsLoaded')) {
+                        app.animateAttic();
+                        app.loadRoom(panel);
                     }
-
-                    if (panel.data('panel') == 'attic') {
-                        console.log("A");
-                    }
-                },
-               onActivate: function(panel){
-                 console.log(panel);
-                 if (panel.data('panel') == 'attic') {
-                     console.log("B");
-                 }
                },
                 directionThreshold: 30,
                 slideSpeed: 300
@@ -104,6 +89,21 @@
 
             $('body').panelSnap(options);
         };
+
+        //AnimateRoom
+        app.loadRoom = function(panel) {
+            panel.addClass('jsLoaded');
+            setTimeout(function(){
+                setTimeout(function(){ panel.find('.room-section-svg-wrapper').addClass('loaded'); }, 100);
+                setTimeout(function(){ panel.find('.room-section-header').addClass('loaded'); }, 800);
+                setTimeout(function(){ panel.find('.room-column:eq(0)').addClass('loaded'); }, 1700);
+                setTimeout(function(){ panel.find('.room-column:eq(1)').addClass('loaded'); }, 2000);
+                setTimeout(function(){ panel.find('.room-column:eq(2)').addClass('loaded'); }, 2300);
+
+                setTimeout(function(){ panel.find('.room-paragraph').addClass('loaded'); }, 3100);
+                setTimeout(function(){ panel.find('.button').addClass('loaded'); }, 3700);
+            }, 4000);
+        }
 
         //Playing with SVG
         app.animateAttic = function() {
@@ -156,7 +156,7 @@
                     setTimeout(function(){svg.select('#textBgr').animate({'opacity': 1}, 500); }, 3500);
                     setTimeout(function(){svg.select('#text').animate({'opacity': 1}, 500); }, 3700);
 
-                }, 5000);
+                }, 100);
             });
         };
 
@@ -217,16 +217,15 @@
     }
 
     $(document).ready(function(){
-        $(window).scrollTop();
         var app = prepareApp();
         app.setPanelSnap();
         app.checkProportions();
         app.bindEvents();
-
         //app.booking.init(app.bookingConfig);
 
         setTimeout(function(){
             $('body').addClass('loaded');
+            window.scrollTo(0,0)
         }, 3000);
 
         $(window).on('resize', function(){

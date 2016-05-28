@@ -49,16 +49,6 @@
         &.hidden {
             opacity: 0;
         }
-
-    }
-
-
-    &.dark {
-        color: $black;
-
-        .with-splash & {
-            color: $white;
-        }
     }
 
     &-item {
@@ -80,8 +70,11 @@
             left: 3%;
             text-transform: uppercase;
             cursor: pointer;
-            opacity: 0.2;
+            opacity: 0.4;
+            color: rgba(255,255,255,0.5);
             font-weight: normal;
+            text-shadow: 0 0 1px $black;
+
             @include transition(opacity 0.2s  ease);
 
             @media #{$media-tablet} {
@@ -96,13 +89,10 @@
                 vertical-align: middle;
                 font-size: 0.8em;
                 display: inline-block;
-                border: 0.15em solid $white;
+                border: 0.15em solid rgba(255,255,255,0.5);
                 padding: 0.4em;
+                box-shadow: 0 0 5px 5px rgba(0,0,0,0.3);
                 @include rounded(50%);
-
-                .dark & {
-                    border-color: $black;
-                }
             }
 
             &:hover {
@@ -133,6 +123,7 @@
                 background: $white;
                 height: 0.2em;
                 width: 1.8em;
+                box-shadow: inset 0 0 3px 3px rgba(0,0,0,0.3);
                 display: block;
                 @include transition(all 0.5s  ease);
 
@@ -142,6 +133,7 @@
                     background: $white;
                     height: 0.2em;
                     width: 1.8em;
+                    box-shadow: inset 0 0 3px 3px rgba(0,0,0,0.3);
                     top: 0;
                     display: block;
                     @include transition(all 0.5s ease);
@@ -150,15 +142,6 @@
                 &:after {
                     top: auto;
                     bottom: 0;
-                }
-
-                .dark & {
-                    background: $black;
-
-                    &:before, &:after {
-                        background: $black;
-                    }
-
                 }
             }
 
@@ -186,6 +169,8 @@
             bottom: 5%;
             right: 3%;
             @include transition(opacity 0.2s linear);
+            color: rgba(255,255,255,0.5);
+            text-shadow: 0 0 1px rgba(0,0,0,0.5);
 
             .full-page & {
                 display: block;
@@ -193,7 +178,7 @@
             .scroll-nav-item {
                 display: block;
                 cursor: pointer;
-                opacity: 0.3;
+                opacity: 0.6;
                 font-size: 1.5em;
                 @include transition(opacity 0.2s linear);
 
@@ -568,7 +553,7 @@
 
 //SINGLE ROOM
 .outer-room-columns {
-    margin: 0.5em 0;
+    margin: 0.4em 0;
 
     @media #{$media-tablet} {
           margin: 1.2em 0;
