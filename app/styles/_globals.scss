@@ -206,11 +206,12 @@ html {
     }
 }
 .video-container {
-    background: url('../images/tape0.png') center center no-repeat;
-    background-size: 100%;
+    background: url('../images/collage2.png') center center no-repeat;
+    background-size: 85%;
+    padding: 0.1em;
 
     &-iframe {
-        width: 3.5em;
+        width: 3.45em;
         height: 2.2em;
         border: 0.05em solid $main-red;
     }
@@ -309,7 +310,7 @@ html {
             line-height: 1.5em;
             color: $main-red;
         }
-        
+
         body:not(.full-page) &, &.loaded {
             opacity: 0.8;
             font-size: 0.5em;
@@ -319,7 +320,7 @@ html {
     .paragraph {
         color: $white;
         opacity: 0;
-        font-size: 0.22em;
+        font-size: 0.21em;
         margin-top: 3em;
         @include transition(all 1s ease);
 
