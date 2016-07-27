@@ -20,7 +20,9 @@
             bookLink: $('.book-now'),
             fixedBookLink: $('.fixed-navs-item.book-now'),
             fixedNavs: $('.fixed-navs'),
-            splashMenu: $('.splash-menu')
+            splashMenu: $('.splash-menu'),
+            galleryImg: $('.section-gallery-list-item'),
+            galleryZoom: $('.section-gallery-zoom-item')
         };
 
         app.bindEvents = function() {
@@ -39,6 +41,8 @@
                   this.ui.menuLink.removeClass('active');
                   this.ui.body.removeClass('with-splash-menu');
             }.bind(this));
+
+            this.ui.galleryImg.on('click', this.zoomImage);
         };
 
         app.closeBooking = function(){
@@ -60,6 +64,7 @@
                 $('body').removeClass('full-page');
                 $('body, .column').css('font-size', '9vw');
                 $('body').panelSnap('disable');
+                app.loadDefaultSVG();
             }
         };
 
@@ -78,7 +83,7 @@
                 namespace: '.panelSnap',
                 onSnapStart: function() {},
                 onSnapFinish: function(panel) {
-                    if (panel.data('panel') == 'attic' && !panel.hasClass('jsLoaded')) {
+                    if (panel.data('panel') === 'attic' && !panel.hasClass('jsLoaded')) {
                         app.animateAttic();
                         app.loadRoom(panel);
                     }
@@ -103,14 +108,36 @@
                 setTimeout(function(){ panel.find('.room-paragraph').addClass('loaded'); }, 3100);
                 setTimeout(function(){ panel.find('.button').addClass('loaded'); }, 3700);
             }, 4000);
-        }
+        };
+        //Zoom Gallery images
+        app.zoomImage = function(e) {
+            var src = $(e.currentTarget).find('img').attr('src');
+            app.ui.galleryZoom.addClass('active').css('background-image', 'url(' + src + ')');
+        };
 
         //Playing with SVG
+        app.loadDefaultSVG = function(){
+            $('.atticSvgContainer').html('');
+            var animSnap = Snap;
+            var svg = animSnap('.atticSvgContainer');
+            animSnap.load('/images/svg/attic-icon-def.svg', function(icon){
+              svg.append(icon.select('#styles'));
+              svg.append(icon.select('#icon'));
+              svg.append(icon.select('#text'));
+
+              svg.select('#innerCircle').attr({mask: icon.select('#clipTriangle')});
+              svg.select('#bigTriangles').attr({mask: icon.select('#clipSmallCircles')});
+              svg.select('#angleLines').attr({mask: icon.select('#clipSmallCircles2')});
+              svg.select('#icon').attr({mask: icon.select('#clipKey')});
+
+            });
+        };
         app.animateAttic = function() {
+            $('.atticSvgContainer').html('');
             var animSnap = Snap;
             var svg = animSnap('.atticSvgContainer');
             animSnap.load('/images/svg/attic-icon.svg', function (icon){
-                //debugger;
+
                 svg.append(icon.select('#styles'));
                 svg.append(icon.select('#icon'));
                 svg.append(icon.select('#text'));
@@ -225,7 +252,7 @@
 
         setTimeout(function(){
             $('body').addClass('loaded');
-            window.scrollTo(0,0)
+            window.scrollTo(0, 0);
         }, 3000);
 
         $(window).on('resize', function(){

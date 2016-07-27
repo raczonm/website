@@ -62,7 +62,7 @@
         }
 
         @media #{$media-phone} {
-            font-size: 0.8em;
+            font-size: 0.55em;
             top: 1.3em;
         }
 
@@ -260,7 +260,7 @@
     }
 
     @media #{$media-phone} {
-        padding-top: 3.5em;
+        padding-top: 2.5em;
     }
 
     &-background {
@@ -315,10 +315,19 @@
             @include linear-gradient-left(rgba(0,0,0,0), rgba(0,0,0,0.3));
         }
 
+        &-img {
+          width: 1.4em;
+          margin-top: 0.55em;
+          display: inline-block;
+          text-align: center;
+          opacity: 0.8;
+
+        }
+
         &.icon-1 {
             @include rotate(-50);
 
-            .fa {
+            .header-circle-icon-img {
                 @include rotate(50);
             }
         }
@@ -326,7 +335,7 @@
         &.icon-2 {
             @include rotate(230);
 
-            .fa {
+            .header-circle-icon-img {
                 @include rotate(-230);
             }
         }
@@ -334,7 +343,7 @@
         &.icon-3 {
             @include rotate(50);
 
-            .fa {
+            .header-circle-icon-img {
                 @include rotate(-50);
             }
         }
@@ -359,9 +368,9 @@
     }
 
     @media #{$media-phone} {
-        width: 8em;
-        height: 3.4em;
-        margin: 0 auto 1.3em;
+        width: 6em;
+        height: 2.7em;
+        margin: 0 auto 2em;
     }
 }
 
@@ -379,7 +388,7 @@
     }
 
     @media #{$media-phone} {
-        font-size: 0.65em;
+        font-size: 0.5em;
         margin-bottom: 3em;
     }
 }
@@ -389,8 +398,19 @@
     &-first-paragraph {
         margin: 2em 0;
     }
+
     &-last-paragraph {
         margin: 1em 0 0;
+    }
+
+    &-middle {
+        height: 2em;
+        background: $main-red;
+
+        @media #{$media-phone} {
+            height: 4em;
+            margin: 0.5em 0;
+        }
     }
 }
 
@@ -399,13 +419,27 @@
 .section-rooms, .section-about {
     margin-top: 1.5em;
     padding-top: 0.1em;
+}
 
+.body:not(.full-page) .section-about {
+      margin-top: 2em;
+
+      @media #{$media-tablet} {
+          margin-top: 3em;
+      }
+
+      @media #{$media-phone} {
+          margin-top: 3.5em;
+      }
+}
+
+.section-rooms {
     @media #{$media-tablet} {
-        margin-top: 2.5em;
+        margin-top: 1em;
     }
 
     @media #{$media-phone} {
-        margin-top: 4.5em;
+        margin-top: 2em;
     }
 }
 
@@ -529,7 +563,12 @@
             overflow-x: visible;
 
             @media #{$media-tablet} {
-                font-size: 0.2em;
+                font-size: 0.27em;
+                padding: 0.5em 1em 0.7em;
+                bottom:0;
+                line-height:1.3em;
+                text-align: left;
+                width:100%;
             }
 
             @media #{$media-phone} {
@@ -556,10 +595,10 @@
     margin: 0.4em 0;
 
     @media #{$media-tablet} {
-          margin: 1.2em 0;
+          margin: 1em 0;
     }
 
-    @media #{$media-tablet} {
+    @media #{$media-phone} {
           margin: 2em 0 1em;
     }
 }
@@ -607,10 +646,22 @@
     }
 
     @media #{$media-phone} {
-        margin-top: 1em;
+        margin-top: 1.4em;
+        margin-bottom: 0em;
         margin-left: 0.4em;
-        font-size: 1em;
+        font-size: 0.8em;
+        width: 4em;
+        text-align: left;
     }
+}
+.room-circle-label-span {
+      @media #{$media-tablet} {
+          text-align: center;
+      }
+
+      @media #{$media-phone} {
+          text-align: left;
+      }
 }
 
 .room-section .room-paragraph {
@@ -619,21 +670,29 @@
     }
 
     @media #{$media-phone} {
-        font-size: 0.8em;
+        font-size: 0.5em;
     }
 }
 
 //PIRATES
 .room-section-pirates {
     @include room-customization($main-pirates, '../images/pirates-bgr.jpg', rgba(232,175,6,0.2), rgba(232,175,6,0.6));
-    @media #{$media-tablet} {
-        margin-top: 3.5em;
-    }
 }
 
 //ATTIC
 .room-section-attic {
     @include room-customization($main-attic, '../images/attic-bgr.jpg', rgba(25,83,183,0.2), rgba(25,83,183,0.6));
+
+    .body:not(.full-page) & {
+          margin-top: 2.5em;
+
+          @media #{$media-tablet} {
+              margin-top: 3.5em;
+          }
+    }
+
+
+
     .room-section-background {
         height: 120%;
 
@@ -680,211 +739,7 @@
     }
 }
 
-.section-gallery {
-    margin-top: 1.5em;
 
-    &-header {
-        font-size: 0.5em;
-        text-transform: uppercase;
-        text-align: left;
-        @include font-sans;
-        color: rgba(255,255,255,0.7);
-    }
-
-    &-desc {
-        font-size: 0.15em;
-        margin: 0.2em 0 1em;
-        text-align: left;
-        text-transform: uppercase;
-        @include font-sans;
-        color: $main-red;
-        opacity:0.6;
-    }
-
-    &-wrapper {
-        padding: 1.4em 0.5em;
-    }
-
-    &-svg {
-        position: absolute;
-        left: -5%;
-        width: 110%;
-    }
-
-    &-box {
-      width: 50%;
-      float: left;
-    }
-
-    &-list {
-        position: relative;
-
-        &-item {
-            width: 1em;
-            height: 1em;
-            font-size: 0.6em;
-            display: block;
-            position:absolute;
-            opacity: 0.9;
-            left:0;
-            overflow:hidden;
-            top:0;
-            cursor: pointer;
-
-            &:after {
-                content: "";
-                position: absolute;
-                top:0;
-                left:0;
-                bottom:0;
-                right:0;
-                opacity: 0;
-                @include transition(all 1.5s linear);
-                @include linear-gradient-left(rgba(188,40,37,0.4), rgba(188,40,37,0));
-            }
-
-            &:hover {
-                &:after {
-                    left:-100%;
-                    opacity:1;
-                    @include transition(all 0.3s linear);
-                }
-            }
-
-            &#g1 {
-                font-size: 1.2em;
-                top: 0;
-                left: 0;
-            }
-            &#g2 {
-                left: 2em;
-                top:0;
-            }
-            &#g3 {
-                left: 3em;
-                top:0;
-            }
-            &#g4 {
-                left: 4em;
-                top:0;
-            }
-            &#g5 {
-                font-size:1.2em;
-                left: 2.5em;
-                top:0;
-            }
-            &#g6 {
-                left: 7em;
-                top:0;
-            }
-            &#g7 {
-                left:2em;
-                top:1em;
-            }
-            &#g8 {
-                font-size:1.2em;
-                left:1.5em;
-                top:0.5em;
-            }
-            &#g9 {
-                left:5em;
-                top:2em;
-            }
-            &#g10 {
-                font-size:1.8em;
-                left:0em;
-                top:0.67em;
-            }
-            &#g11 {
-                left:7em;
-                top:1em;
-            }
-            &#g12 {
-                font-size:1.2em;
-                left:3em;
-                top:1em;
-            }
-            &#g13 {
-                left:3em;
-                top:3em;
-            }
-            &#g14 {
-                left:4em;
-                top:3em;
-            }
-            &#g15 {
-                left:5em;
-                top:3em;
-            }
-            &#g16 {
-                left:3em;
-                top:4em;
-            }
-            &#g17 {
-                font-size: 1.2em;
-                left:2em;
-                top:2em;
-            }
-            &#g18 {
-                left:6em;
-                top:4em;
-            }
-            &#g19 {
-                left:7em;
-                top:4em;
-            }
-            &#g20 {
-                left:0em;
-                top:5em;
-            }
-            &#g21 {
-                left:1em;
-                top:5em;
-            }
-            &#g22 {
-                left:2em;
-                top:5em;
-            }
-            &#g23 {
-                left:3em;
-                top:5em;
-            }
-            &#g24 {
-                left:6em;
-                top:5em;
-            }
-            &#g25 {
-                left:7em;
-                top:5em;
-            }
-
-            &-image {
-              width: 100%;
-              height: auto;
-              -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
-              filter: grayscale(100%);
-              display: block;
-            }
-        }
-    }
-    &-zoom {
-        width: 50%;
-        float:left;
-        font-size: 1em;
-
-        &-item {
-            width: 5em;
-            height: 5em;
-            font-size: 0.3em;
-            margin:0.1em;
-            float: left;
-            display: block;
-            @include linear-gradient-left(rgba(0,0,0,0.2), rgba(0,0,0,0.1));
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-    }
-}
 
 .paragraph-us {
     margin-top: 3em;

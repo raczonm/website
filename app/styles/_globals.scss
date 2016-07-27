@@ -144,6 +144,14 @@ html {
         display: inline-block
     }
 
+    &-small {
+      vertical-align: middle;
+      font-size: 0.3em;
+      margin-right: 0.3em;
+      color: $white;
+      opacity: 0.8;
+    }
+
     &-strong {
         color: $main-red;
         font-size: 2.3em;
@@ -167,14 +175,6 @@ html {
     margin: 0 auto;
     padding-bottom: 0.5em;
 
-    @media #{$media-tablet} {
-        font-size: 0.7em;
-    }
-
-    @media #{$media-phone} {
-        font-size: 1.2em;
-    }
-
     &-span {
         color: $main-red;
     }
@@ -189,6 +189,20 @@ html {
         height: 0.07em;
         background: $main-red;
     }
+
+    @media #{$media-tablet} {
+        font-size: 0.7em;
+    }
+
+    @media #{$media-phone} {
+        font-size: 0.7em;
+        padding-bottom: 0.9em;
+
+
+        &:after {
+            height: 0.1em;
+        }
+    }
 }
 
 .paragraph {
@@ -202,18 +216,7 @@ html {
     }
 
     @media #{$media-phone} {
-        font-size: 0.6em;
-    }
-}
-.video-container {
-    background: url('../images/collage2.png') center center no-repeat;
-    background-size: 85%;
-    padding: 0.1em;
-
-    &-iframe {
-        width: 3.45em;
-        height: 2.2em;
-        border: 0.05em solid $main-red;
+        font-size: 0.4em;
     }
 }
 
@@ -259,6 +262,7 @@ html {
             &:after {
                 @include rotate(5);
             }
+
         }
     }
 
@@ -274,7 +278,14 @@ html {
             width: 20%;
             height: 20%;
             left: 40%;
-            top: 0.1em
+            top: 0.1em;
+
+            @media #{$media-tablet} {
+                width: 40%;
+                height: 20%;
+                left: 30%;
+                top: -1em;
+            }
         }
 
     }
@@ -296,14 +307,6 @@ html {
         padding-top: 2.5em;
         text-transform: uppercase;
 
-        @media #{$media-tablet} {
-            font-size: 0.8em;
-        }
-
-        @media #{$media-phone} {
-            font-size: 1.2em;
-        }
-
         &-span {
             display: block;
             font-size: 1.3em;
@@ -314,6 +317,16 @@ html {
         body:not(.full-page) &, &.loaded {
             opacity: 0.8;
             font-size: 0.5em;
+
+            @media #{$media-tablet} {
+                font-size: 0.8em;
+                padding-top: 3.5em;
+            }
+
+            @media #{$media-phone} {
+                font-size: 1.2em;
+                padding-top: 4.5em;
+            }
         }
     }
 
@@ -351,6 +364,14 @@ html {
         body:not(.full-page) &, &.loaded {
             font-size: 0.3em;
             opacity: 0.8;
+
+            @media #{$media-tablet} {
+                font-size: 0.5em;
+            }
+
+            @media #{$media-phone} {
+                font-size: 0.8em;
+            }
         }
     }
 }

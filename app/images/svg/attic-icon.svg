@@ -6,7 +6,7 @@
 	.stDef {
 			fill:none;
 			stroke:#FFFFFF;
-			opacity:0.8;
+			opacity:1d;
 			stroke-miterlimit:10;
 			stroke-width:25;
 	}
