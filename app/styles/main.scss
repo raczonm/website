@@ -547,6 +547,18 @@
                 background: url('../images/menu-garden-hover.png') no-repeat;
                 background-size: 100%;
             }
+
+            &:hover {
+                &:before {
+                    opacity: 0;
+                }
+
+                .rooms-column-image-label {
+                    @include scale(1);
+                    margin-left: 0;
+                }
+            }
+
         }
 
         &-label {
@@ -741,12 +753,8 @@
 
 
 
-.paragraph-us {
-    margin-top: 3em;
-
-    @media #{$media-phone} {
-        margin: 2em 0;
-    }
+.paragraph-us:first-child {
+    margin: 2em 0;
 }
 
 .outer-us-columns {

@@ -22,7 +22,9 @@
             fixedNavs: $('.fixed-navs'),
             splashMenu: $('.splash-menu'),
             galleryImg: $('.section-gallery-list-item'),
-            galleryZoom: $('.section-gallery-zoom-item')
+            galleryZoom: $('.section-gallery-zoom-item'),
+            commentsDots: $('.comments-dots-item'),
+            comments: $('.comment')
         };
 
         app.bindEvents = function() {
@@ -43,6 +45,9 @@
             }.bind(this));
 
             this.ui.galleryImg.on('click', this.zoomImage);
+            this.ui.commentsDots.on('click', function(e){
+                this.changeQuote($(e.currentTarget).data('id'));
+            }.bind(this));
         };
 
         app.closeBooking = function(){
@@ -71,7 +76,7 @@
         app.setPanelSnap = function() {
             var self = this;
             var options = {
-                $menu: $('.splash-menu, .scroll-nav'),
+                $menu: $('.splash-menu, .scroll-nav, .rooms-columns'),
                 menuSelector: '[data-panel]',
                 navigation: {
                     buttons: {
@@ -109,6 +114,17 @@
                 setTimeout(function(){ panel.find('.button').addClass('loaded'); }, 3700);
             }, 4000);
         };
+
+        //comments slider
+        app.changeQuote = function(id) {
+            app.ui.comments.removeClass('active');
+            app.ui.commentsDots.removeClass('active');
+            setTimeout(function () {
+                app.ui.comments.closest('[data-id="'+id+'"]').addClass('active');
+                app.ui.commentsDots.closest('[data-id="'+id+'"]').addClass('active');
+            }, 600);
+        };
+
         //Zoom Gallery images
         app.zoomImage = function(e) {
             var src = $(e.currentTarget).find('img').attr('src');
