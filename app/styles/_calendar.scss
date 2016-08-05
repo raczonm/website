@@ -22,6 +22,7 @@
             margin: 1.2em;
             padding: 0;
             color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
 
             &:before {
                 content: '';
@@ -106,7 +107,7 @@
             background: rgba(255,255,255,0.7);
             border-left: 0.75em solid $main-attic;
             text-align: center;
-            margin: 0 0.6em 0.8em;
+            margin: 0 0.6em 0;
             @include transition(all 3s ease);
             font-size: 0.75em;
 
@@ -117,7 +118,7 @@
         }
 
         .fc-time-grid-event .fc-time {
-            padding: 1.5em;
+            padding: 1.1em;
             @include font-sans();
         }
     }
@@ -126,5 +127,74 @@
     .fc-unthemed td, .fc-unthemed th, .fc-unthemed thead, .fc-content-skeleton, .fc-time-grid .fc-slats td {
         border-color: transparent;
     }
+    .bookingjs-bookpage {
+        background: rgba(0,0,0,0.95);
+        @include linear-gradient-left(rgba(0,0,0,0.85), rgba(0,0,0,0.75));
 
+        &-date {
+            color: rgba(255,255,255,0.8);
+            font-size:2em;
+        }
+
+        &-time {
+            color: rgba(255,255,255,0.8);
+            font-size:1em;
+            margin-top:1em;
+        }
+
+        &-close {
+            background: rgba(255,255,255,0.5);
+            top: 2em;
+            right: 2em;
+            font-size:0.8em;
+            @include rounded(0.2em);
+            color: $black;
+            text-transform: uppercase;
+            text-decoration: none;
+            @include font-sans();
+
+            .bookingjs-closeicon {
+                display: none;
+            }
+
+            &:before {
+                content: 'zamknij';
+            }
+        }
+    }
+    .bookingjs-form {
+        width: 30em;
+
+        &-box {
+            background: none;
+        }
+
+        &-input {
+            margin-bottom:1em;
+            @include rounded(0.2em);
+            background: rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.8);
+
+            &:focus {
+                background: rgba(255,255,255,0.95);
+                color: $black;
+            }
+        }
+
+        &-button {
+            box-shadow: none;
+            padding: 0.8em 2em;
+            max-width: none;
+            max-height: none;
+            height:auto;
+            margin: 0;
+        }
+    }
+    .bookingjs-poweredby {
+        opacity:0.3;
+
+        svg {
+            display: none;
+        }
+    }
 }

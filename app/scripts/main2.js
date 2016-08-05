@@ -10,7 +10,9 @@
             }
             return false;
         };
-
+        /* jshint ignore:start */
+        //app.booking = new TimekitBooking();
+        /* jshint ignore:end */
         app.ui = {
             body: $('body'),
             scrollNav: $('.scroll-nav'),
@@ -32,6 +34,7 @@
                 this.ui.menuLink.removeClass('active');
                 this.ui.body.addClass('with-splash-book');
                 this.ui.fixedNavs.addClass('hidden');
+                //app.booking.render();
             }.bind(this));
 
             this.ui.menuLink.on('click', function() {
@@ -120,10 +123,15 @@
             app.ui.comments.removeClass('active');
             app.ui.commentsDots.removeClass('active');
             setTimeout(function () {
-                app.ui.comments.closest('[data-id="'+id+'"]').addClass('active');
-                app.ui.commentsDots.closest('[data-id="'+id+'"]').addClass('active');
+                app.ui.comments.closest('[data-id="' + id + '"]').addClass('active');
+                app.ui.commentsDots.closest('[data-id="' + id + '"]').addClass('active');
             }, 600);
         };
+        // app.quoteAutoplayInterval = false;
+        // app.quoteAutoplay = function(){
+        //   console.log(app.ui.comments.closest('.active'));
+        //
+        // }
 
         //Zoom Gallery images
         app.zoomImage = function(e) {
@@ -205,27 +213,35 @@
 
         //app.booking = new TimekitBooking();
         app.bookingConfig = {
-            name: 'Strych - Rezerwacja',
+            name: 'Tajemnica Rodu Cromwell',
             email: 'itsatrapescape@gmail.com',
             apiToken: '3D7sVhBPvB9X2iXcpEgQ0KtnGJhMJ6Dz',
             calendar: '43c56a63-1886-423d-ad3f-6d9ea02241df',
             avatar: 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg',
+            bookingGraph: 'confirm_decline',
             timekitFindTime: {
                 filters: {
-                    and: [
-                        { 'specific_time': {'start': 13, 'end': 23} }
+                    or: [
+                        { 'specific_time': {'start': 13, 'end': 14} },
+                        { 'specific_time': {'start': '14:30', 'end': '15:30'} },
+                        { 'specific_time': {'start': 16, 'end': 17} },
+                        { 'specific_time': {'start': '17:30', 'end': '18:30'} },
+                        { 'specific_time': {'start': 19, 'end': 20} },
+                        { 'specific_time': {'start': '20:30', 'end': '21:30'} },
+                        { 'specific_time': {'start': 22, 'end': 23} }
                     ]
                 },
                 future: '6 months',
-                length: '1 hours, 30 minutes'
+                length: '1 hours'
               //  ignore_all_day_events: true // eslint-disable-line no-use-before-define
             },
             fullCalendar: {
                 businessHours: false,
+                lang: 'pl',
                 height: 'auto',
                 contentHeight: 'auto',
                 minTime: '13:00:00',
-                maxTime: '23:00:00',
+                maxTime: '24:00:00',
                 timeFormat: 'H:mm',
                 dayNames: ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'],
                 dayNamesShort: ['NIE', 'PON', 'WT', 'ŚR', 'CZW', 'PT', 'SOB'],
@@ -247,12 +263,50 @@
                     }
 
                 },
+                buttonText: {
+                     today: 'Dzisiaj'
+                },
                 header: {
                    right: 'today, prev, next, closeButton'
                 }
             },
             localization: {
-                showTimezoneHelper: false // Should the timezone difference helper (bottom) be shown?
+                showTimezoneHelper: false,
+                timeDateFormat: '24h-dmy-mon',
+                bookingDateFormat: 'MMMM D, YYYY', // Override the default date format on the booking page
+                bookingTimeFormat: 'h:mma',
+                strings: {
+                    submitText: 'Rezerwuj',
+                    successMessageTitle: 'Dziękujemy za rezerwację!',
+                    successMessageBody: 'Na twój adres email zostało wysłane potwierdzenie rezerwacji.',
+                    timezoneHelperLoading: 'Ładowanie..'
+                }
+            },
+            bookingFields: {
+                name: {
+                  placeholder: 'Imię i nazwisko',
+                  prefilled: false,
+                  locked: false
+                },
+                email: {
+                  placeholder: 'Adres E-mail',
+                  prefilled: false,
+                  locked: false
+                },
+                phone: {
+                  placeholder: 'Numer telefonu',
+                  prefilled: false,
+                  locked: false,
+                  required: true,
+                  enabled: true
+                },
+                comment: {
+                  enabled: true,
+                  placeholder: 'Komentarz (np. grupa anglojęzyczna)',
+                  prefilled: false,
+                  required: false,
+                  locked: false
+                }
             }
         };
 
@@ -264,6 +318,7 @@
         app.setPanelSnap();
         app.checkProportions();
         app.bindEvents();
+        //app.quoteAutoplayInterval =  setInterval(function(){ app.quoteAutoplay() }, 1000);
         //app.booking.init(app.bookingConfig);
 
         setTimeout(function(){
