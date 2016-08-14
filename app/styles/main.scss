@@ -221,6 +221,8 @@
         padding-top: 0.8em;
         text-transform: uppercase;
 
+
+
         &-item {
             cursor:pointer;
             font-size: 0.2em;
@@ -228,6 +230,18 @@
             padding: 1em;
             opacity: 0.7;
             @include transition(all 0.4s ease);
+
+            @media #{$media-tablet} {
+                font-size: 0.4em;
+                padding: 0.4em;
+                line-height: 6vh;
+            }
+
+            @media #{$media-phone} {
+                font-size: 3.5vh;
+                padding: 0.35em;
+                line-height: 6vh;
+            }
 
             &:hover {
                 opacity: 1;
@@ -241,6 +255,10 @@
             opacity: 0.9;
             @include linear-gradient-left(rgba(180,40,37,0.55), rgba(180,40,37,1));
             @include transition(all 0.4s ease);
+
+            @media #{$media-phone} {
+                font-size: 4vh;
+            }
 
             &:hover {
                 opacity: 1;
@@ -801,6 +819,17 @@
                 background: url('../images/menu-pirates-hover.png') no-repeat;
                 background-size: 100%;
             }
+
+            &:hover {
+                &:before {
+                    opacity: 0;
+                }
+
+                .rooms-column-image-label {
+                    @include scale(1);
+                    margin-left: 0;
+                }
+            }
         }
 
         &.attic {
@@ -808,7 +837,7 @@
             background-size: 100%;
 
             &:before {
-                background: url('../images/menu-attic-hover.png') no-repeat;
+                background: url('../images/menu-attic-hover.jpg') no-repeat;
                 background-size: 100%;
             }
         }
@@ -832,7 +861,6 @@
                     margin-left: 0;
                 }
             }
-
         }
 
         &-label {
@@ -847,6 +875,10 @@
             position: absolute;
             bottom: 20%;
             overflow-x: visible;
+
+            .garden &, .pirates & {
+                background: $black;
+            }
 
             @media #{$media-tablet} {
                 font-size: 0.27em;
@@ -871,6 +903,10 @@
                 height: 100%;
                 width: 1em;
                 @include skew(-15, 0);
+
+                .garden &, .pirates & {
+                    background: $black;
+                }
             }
         }
     }
@@ -983,8 +1019,6 @@
           }
     }
 
-
-
     .room-section-background {
         height: 120%;
 
@@ -1030,8 +1064,6 @@
         }
     }
 }
-
-
 
 .paragraph-us:first-child {
     margin: 2em 0;

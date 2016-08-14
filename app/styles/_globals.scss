@@ -418,7 +418,11 @@ html {
         font-size: 1em;
     }
 }
-
+.comment-wrapper {
+  @media #{$media-phone} {
+      display:none;
+  }
+}
 .comments-list {
     height:1.7em;
     margin-top: 0.6em;
@@ -428,9 +432,7 @@ html {
         height:3.6em;
     }
 
-    @media #{$media-phone} {
-        display:none;
-    }
+
 }
 .comment {
     opacity:0;
