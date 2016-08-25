@@ -42,6 +42,31 @@ html {
     }
 }
 
+
+.logo-trap {
+    text-indent: 2000px;
+    background: url('../images/logo.png') center center no-repeat;
+    background-size: 100%;
+    opacity: 0.9;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 2.6em;
+    height: 1.15em;
+    margin: 0 auto 0.7em;
+
+    @media #{$media-tablet} {
+        width: 4em;
+        height: 1.7em;
+        margin: 0 auto 1.3em;
+    }
+
+    @media #{$media-phone} {
+        width: 6em;
+        height: 2.7em;
+        margin: 0 auto 2em;
+    }
+}
+
 .wrapper {
     width: 9em;
     margin-left: auto;
@@ -583,5 +608,76 @@ html {
             background: $main-red;
             @include scale(1.5);
         }
+    }
+}
+
+
+//RIGHT NAV
+.right-nav {
+    position:fixed;
+    left:100%;
+    top: 20vh;
+    margin-left:-80px;
+    z-index:11;
+    font-size:20px;
+    color:$white;
+
+    @media #{$media-tablet} {
+        display: none;
+    }
+
+    &-item {
+        position:relative;
+        @include transition(all 0.4s linear);
+
+        &.facebook {
+            z-index:14;
+        }
+        &.lockme {
+          margin-top:1vh;
+        }
+
+        &-icon {
+            background: $black;
+            font-size: 40px;
+            width:80px;
+            height:80px;
+            display:block;
+            text-align: center;
+            line-height: 80px;
+            opacity:0.7;
+            cursor:pointer;
+            z-index:1;
+            @include transition(all 0.2s linear);
+
+            .lockme & {
+                color: #fbc416;
+            }
+        }
+
+        &-box {
+            width: 360px;
+            background: $black;
+            padding: 20px;
+            height:360px;
+            position:absolute;
+            left: 80px;
+            top: 0;
+            z-index:112;
+
+            div[data-lockme=full] {
+                width: 100%;
+            }
+        }
+
+        &:hover {
+            @include translate(-360px, 0);
+
+            > .right-nav-item-icon {
+                opacity: 1;
+                background: $black;
+            }
+        }
+
     }
 }

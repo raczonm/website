@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>It's a Trap - Escape Game</title>
+
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="/images/favicons/favicon_16.png">
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="/images/favicons/favicon_32.png">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="/images/favicons/favicon_48.png">
+    <link rel="shortcut icon" type="image/png" sizes="64x64" href="/images/favicons/favicon_64.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/favicon_48.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/images/favicons/favicon_48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/favicon_72.pngg">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/favicon_114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/favicon_120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/favicon_144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/favicon_152.png">
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/reset-css/reset.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/mainRoom.css -->
+    <link rel="stylesheet" href="styles/room.css">
+    <link rel="stylesheet" href="styles/font-awesome.css" />
+    <!-- endbuild -->
+
+  </head>
+  <body class="body">
+    <ul class="right-nav">
+        <li class="right-nav-item facebook">
+          <a class="right-nav-item-icon"><i class="fa fa-facebook" ></i></a>
+          <div class="right-nav-item-box">
+              <div class="fb-page" data-href="https://www.facebook.com/itsatrapcracow/" data-tabs="timeline" data-width="320" data-height="320" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/itsatrapcracow/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/itsatrapcracow/">It&#039;s a Trap</a></blockquote></div>
+          </div>
+        </li>
+        <li class="right-nav-item lockme">
+          <a class="right-nav-item-icon"><i class="ico ico-lockme" ></i></a>
+          <div class="right-nav-item-box">
+                <div data-lockme="full"></div>
+          </div>
+        </li>
+    </ul>
+    <aside class="left">
+        <h1 class="logo-trap">It's a trap</h1>
+        <div class="room">
+            <h2 class="room-title">Tajemnica Hrabiego Cromwella </h2>
+            <p class="room-desc">
+              Hrabia Cromwell był człowiekiem równie tajemniczym, co okoliczności jego śmierci. Tak się składa, że to właśnie wam pragnął przekazać swój majątek.
+              Niestety nikt nie wie, gdzie schował swój testament. Zapewne jest gdzieś na poddaszu. Ten z&nbsp;pozoru zwykły strych skrywa wiele mrocznych sekretów.
+              Czy uda wam się odnaleźć testament Cromwella i&nbsp;wydostać z&nbsp;jego pracowni? I&nbsp;czy zdążycie na czas?
+            </p>
+            <ul class="room-stats">
+                <li class="room-stats-item"><strong class="room-stats-strong">19%</strong> - Udało się uciec</li>
+                <li class="room-stats-item"><strong class="room-stats-strong">57min</strong> - Średni czas ucieczki</li>
+                <li class="room-stats-item"><strong class="room-stats-strong">39min</strong> - Najlepszy czas ucieczki</li>
+            </ul>
+        </div>
+        <a class="home">Powrót do strony głównej</a>
+    </aside>
+    <main class="calendar">
+        <iframe src="http://rezerwator.pl/Calendar/Index/1339" class="calendar-iframe" width="100%" height="100%"></iframe>
+    </main>
+
+    <div id="fb-root"></div>
+
+
+    <!-- LOCKME -->
+    <script type="text/javascript">
+    (function(d, t, q){
+      var id = 'lockme-'+t, js;
+      if(!d[q]('#'+id)){
+        js=d.createElement('script');
+        js.defer=true;
+        js.id=id;
+        js.src='https://lockme.pl/widget/full/a5aacae740157ec3a8d5331f245b7582.js';
+        d[q]('head').appendChild(js);
+      }
+    })(document, 'full', 'querySelector')
+    </script>
+
+    <!-- FACEBOOK -->
+
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.7";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendorAttic.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js scripts/mainAttic.js -->
+    <!-- endbuild -->
+  </body>
+</html>

@@ -21,8 +21,6 @@
             fixedBookLink: $('.fixed-navs-item.book-now'),
             fixedNavs: $('.fixed-navs'),
             splashMenu: $('.splash-menu'),
-            // galleryImg: $('.section-gallery-list-item'),
-            // galleryZoom: $('.section-gallery-zoom-item'),
             commentsDots: $('.comments-dots-item'),
             comments: $('.comment')
         };
@@ -44,7 +42,6 @@
                   this.ui.body.removeClass('with-splash-menu');
             }.bind(this));
 
-            // this.ui.galleryImg.on('click', this.zoomImage);
             this.ui.commentsDots.on('click', function(e){
                 this.changeQuote($(e.currentTarget).data('id'));
             }.bind(this));
@@ -130,19 +127,13 @@
         };
         app.quoteAutoplayInterval = false;
         app.quoteAutoplay = function(){
-          var next = $('.comment.active').next().data('id');
-          if(next) {
-              app.changeQuote(next);
-          } else {
-              app.changeQuote(0);
-          }
+            var next = $('.comment.active').next().data('id');
+            if(next) {
+                app.changeQuote(next);
+            } else {
+                app.changeQuote(0);
+            }
         };
-
-        //Zoom Gallery images
-        // app.zoomImage = function(e) {
-        //     var src = $(e.currentTarget).find('img').attr('src');
-        //     app.ui.galleryZoom.addClass('active').css('background-image', 'url(' + src + ')');
-        // };
 
         //Playing with SVG
         app.loadDefaultSVG = function(){
