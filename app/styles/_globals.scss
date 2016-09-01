@@ -17,6 +17,10 @@
   -moz-box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 html {
     overflow-x: hidden;
 }
@@ -679,5 +683,33 @@ html {
             }
         }
 
+    }
+}
+
+.hint {
+    background: rgba(0,0,0,0.4);
+    font-size: 0.25em;
+    padding: 0 1em;
+    line-height: 4em;
+    @include rounded(5px);
+    color: $white;
+    max-height: 0;
+    overflow: hidden;
+    @include transition(all 0.5s linear);
+    
+    &.active {
+      max-height:4em;
+    }
+
+    &.error {
+        background: rgba(255,0,0,0.4);
+    }
+
+    &.success {
+        background: rgba(0,255,0,0.4);
+    }
+
+    &.warning {
+        background: rgba(255,255,0,0.4);
     }
 }

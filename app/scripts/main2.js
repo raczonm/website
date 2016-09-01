@@ -1,4 +1,4 @@
- /* global $ Snap */
+ /* global $ Snap emailjs */
 'use strict';
 (function () {
     function prepareApp() {
@@ -22,7 +22,12 @@
             fixedNavs: $('.fixed-navs'),
             splashMenu: $('.splash-menu'),
             commentsDots: $('.comments-dots-item'),
-            comments: $('.comment')
+            comments: $('.comment'),
+            mailAddress: $('#reply_to'),
+            mailFrom: $('#from_name'),
+            mailMessage: $('#message_html'),
+            mailSend: $('.form-button'),
+            mailHint: $('.hint')
         };
 
         app.bindEvents = function() {
@@ -44,6 +49,10 @@
 
             this.ui.commentsDots.on('click', function(e){
                 this.changeQuote($(e.currentTarget).data('id'));
+            }.bind(this));
+
+            this.ui.mailSend.on('click', function(){
+                this.sendMail();
             }.bind(this));
         };
 
@@ -133,6 +142,34 @@
             } else {
                 app.changeQuote(0);
             }
+        };
+        //Playing with emails
+        app.sendMail = function(){
+          var email = this.ui.mailAddress.val(),
+              name = this.ui.mailFrom.val(),
+              message = this.ui.mailMessage.val(),
+              wrongEmail = document.getElementById('reply_to').validity.typeMismatch;
+
+          if(email && name && message){
+              if (wrongEmail) {
+                  this.ui.mailHint.html('Proszę wpisać poprawny email.').addClass('active error');
+              } else {
+                  emailjs.send('itsatrap', 'template_p0dGo5kl', {'reply_to': email, 'from_name': name, 'message_html': message })
+                  .then(function(response) {
+                     console.log('SUCCESS. status=%d, text=%s', response.status, response.text);
+                  }, function(err) {
+                     console.log('FAILED. error=', err);
+                     this.ui.mailHint.html('Ups coś poszlo nie tak').addClass('active warning');
+                  });
+
+                  this.ui.mailHint.html('Wiadomość została wysłana').addClass('active success');
+                  this.ui.mailAddress.val('');
+                  this.ui.mailFrom.val('');
+                  this.ui.mailMessage.val('');
+              }
+          } else {
+              this.ui.mailHint.html('Proszę uzupełnić wszystkie pola').addClass('active error');
+          }
         };
 
         //Playing with SVG

@@ -48,6 +48,10 @@ html {
     height: 87px;
     margin: 30px;
 
+    @media (min-width:1030px) and (max-width: 1400px) {
+      width:100px;
+      height:43px
+    }
     @media #{$media-tablet}  {
         margin: 30px auto;
     }
@@ -59,8 +63,16 @@ html {
     margin-top: 50px;
     padding: 0 40px;
 
+    @media (min-width:1030px) and (max-width: 1400px) {
+        margin-top:20px;
+    }
+
     &-title {
         font-size: 32px;
+
+        @media (min-width:1030px) and (max-width: 1400px) {
+            font-size: 20px;
+        }
 
         @media #{$media-phone}  {
             font-size: 20px;
@@ -73,6 +85,12 @@ html {
         line-height:30px;
         opacity:0.8;
 
+        @media (min-width:1030px) and (max-width: 1400px) {
+            font-size: 16px;
+            line-height:22px;
+            margin-top:20px;
+        }
+
         @media #{$media-phone}  {
             display:none;
         }
@@ -83,6 +101,11 @@ html {
         font-size: 20px;
         text-align: left;
         font-style: italic;
+
+        @media (min-width:1030px) and (max-width: 1400px) {
+            font-size: 16px;
+            margin-top:20px;
+        }
 
         &-item {
           padding: 5px 0;
@@ -102,7 +125,6 @@ html {
     position: relative;
     height: 100%;
     padding-left:600px;
-    padding-top:60px;
 
     @media #{$media-tablet}  {
         height: auto;
@@ -126,9 +148,19 @@ html {
     display:block;
     width:280px;
     text-align: center;
-    margin:70px auto;
+    margin:70px auto 0;
     cursor:pointer;
     @include transition(all 0.5s linear);
+    text-decoration: none;
+
+    @media (min-width:1030px) and (max-width: 1400px) {
+        padding: 20px;
+        margin-top: 40px;
+    }
+
+    @media #{$media-phone}  {
+          padding: 20px;
+    }
 
     &:hover {
         background: $white;

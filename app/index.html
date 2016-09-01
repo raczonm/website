@@ -35,7 +35,7 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <nav class="fixed-navs visible">
-        <a class="fixed-navs-item book-now sans">
+        <a class="fixed-navs-item book-now sans" href="/tajemnica-hrabiego-cromwella.html">
             <i class="book-now-icon fa fa-calendar-o"></i>
             Rezerwuj
         </a>
@@ -107,7 +107,7 @@
                         <img class="header-circle-icon-img" src="/images/icons/icon_pay.png" />
                     </div>
                     <h3 class="circle-label header-circle-label">
-                        <strong class="circle-label-strong"><small class="circle-label-small">od</small>99</strong>
+                        <strong class="circle-label-strong"><small class="circle-label-small">od</small>109</strong>
                         <span class="circle-label-span">złotych <br />za grupę</span>
                     </h3>
                 </div>
@@ -342,7 +342,7 @@
                   Niestety nikt nie wie, gdzie schował swój testament. Zapewne jest gdzieś na poddaszu. Ten z&nbsp;pozoru zwykły strych skrywa wiele mrocznych sekretów.
                   Czy uda wam się odnaleźć testament Cromwella i&nbsp;wydostać z jego pracowni? I&nbsp;czy zdążycie na czas?
                 </p>
-                <a class="button">REZERWUJ</a>
+                <a class="button" href="/tajemnica-hrabiego-cromwella.html">REZERWUJ</a>
             </div>
         </div>
     </section>
@@ -515,16 +515,18 @@
             <h2 class="footer-header">Kontakt</h2>
             <div class="contact">
                 <form class="form">
+
                     <label class="form-label">Odezwij się do nas!</label>
                     <div class="form-field">
-                        <input type="email" class="form-input" placeholder="Adres email"/>
+                        <input type="email" class="form-input" placeholder="Adres email" id="reply_to"/>
                     </div>
                     <div class="form-field">
-                        <input type="text" class="form-input" placeholder="O czym piszesz?"/>
+                        <input type="text" class="form-input" placeholder="Kim jesteś?" id="from_name"/>
                     </div>
                     <div class="form-field">
-                        <textarea class="form-input form-text" placeholder="Treść..."></textarea>
+                        <textarea class="form-input form-text" placeholder="Treść..." id="message_html"></textarea>
                     </div>
+                    <div class="hint">Niestety okazuje się że dupa jest zbnita!</div>
                     <div class="form-field">
                           <a class="button form-button">Wyślij wiadomość</a>
                     </div>
@@ -550,7 +552,7 @@
         <div class="footer-copy">
             <div class="wrapper">
                 <p class="footer-copy-paragraph"> &copy; Copyright Exterasys 2016 </p>
-                <a class="button footer-copy-button">Rezerwuj </a>
+                <a class="button footer-copy-button" href="/tajemnica-hrabiego-cromwella.html">Rezerwuj </a>
             </div>
         </div>
     </footer>
@@ -592,6 +594,15 @@
       e.src='https://www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+
+    <!-- EMAILJS -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("user_S2haEHosDCt6K6cUJbiZc");
+       })();
     </script>
 
     <!-- build:js scripts/vendor.js -->
