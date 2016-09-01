@@ -1,10 +1,12 @@
 <!doctype html>
-<html lang="">
+<html lang="pl">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="">
+    <meta name="keywords" content="pokój zagadek, escape game, escape room, It's a Trap, real life escape game, itsatrapcracow.pl">
+    <meta name="description" content="Escape game w centrum Krakowa. Unikalne pokoje o dopracowanym wystroju, oryginalnych zagadkach i zaskakujących mechanizmach. Itsatrapcracow.pl">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>It's a Trap - Escape Game</title>
+    <meta content="Michał Raczoń" name="Author">
+    <title>It's a Trap - Escape Game Kraków</title>
 
     <link rel="shortcut icon" type="image/png" sizes="16x16" href="/images/favicons/favicon_16.png">
     <link rel="shortcut icon" type="image/png" sizes="32x32" href="/images/favicons/favicon_32.png">
@@ -18,13 +20,9 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/favicon_144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/favicon_152.png">
 
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/reset-css/reset.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="/bower_components/reset-css/reset.css" />
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/font-awesome.css" />
     <!-- endbuild -->
@@ -50,13 +48,12 @@
     <div class="splash sans splash-nav">
         <nav class="splash-menu text-center">
             <a class="splash-menu-item" data-panel="header">It's a Trap</a>
+            <a class="splash-menu-item" data-panel="about">O Escape game</a>
             <a class="splash-menu-item" data-panel="rooms">Pokoje</a>
-            <a class="splash-menu-item" data-panel="pirates">Pirate's treasure</a>
             <a class="splash-menu-item" data-panel="attic">Tajemnica Hrabiego Cromwell'a</a>
-            <a class="splash-menu-item" data-panel="garden">Myesterious Garden</a>
             <a class="splash-menu-item" data-panel="us">O nas</a>
             <a class="splash-menu-item" data-panel="header">Kontakt</a>
-            <a class="button splash-menu-book">Rezerwuj pokój</a>
+            <a class="button splash-menu-book" href="/tajemnica-hrabiego-cromwella.html">Rezerwuj pokój</a>
         </nav>
     </div>
     <div class="splash sans splash-bookjs" id="bookingjs"></div>
@@ -86,7 +83,7 @@
             <div class="columns sans header-columns ">
                 <div class="column header-column">
                     <div class="circle-icon header-circle-icon icon-1">
-                        <img class="header-circle-icon-img" src="/images/icons/icon_rooms.png" />
+                        <img class="header-circle-icon-img" src="/images/icons/icon_rooms.png" alt="Ikona pokoju zagadek"/>
                     </div>
                     <h3 class="circle-label header-circle-label">
                         <strong class="circle-label-strong">3</strong>
@@ -95,7 +92,7 @@
                 </div>
                 <div class="column header-column">
                     <div class="circle-icon header-circle-icon icon-2">
-                        <img class="header-circle-icon-img" src="/images/icons/icon_time.png" />
+                        <img class="header-circle-icon-img" src="/images/icons/icon_time.png" alt="Ikona Casu gry"/>
                     </div>
                     <h3 class="circle-label header-circle-label">
                         <strong class="circle-label-strong">60</strong>
@@ -104,7 +101,7 @@
                 </div>
                 <div class="column header-column">
                     <div class="circle-icon header-circle-icon icon-3">
-                        <img class="header-circle-icon-img" src="/images/icons/icon_pay.png" />
+                        <img class="header-circle-icon-img" src="/images/icons/icon_pay.png" alt="Ikona ppłatności"/>
                     </div>
                     <h3 class="circle-label header-circle-label">
                         <strong class="circle-label-strong"><small class="circle-label-small">od</small>109</strong>
@@ -124,23 +121,23 @@
             </p>
             <div class="icons-path">
                 <div class="icons-path-step">
-                    <img class="icons-path-icon" src="/images/icons/icon_path/1_black.png"/>
-                    <img class="icons-path-icon red" src="/images/icons/icon_path/1_red.png"/>
+                    <img class="icons-path-icon" src="/images/icons/icon_path/1_black.png" alt="Ikona Szukaj wskazówek"/>
+                    <img class="icons-path-icon red" src="/images/icons/icon_path/1_red.png" alt="Ikona Szukaj wskazówek czerwona"/>
                     <h4 class="icons-path-step-name">Szukaj Wskazówek</h4>
                 </div>
                 <div class="icons-path-step">
-                    <img class="icons-path-icon top" src="/images/icons/icon_path/2_black.png"/>
-                    <img class="icons-path-icon red top" src="/images/icons/icon_path/2_red.png"/>
+                    <img class="icons-path-icon top" src="/images/icons/icon_path/2_black.png" alt="Ikona Sprawdzaj pomysły"/>
+                    <img class="icons-path-icon red top" src="/images/icons/icon_path/2_red.png" alt="Ikona Sprawdzaj pomysły czerwona"/>
                     <h4 class="icons-path-step-name">Sprawdzaj Pomysły</h4>
                 </div>
                 <div class="icons-path-step">
-                    <img class="icons-path-icon" src="/images/icons/icon_path/3_black.png"/>
-                    <img class="icons-path-icon red" src="/images/icons/icon_path/3_red.png"/>
+                    <img class="icons-path-icon" src="/images/icons/icon_path/3_black.png" alt="Ikona Rozwiązuj zagadki"/>
+                    <img class="icons-path-icon red" src="/images/icons/icon_path/3_red.png" alt="Ikona Rozwiązuj zagadki czerwona"/>
                     <h4 class="icons-path-step-name">Rozwiązuj Zagadki</h4>
                 </div>
                 <div class="icons-path-step">
-                    <img class="icons-path-icon top" src="/images/icons/icon_path/4_black.png"/>
-                    <img class="icons-path-icon red top" src="/images/icons/icon_path/4_red.png"/>
+                    <img class="icons-path-icon top" src="/images/icons/icon_path/4_black.png" alt="Ikona Wydostań się"/>
+                    <img class="icons-path-icon red top" src="/images/icons/icon_path/4_red.png" alt="Ikona Wydostań się czerwona"/>
                     <h4 class="icons-path-step-name">Wydostań Się</h4>
                 </div>
                 <ul class="icons-path-dots">
@@ -173,53 +170,6 @@
         </div>
         <div class="section-about-separator"></div>
     </section>
-    <!-- <section class="section section-gallery-2 panel" data-panel="gallery" data-nav-class="dark">
-        <div class="background header-background"></div>
-            <div class="section-gallery-wrapper">
-                <div class="section-gallery-box">
-                    <h2 class="section-gallery-header">Galeria</h2>
-                    <p class="section-gallery-desc">Kliknij na zdjęcie aby zobaczyć powiększenie.</p>
-                    <ul class="section-gallery-list">
-                        <li class="section-gallery-list-item" id="g1"><img class="section-gallery-list-item-image" src="/images/gallery/01.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g2"><img class="section-gallery-list-item-image" src="/images/gallery/02.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g3"><img class="section-gallery-list-item-image" src="/images/gallery/26.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g4"><img class="section-gallery-list-item-image" src="/images/gallery/19.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g5"><img class="section-gallery-list-item-image" src="/images/gallery/27.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g6"><img class="section-gallery-list-item-image" src="/images/gallery/06.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g7"><img class="section-gallery-list-item-image" src="/images/gallery/07.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g8"><img class="section-gallery-list-item-image" src="/images/gallery/21.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g9"><img class="section-gallery-list-item-image" src="/images/gallery/09.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g10"><img class="section-gallery-list-item-image" src="/images/gallery/10.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g11"><img class="section-gallery-list-item-image" src="/images/gallery/11.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g12"><img class="section-gallery-list-item-image" src="/images/gallery/12.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g13"><img class="section-gallery-list-item-image" src="/images/gallery/13.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g14"><img class="section-gallery-list-item-image" src="/images/gallery/14.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g15"><img class="section-gallery-list-item-image" src="/images/gallery/15.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g16"><img class="section-gallery-list-item-image" src="/images/gallery/16.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g17"><img class="section-gallery-list-item-image" src="/images/gallery/17.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g18"><img class="section-gallery-list-item-image" src="/images/gallery/18.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g19"><img class="section-gallery-list-item-image" src="/images/gallery/04.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g20"><img class="section-gallery-list-item-image" src="/images/gallery/20.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g21"><img class="section-gallery-list-item-image" src="/images/gallery/08.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g22"><img class="section-gallery-list-item-image" src="/images/gallery/22.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g23"><img class="section-gallery-list-item-image" src="/images/gallery/23.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g24"><img class="section-gallery-list-item-image" src="/images/gallery/24.jpg"/></li>
-                        <li class="section-gallery-list-item" id="g25"><img class="section-gallery-list-item-image" src="/images/gallery/25.jpg"/></li>
-                    </ul>
-                </div>
-                <div class="section-gallery-zoom">
-                    <div class="section-gallery-zoom-item"></div>
-                    <div class="section-gallery-zoom-item"></div>
-                    <div class="section-gallery-zoom-item"></div>
-                    <div class="section-gallery-zoom-item"></div>
-                    <div class="section-gallery-zoom-item"></div>
-                    <div class="section-gallery-zoom-item"></div>
-                    <div class="section-gallery-zoom-item"></div>
-                    <div class="section-gallery-zoom-item"></div>
-                    <div class="section-gallery-zoom-item"></div>
-                </div>
-            </div>
-    </section> -->
     <section class="section section-rooms panel" data-panel="rooms" data-nav-class="dark">
         <h2 class="section-header">Nasze <span class="section-header-span">pokoje</span></h2>
         <div class="wrapper">
@@ -252,51 +202,6 @@
             </p>
         </div>
     </section>
-    <!-- <section class="section room-section room-section-pirates panel" data-panel="pirates" data-nav-class="light">
-        <div class="room-section-background"></div>
-        <h2 class="room-section-header">
-            <span class="room-section-header-span">01</span>
-            Pirates Treasure
-        </h2>
-        <div class="wrapper">
-            <div class="outer-room-columns sans">
-                <div class="columns room-columns ">
-                    <div class="column room-column">
-                        <div class="circle-icon room-circle-icon">
-                            19%
-                        </div>
-                        <h3 class="circle-label room-circle-label">
-                            <span class="circle-label-span">escaped <br />the room</span>
-                        </h3>
-                    </div>
-                    <div class="column room-column">
-                        <div class="circle-icon room-circle-icon">
-                            28'
-                        </div>
-                        <h3 class="circle-label room-circle-label">
-                            <span class="circle-label-span">With <br />best time</span>
-                        </h3>
-                    </div>
-                    <div class="column room-column">
-                        <div class="circle-icon room-circle-icon">
-                            55'
-                        </div>
-                        <h3 class="circle-label room-circle-label">
-                            <span class="circle-label-span">Average <br />time</span>
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <p class="paragraph room-paragraph">
-                Lorem ipsum dolor sit amet, <strong class="red-strong">consectetur</strong> adipiscing elit.
-                Sed dui nisi, pellentesque quis lobortis vel, ultricies eu libero. Nunc condimentum
-                , quam in <strong class="red-strong">blandit dapibus</strong>, turpis lacus viverra leo, non consequat nisi t
-                urpis non massa. In ut lacus interdum, malesuada turpis nec, malesuada nunc. Ut i
-                aculis ex in mauris venenatis iaculis. Nam imperdiet enim
-            </p>
-            <a class="button">Book now</a>
-        </div>
-    </section> -->
     <section class="section room-section room-section-attic panel" data-panel="attic" data-nav-class="light">
         <div class="room-section-background"></div><!--inverse-->
         <div class="room-section-svg-wrapper">
@@ -346,51 +251,6 @@
             </div>
         </div>
     </section>
-    <!--<section class="section room-section room-section-garden panel" data-panel="garden" data-nav-class="light">
-        <div class="room-section-background"></div>
-        <h2 class="room-section-header">
-            <span class="room-section-header-span">03</span>
-            Mysterious Alice Garden
-        </h2>
-        <div class="wrapper">
-            <div class="outer-room-columns sans">
-                <div class="columns room-columns ">
-                    <div class="column room-column">
-                        <div class="circle-icon room-circle-icon">
-                            19%
-                        </div>
-                        <h3 class="circle-label room-circle-label">
-                            <span class="circle-label-span">escaped <br />the room</span>
-                        </h3>
-                    </div>
-                    <div class="column room-column">
-                        <div class="circle-icon room-circle-icon">
-                            28'
-                        </div>
-                        <h3 class="circle-label room-circle-label">
-                            <span class="circle-label-span">With <br />best time</span>
-                        </h3>
-                    </div>
-                    <div class="column room-column">
-                        <div class="circle-icon room-circle-icon">
-                            55'
-                        </div>
-                        <h3 class="circle-label room-circle-label">
-                            <span class="circle-label-span">Average <br />time</span>
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <p class="paragraph room-paragraph">
-                Lorem ipsum dolor sit amet, <strong class="red-strong">consectetur</strong> adipiscing elit.
-                Sed dui nisi, pellentesque quis lobortis vel, ultricies eu libero. Nunc condimentum
-                , quam in <strong class="red-strong">blandit dapibus</strong>, turpis lacus viverra leo, non consequat nisi t
-                urpis non massa. In ut lacus interdum, malesuada turpis nec, malesuada nunc. Ut i
-                aculis ex in mauris venenatis iaculis. Nam imperdiet enim
-            </p>
-            <a class="button">Book now</a>
-        </div>
-    </section>-->
     <section class="section section-us panel" data-panel="us" data-nav-class="dark">
         <h2 class="section-header">Dlaczego <span class="section-header-span">właśnie my?</span></h2>
         <div class="wrapper">
@@ -409,7 +269,7 @@
                 <div class="comments-list">
                     <div class="comment active" data-id="0">
                         <h3 class="comment-author">
-                            <img src="/images/icons/icon_user.png" class="comment-author-icon" />
+                            <img src="/images/icons/icon_user.png" class="comment-author-icon" alt="Ikona użytkownik"/>
                             0Lorem Impus
                             <span class="comment-date">24/07/2016</span>
                         </h3>
@@ -420,7 +280,7 @@
                     </div>
                     <div class="comment" data-id="1">
                         <h3 class="comment-author">
-                            <img src="/images/icons/icon_user.png" class="comment-author-icon" />
+                            <img src="/images/icons/icon_user.png" class="comment-author-icon" alt="Ikona użytkownik"/>
                             1Lorem Impus
                             <span class="comment-date">24/07/2016</span>
                         </h3>
@@ -431,7 +291,7 @@
                     </div>
                     <div class="comment" data-id="2">
                         <h3 class="comment-author">
-                            <img src="/images/icons/icon_user.png" class="comment-author-icon" />
+                            <img src="/images/icons/icon_user.png" class="comment-author-icon" alt="Ikona użytkownik"/>
                             2Lorem Impus
                             <span class="comment-date">24/07/2016</span>
                         </h3>
@@ -442,7 +302,7 @@
                     </div>
                     <div class="comment" data-id="3">
                         <h3 class="comment-author">
-                            <img src="/images/icons/icon_user.png" class="comment-author-icon" />
+                            <img src="/images/icons/icon_user.png" class="comment-author-icon" alt="Ikona użytkownik"/>
                             3Lorem Impus
                             <span class="comment-date">24/07/2016</span>
                         </h3>
@@ -453,7 +313,7 @@
                     </div>
                     <div class="comment" data-id="4">
                         <h3 class="comment-author">
-                            <img src="/images/icons/icon_user.png" class="comment-author-icon" />
+                            <img src="/images/icons/icon_user.png" class="comment-author-icon" alt="Ikona użytkownik"/>
                             4Lorem Impus
                             <span class="comment-date">24/07/2016</span>
                         </h3>
@@ -464,7 +324,7 @@
                     </div>
                     <div class="comment" data-id="5">
                         <h3 class="comment-author">
-                            <img src="/images/icons/icon_user.png" class="comment-author-icon" />
+                            <img src="/images/icons/icon_user.png" class="comment-author-icon" alt="Ikona użytkownik"/>
                             5Lorem Impus
                             <span class="comment-date">24/07/2016</span>
                         </h3>
@@ -475,7 +335,7 @@
                     </div>
                     <div class="comment" data-id="6">
                         <h3 class="comment-author">
-                            <img src="/images/icons/icon_user.png" class="comment-author-icon" />
+                            <img src="/images/icons/icon_user.png" class="comment-author-icon" alt="Ikona użytkownik"/>
                             6Lorem Impus
                             <span class="comment-date">24/07/2016</span>
                         </h3>
@@ -486,7 +346,7 @@
                     </div>
                     <div class="comment" data-id="7">
                         <h3 class="comment-author">
-                            <img src="/images/icons/icon_user.png" class="comment-author-icon" />
+                            <img src="/images/icons/icon_user.png" class="comment-author-icon" alt="Ikona użytkownik"/>
                             8Lorem Impus
                             <span class="comment-date">24/07/2016</span>
                         </h3>
@@ -531,33 +391,31 @@
                           <a class="button form-button">Wyślij wiadomość</a>
                     </div>
                 </form>
-                <address class="address">
+                <div class="address">
                   <h3 class="address-header">Adres</h3>
-                  <p class="address-paragraph">ul. Karmelicka 54/7 <br />31-128 Kraków <br />Polska<br /></p>
+                  <address class="address-paragraph">ul. Karmelicka 54/7 <br />31-128 Kraków <br />Polska<br /></address>
                   <h3 class="address-header">Email</h3>
                   <p class="address-paragraph">
                       <strong class="address-strong">Rezerwacje: </strong>itsatrapescape@gmail.com<br />
                       <strong class="address-strong">Pomoc: </strong>itsatrapescape@gmail.com<br />
-                      <strong class="address-strong">Inne: </strong>itsatrapescape@gmail.com<br />
                   </p>
                   <h3 class="address-header">Numery telefonów</h3>
                   <p class="address-paragraph">
-                      <strong class="address-strong">Strona internetowa: </strong>501568148<br />
-                      <strong class="address-strong">Rezerwacje: </strong>500500100<br />
-                      <strong class="address-strong">Inne: </strong>800800900<br />
+                      <strong class="address-strong">Rezerwacje:</strong> 667 562 208<br />
+                      <strong class="address-strong">Strona internetowa:</strong> 501 569 148<br />
                   </p>
-                <address>
+                <div>
             </div>
         </div>
         <div class="footer-copy">
             <div class="wrapper">
                 <p class="footer-copy-paragraph"> &copy; Copyright Exterasys 2016 </p>
-                <a class="button footer-copy-button" href="/tajemnica-hrabiego-cromwella.html">Rezerwuj </a>
+                <a class="button footer-copy-button" href="/tajemnica-hrabiego-cromwella.html">Rezerwuj</a>
             </div>
         </div>
     </footer>
     <div class="loader">
-        <img class="loader-logo" src="images/logo.png"/>
+        <img class="loader-logo" src="images/logo.png" alt="Logo It's a Trap"/>
     </div>
     <div id="fb-root"></div>
 
@@ -588,12 +446,14 @@
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-83517726-1', 'auto');
+        ga('send', 'pageview');
+
     </script>
 
 

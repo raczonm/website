@@ -36,7 +36,6 @@
     }
 }
 
-//FIXED NAVS
 .fixed-navs {
     color: $white;
     opacity: 0;
@@ -721,7 +720,7 @@
             background-size: 100%;
 
             &:before {
-                background: url('../images/menu-pirates-hover.png') no-repeat;
+                //background: url('../images/menu-pirates-hover.png') no-repeat;
                 background-size: 100%;
             }
 
@@ -752,7 +751,7 @@
             background-size: 100%;
 
             &:before {
-                background: url('../images/menu-garden-hover.png') no-repeat;
+                //background: url('../images/menu-garden-hover.png') no-repeat;
                 background-size: 100%;
             }
 
@@ -1178,6 +1177,7 @@
     &-paragraph {
         font-size: 0.3em;
         margin-bottom: 1.3em;
+        line-height: 1.3em;
 
         @media #{$media-tablet} {
             font-size: 0.35em;
