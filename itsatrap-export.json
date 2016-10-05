@@ -1,0 +1,236 @@
+{
+  "hints" : {
+    "attic" : {
+      "active" : false,
+      "adhoc" : "",
+      "language" : "pl",
+      "list" : [ {
+        "id" : 1,
+        "img" : "",
+        "name" : "Ouija - list",
+        "text" : "Jeszcze raz rzuć okiem na list w na biurku.",
+        "text_eng" : "Take another look at the letter on the desk",
+        "type" : "text"
+      }, {
+        "id" : 2,
+        "img" : "",
+        "name" : "Ouija - tekst",
+        "text" : "Przywołaj mnie po imieniu",
+        "text_eng" : "Call me by my name",
+        "type" : "text"
+      }, {
+        "id" : 3,
+        "img" : "",
+        "name" : "Kolejność obrazów",
+        "text" : "Miej na uwadze portrety podziwiając <br />że czasem szczegóły są najważniejsze <br />Pamiętaj rodzinne pamiątki oglądając <br />to co najstarsze jest zawsze pierwsze",
+        "text_eng" : "If You don't want to fail <br />pay attention to every detail <br />If You don't want to be cursed <br />remember: The oldest always comes first",
+        "type" : "text"
+      }, {
+        "id" : 4,
+        "img" : "",
+        "name" : "Walizka",
+        "text" : "Każdej nocy między marzeniami <br />Zabieram walizkę i podążam za śladami",
+        "text_eng" : "Each night between my dreams <br />I take my case and follow footprints",
+        "type" : "text"
+      }, {
+        "id" : 5,
+        "img" : "",
+        "name" : "Puzzle",
+        "text" : "Cromwell zapisał znaczenie symboli na skórze. Znajdź wszystkie fragmenty i złóż je w całość",
+        "text_eng" : "Cromwell wrote down symbols meaning on the leather. Find all the pieces and put them together",
+        "type" : "text"
+      }, {
+        "id" : 6,
+        "img" : "",
+        "name" : "Przeoczony artykuł",
+        "text" : "Zajrzyj do dziennika",
+        "text_eng" : "Review the journal",
+        "type" : "text"
+      }, {
+        "id" : 7,
+        "img" : "",
+        "name" : "Potrzebne składniki",
+        "text" : "Cromwell chciał odtworzyć Eliksir Nieśmiertelności. Jakich składników potrzebował?",
+        "text_eng" : "Cromwell wanted to recreate the Elixir of Immortality. Which ingredients did he need?",
+        "type" : "text"
+      }, {
+        "id" : 8,
+        "img" : "",
+        "name" : "Encyklopedie",
+        "text" : "Gdy w głowie pustka zapanuje <br />I CHAOS wróżący tragedię <br />Tylko wiedza Cię uratuje <br />Więc sięgnij po encyklopedię",
+        "text_eng" : "When Your mind is blank <br /> and CHAOS is near <br /> My Encyklopedia, <br />will be usefull here ",
+        "type" : "text"
+      }, {
+        "id" : 9,
+        "img" : "",
+        "name" : "Cyfry z telefonu",
+        "text" : "Dwie brakujące cyfry potrzebne do otwarcia sejfu pochodzą z telefonu",
+        "text_eng" : "Two missing letters, which You need to open the safe, comes from telephone",
+        "type" : "text"
+      }, {
+        "id" : 10,
+        "img" : "",
+        "name" : "Tarot",
+        "text" : "Trzy kolory i trzy cyfry <br />Zamęt sieją w Twojej głowie <br /> Szukaj kluczy tej zagadki <br /> Tylko Tarot Ci podpowie",
+        "text_eng" : "Three different colours <br /> Three different numbers <br />Look for the keys that is the clue <br /> To win this game look at the cards <br /> Only Tarot will tell You the truth",
+        "type" : "text"
+      }, {
+        "id" : 11,
+        "img" : "",
+        "name" : "Obrazy",
+        "text" : "Pięciu członków rodziny <br />Każdy zostawił pamiątkę <br /> Przyjrzyj się im uważnie <br /> A otrzymasz cyfr piątkę",
+        "text_eng" : "Five family heirlooms <br /> Left by five family members <br /> Look at them very carefully <br /> And You will see all five numbers",
+        "type" : "text"
+      }, {
+        "id" : 12,
+        "img" : "",
+        "name" : "Szyfr",
+        "text" : "Podążaj za symbolami <br /> One wskażą Ci słowo <br /> Gdy znajdziez literę rusz w prawo <br /> I zacznij na nowo",
+        "text_eng" : "Follow the symbols to get the word <br /> When You find a letter use Your brain <br /> One step to the right and start again ",
+        "type" : "text"
+      }, {
+        "id" : 13,
+        "img" : "images/hints/skull.jpg",
+        "name" : "Czaszka",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 14,
+        "img" : "images/hints/ouija.jpg",
+        "name" : "Ouija",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 15,
+        "img" : "images/hints/pharmacy.jpg",
+        "name" : "Pudełko Pharmacy",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 16,
+        "img" : "images/hints/hat.jpg",
+        "name" : "Obraz - Kapelusz",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 17,
+        "img" : "images/hints/cup.jpg",
+        "name" : "Obraz - Kielich",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 18,
+        "img" : "images/hints/ring.jpg",
+        "name" : "Obraz - Pierścień",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 19,
+        "img" : "images/hints/staff.jpg",
+        "name" : "Obraz - Laska",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 20,
+        "img" : "images/hints/potions.jpg",
+        "name" : "Alchemia - składniki",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 21,
+        "img" : "images/hints/scrolls.jpg",
+        "name" : "Alchemia - receptury",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 22,
+        "img" : "images/hints/code.jpg",
+        "name" : "Zagadka z szyfrem",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 23,
+        "img" : "images/hints/tarot.jpg",
+        "name" : "Tarot",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 24,
+        "img" : "images/hints/davinci.jpg",
+        "name" : "Davinci",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 24,
+        "img" : "images/hints/5numbers.jpg",
+        "name" : "Kłódla 5 cyfrowa",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 24,
+        "img" : "images/hints/books.jpg",
+        "name" : "Encyklopedie",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 25,
+        "img" : "images/hints/box.jpg",
+        "name" : "Kłódka 4 cyfrowa",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 26,
+        "img" : "images/hints/cage.jpg",
+        "name" : "Klatka",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 27,
+        "img" : "images/hints/empty_painting.jpg",
+        "name" : "Obraz do ultrafioletu",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 28,
+        "img" : "images/hints/mortar.jpg",
+        "name" : "Moździerz",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 29,
+        "img" : "images/hints/scarf.jpg",
+        "name" : "Szalik",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }, {
+        "id" : 30,
+        "img" : "images/hints/small_closet.jpg",
+        "name" : "Nakastlik",
+        "text" : "",
+        "text_eng" : "",
+        "type" : "image"
+      }],
+      "started" : false,
+      "timer" : false
+    }
+  }
+}

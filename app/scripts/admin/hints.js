@@ -45,6 +45,7 @@
         room.startGame = function(){
             room.ui.$switch.addClass('on');
             room.ui.$section.addClass('running');
+            room.ui.$adhocInput.val('');
             room.data.on('value', room.printHints);
             room.data.update({'started': true, 'timer': Date.now(), 'active': false, 'adhoc': ''});
             room.startTimer();
@@ -74,23 +75,28 @@
             room.ui.$languageSwitch.removeClass('eng');
         };
         room.startTimer = function(){
-            var count = 3600 - (room.timeGone || 0);
+            var count = 10 - (room.timeGone || 0);
             function timer() {
                 count = count - 1;
                 if (count <= 0) {
-                    room.stopGame();
-                    return;
+                  console.log('?');
+                    clearInterval(room.timeCounter);
+                    room.timeCounter = setInterval(timerUp, 1000); //1000 will  run it every 1 second
                 }
                 var seconds = count % 60;
                 var minutes = Math.floor(count / 60);
                 minutes %= 60;
                 room.ui.$timer.html(minutes + ':' + seconds); // watch for spelling
             }
-
+            function timerUp() {
+                count = count + 1;
+                var seconds = count % 60;
+                var minutes = Math.floor(count / 60);
+                minutes %= 60;
+                room.ui.$timer.html('-' + minutes + ':' + seconds); // watch for spelling
+            }
 
             room.timeCounter = setInterval(timer, 1000); //1000 will  run it every 1 second
-
-
         };
         room.printHints = function(snapshot){
             var list = room.ui.$list;
@@ -105,17 +111,18 @@
                     content = item.type === 'text' ? '<p class="hints-list-item-text">' + textPrimary + '<span class="hints-list-item-text-small">' + textSmall + '</span></p>' : '<img class="hints-list-item-image" src="/' + item.img + '" />',
                     button = '<a class="hints-list-item-button button" data-id="' + item.id + '">Set active</a>',
                     el = $('<li data-id="' + item.id + '" class="hints-list-item ' + active + '"> <h4 class="hints-list-item-title">' + item.name + '</h4>' + content + button + '</li>');
-                // el.on('click', function(){
-                //     room.setActiveHint($(this).data('id'));
-                // });
+
                 // UNCOMMENT THIS WHEN READY
                 list.append(el);
             }
+            list.find('li').on('click', function(){
+                room.setActiveHint($(this).data('id'));
+            });
         };
 
         room.data.once('value', function(snapshot){
             var data = snapshot.val();
-            if (data.started) {
+            if (data && data.started) {
                 room.timeGone = Math.round((Date.now() - data.timer) / 1000);
                 if(room.timeGone < 3600){
                     room.restartGame(data);
