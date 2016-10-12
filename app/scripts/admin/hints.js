@@ -75,7 +75,7 @@
             room.ui.$languageSwitch.removeClass('eng');
         };
         room.startTimer = function(){
-            var count = 10 - (room.timeGone || 0);
+            var count = 3600 - (room.timeGone || 0);
             function timer() {
                 count = count - 1;
                 if (count <= 0) {

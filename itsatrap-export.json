@@ -7,16 +7,9 @@
       "list" : [ {
         "id" : 1,
         "img" : "",
-        "name" : "Ouija - list",
-        "text" : "Jeszcze raz rzuć okiem na list w na biurku.",
+        "name" : "Światło",
+        "text" : "Lucius w liscie Ci napisał <br />Że w tej dziwnej posiadłości <br />Pewne rzeczy, pewne słowa <br />Dostrzegalne są w ciemności",
         "text_eng" : "Take another look at the letter on the desk",
-        "type" : "text"
-      }, {
-        "id" : 2,
-        "img" : "",
-        "name" : "Ouija - tekst",
-        "text" : "Przywołaj mnie po imieniu",
-        "text_eng" : "Call me by my name",
         "type" : "text"
       }, {
         "id" : 3,
@@ -36,14 +29,14 @@
         "id" : 5,
         "img" : "",
         "name" : "Puzzle",
-        "text" : "Cromwell zapisał znaczenie symboli na skórze. Znajdź wszystkie fragmenty i złóż je w całość",
+        "text" : "Dziwne cztery te składniki <br />Oznaczone symbolami <br />Teraz pomóc możesz sobie <br />Tylko skóry kawałkami",
         "text_eng" : "Cromwell wrote down symbols meaning on the leather. Find all the pieces and put them together",
         "type" : "text"
       }, {
         "id" : 6,
         "img" : "",
         "name" : "Przeoczony artykuł",
-        "text" : "Zajrzyj do dziennika",
+        "text" : "Odnalazłeś tajne przejście <br />Lecz co dalej, cel zanika <br />Czego szukać w tej pracowni <br />Szalonego alchemika?  <br />By rozwiązać te zagadkę <br />Zajrzyj znowu do dziennika",
         "text_eng" : "Review the journal",
         "type" : "text"
       }, {
@@ -64,7 +57,7 @@
         "id" : 9,
         "img" : "",
         "name" : "Cyfry z telefonu",
-        "text" : "Dwie brakujące cyfry potrzebne do otwarcia sejfu pochodzą z telefonu",
+        "text" : "Jesteś już tak blisko wyjścia <br />Lecz brak cyfr Ci nie pomoże <br />Brakujących nie zobaczysz <br />Lecz usłyszeć o nich możesz",
         "text_eng" : "Two missing letters, which You need to open the safe, comes from telephone",
         "type" : "text"
       }, {
@@ -90,139 +83,146 @@
         "type" : "text"
       }, {
         "id" : 13,
+        "img" : "",
+        "name" : "Skóra do szyfru",
+        "text" : "Ważne słowo z pięciu liter <br />W labiryncie jest schowane <br />Drogę wskażą Ci symbole <br />Te na skórze zapisane",
+        "text_eng" : "Follow the symbols to get the word <br /> When You find a letter use Your brain <br /> One step to the right and start again ",
+        "type" : "text"
+      }, {
+        "id" : 14,
         "img" : "images/hints/skull.jpg",
         "name" : "Czaszka",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 14,
+        "id" : 15,
         "img" : "images/hints/ouija.jpg",
         "name" : "Ouija",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 15,
+        "id" : 16,
         "img" : "images/hints/pharmacy.jpg",
         "name" : "Pudełko Pharmacy",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 16,
+        "id" : 17,
         "img" : "images/hints/hat.jpg",
         "name" : "Obraz - Kapelusz",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 17,
+        "id" : 18,
         "img" : "images/hints/cup.jpg",
         "name" : "Obraz - Kielich",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 18,
+        "id" : 19,
         "img" : "images/hints/ring.jpg",
         "name" : "Obraz - Pierścień",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 19,
+        "id" : 20,
         "img" : "images/hints/staff.jpg",
         "name" : "Obraz - Laska",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 20,
+        "id" : 21,
         "img" : "images/hints/potions.jpg",
         "name" : "Alchemia - składniki",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 21,
+        "id" : 22,
         "img" : "images/hints/scrolls.jpg",
         "name" : "Alchemia - receptury",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 22,
+        "id" : 23,
         "img" : "images/hints/code.jpg",
         "name" : "Zagadka z szyfrem",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 23,
+        "id" : 24,
         "img" : "images/hints/tarot.jpg",
         "name" : "Tarot",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 24,
+        "id" : 25,
         "img" : "images/hints/davinci.jpg",
         "name" : "Davinci",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 24,
+        "id" : 26,
         "img" : "images/hints/5numbers.jpg",
         "name" : "Kłódla 5 cyfrowa",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 24,
+        "id" : 27,
         "img" : "images/hints/books.jpg",
         "name" : "Encyklopedie",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 25,
+        "id" : 28,
         "img" : "images/hints/box.jpg",
         "name" : "Kłódka 4 cyfrowa",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 26,
+        "id" : 29,
         "img" : "images/hints/cage.jpg",
         "name" : "Klatka",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 27,
+        "id" : 30,
         "img" : "images/hints/empty_painting.jpg",
         "name" : "Obraz do ultrafioletu",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 28,
+        "id" : 31,
         "img" : "images/hints/mortar.jpg",
         "name" : "Moździerz",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 29,
+        "id" : 32,
         "img" : "images/hints/scarf.jpg",
         "name" : "Szalik",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
       }, {
-        "id" : 30,
+        "id" : 33,
         "img" : "images/hints/small_closet.jpg",
         "name" : "Nakastlik",
         "text" : "",

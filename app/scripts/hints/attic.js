@@ -10,7 +10,7 @@
         function startTimer() {
             timerStarted = true;
             var timeGone = 0;
-            var count = 10 - (timeGone || 0);
+            var count = 3600 - (timeGone || 0);
             function timer() {
                 count = count - 1;
                 if (count <= 0) {
