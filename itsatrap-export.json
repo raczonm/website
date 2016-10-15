@@ -9,7 +9,7 @@
         "img" : "",
         "name" : "Światło",
         "text" : "Lucius w liscie Ci napisał <br />Że w tej dziwnej posiadłości <br />Pewne rzeczy, pewne słowa <br />Dostrzegalne są w ciemności",
-        "text_eng" : "Take another look at the letter on the desk",
+        "text_eng" : "In his letter Lucius wrote <br />That very wary you should be <br />There are things and also words <br />That in the darkness you can see",
         "type" : "text"
       }, {
         "id" : 3,
@@ -23,28 +23,28 @@
         "img" : "",
         "name" : "Walizka",
         "text" : "Każdej nocy między marzeniami <br />Zabieram walizkę i podążam za śladami",
-        "text_eng" : "Each night between my dreams <br />I take my case and follow footprints",
+        "text_eng" : "Every night between my dreams <br />I take my case and follow prints",
         "type" : "text"
       }, {
         "id" : 5,
         "img" : "",
         "name" : "Puzzle",
         "text" : "Dziwne cztery te składniki <br />Oznaczone symbolami <br />Teraz pomóc możesz sobie <br />Tylko skóry kawałkami",
-        "text_eng" : "Cromwell wrote down symbols meaning on the leather. Find all the pieces and put them together",
+        "text_eng" : "Four components make four symbols <br /> You can see them on the leather <br /> To decipher this elixir <br />Find them and put all together",
         "type" : "text"
       }, {
         "id" : 6,
         "img" : "",
         "name" : "Przeoczony artykuł",
         "text" : "Odnalazłeś tajne przejście <br />Lecz co dalej, cel zanika <br />Czego szukać w tej pracowni <br />Szalonego alchemika?  <br />By rozwiązać te zagadkę <br />Zajrzyj znowu do dziennika",
-        "text_eng" : "Review the journal",
+        "text_eng" : "Where are you? Is it a trap? <br />What to look for in this place <br />In alchemist's secret lab? <br />How to start this new inquiry? <br />Look at Lucius secret diary",
         "type" : "text"
       }, {
         "id" : 7,
         "img" : "",
         "name" : "Potrzebne składniki",
-        "text" : "Cromwell chciał odtworzyć Eliksir Nieśmiertelności. Jakich składników potrzebował?",
-        "text_eng" : "Cromwell wanted to recreate the Elixir of Immortality. Which ingredients did he need?",
+        "text" : "Lucius chciał stworzyć eliksir <br />Który czyni nieśmiertelnym <br />Znalazł przepis, cel miał ziścić <br />Odtworzeniem jego wiernym",
+        "text_eng" : "Lucius Cromwell had one desire <br />The immortality was his need <br />How to make this weird elixir? <br />Find the recipe and you'll succeed",
         "type" : "text"
       }, {
         "id" : 8,
