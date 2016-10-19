@@ -1,31 +1,17 @@
 @import 'bower_components/reset-css/_reset';
-
 @import 'elements';
-
-@font-face {
-    font-family: 'anton';
-    src: url('../fonts/anton-webfont.eot');
-    src: url('../fonts/anton-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/anton-webfont.woff2') format('woff2'),
-         url('../fonts/anton-webfont.woff') format('woff'),
-         url('../fonts/anton-webfont.ttf') format('truetype'),
-         url('../fonts/anton-webfont.svg#antonregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 
 @mixin active-button(){
     position: absolute;
-    top: 20px;
-    font-size: 17px;
-    right: 30px;
-    width: 160px;
+    top: 10px;
+    font-size: 13px;
+    right: 10px;
+    width: 100px;
     text-align: center;
     display: inline-block;
     text-transform: uppercase;
-    @include font-sans();
     color: rgba(255,255,255,0.7);
-    padding: 32px;
+    padding: 17px 12px;
     cursor:pointer;
     @include linear-gradient-left(rgba(25,83,183,0.7), rgba(25,83,183,0.9));
 
@@ -54,22 +40,10 @@ html {
     font-size: 0;
     min-height: 100%;
     background-attachment: fixed;
-    @include font-sans();
+    font-family: sans-serif;
+    font-weight: 100;
 }
 
-.title {
-    font-size: 80px;
-    padding: 40px;
-    text-align: center;
-    color: $white;
-    text-transform: uppercase;
-    font-weight: normal;
-    opacity: 0.7;
-
-    &-strong {
-        color: $main-red;
-    }
-}
 
 .hints {
     display: inline-block;
@@ -79,7 +53,7 @@ html {
     vertical-align: top;
     position: relative;
     height: 100vh;
-    padding-top: 210px;
+    padding-top: 140px;
     border-right: 3px solid rgba(255,255,255,0.3);
     -webkit-filter: grayscale(70%); /* Chrome, Safari, Opera */
     filter: grayscale(70%);
@@ -91,45 +65,90 @@ html {
     }
 
     &-header {
-        height: 210px;
-        background:rgba(0,0,0,0.5);
-        border-bottom: 3px solid rgba(255,255,255,0.3);
+        height: 130px;
+        background:rgba(0,0,0,0.8);
+        border-bottom: 1px solid rgba(255,255,255,0.7);
         position:absolute;
         width:100%;
         top: 0;
 
         &-title {
             color: rgba(255,255,255,0.7);
-            padding: 15px 30px 20px;
+            padding: 10px;
             text-transform: uppercase;
-            font-size: 50px;
-            border-bottom: 3px solid rgba(255,255,255,0.3);
+            font-size: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
         }
 
         &-timer {
-            padding-left: 1em;
-            font-size:0.8em;
             display:inline-block;
-            vertical-align: top;
-            padding-top:0.1em;
             color: rgba(25,83,183,0.5);
+        }
+
+        &-levels {
+            display: inline-block;
+            font-size: 14px;
+            margin: 0 10px;
+            vertical-align: top;
+
+            &-item {
+                border: 1px solid rgba(255,255,255,0.3);
+                padding: 12px;
+                display: inline-block;
+                cursor: pointer;
+
+                &:hover {
+                    background: rgba(255,255,255,0.1);
+                }
+
+                &.active {
+                    background: rgba(255,255,255,0.15);
+                    border: 1px solid rgba(255,255,255,0.8);
+                }
+            }
+        }
+
+        &-menu {
+            font-size: 0px;
+            font-weight: 100;
+            text-transform: none;
+            display: inline-block;
+            float: right;
+            margin: -10px 20px;
+
+            &-item {
+                border-left: 1px solid rgba(255,255,255,0.3);
+                padding: 24px;
+                font-size: 12px;
+                display: inline-block;
+                cursor: pointer;
+                @include transition(all 0.3s linear);
+
+                &:hover {
+                    background: rgba(255,255,255,0.15)
+                }
+
+                &:last-child {
+                    border-right: 1px solid rgba(255,255,255,0.3);
+                }
+            }
         }
 
         &-switch {
             display: inline-block;
-            float:right;
-            padding: 12px;
-            border: 3px solid rgba(255,255,255,0.7);
-            font-size: 24px;
-            width:82px;
+            float: right;
+            padding: 11px 16px 9px;
+            border: 1px solid rgba(255,255,255,0.7);
+            font-size: 16px;
+            width: 82px;
             position: relative;
             cursor: pointer;
-            @include rounded(5px);
             overflow: hidden;
             @include transition(all 0.2s linear);
 
             &:hover {
-                background-color: rgba(255,255,255,0.2);
+                background-color: rgba(255,255,255,1);
+                color: $black;
             }
 
             &:before {
@@ -161,7 +180,7 @@ html {
             }
         }
         &-adhoc {
-            padding: 20px 220px 20px 30px;
+            padding: 10px 120px 10px 10px;
             position: relative;
             font-size: 20px;
             &.active {
@@ -169,19 +188,21 @@ html {
             }
 
             &-text {
-                border:1px solid rgba(255,255,255,0.5);
+                border: 1px solid rgba(255,255,255,0.3);
                 background: rgba(255,255,255,0.1);
-                height: 80px;
+                height: 47px;
                 padding: 10px;
                 @include box-sizing;
+                font-weight: 100;
+                outline: none;
                 width:100%;
                 color: rgba(255,255,255,0.7);
                 font-size: 16px;
 
                 &:focus {
                     color: rgba(255,255,255,0.8);
-                    border:1px solid rgba(255,255,255,0.8);
-                    background: rgba(255,255,255,0.3);
+                    border: 1px solid rgba(255,255,255,0.8);
+                    background: rgba(255,255,255,0.15);
                 }
             }
 
@@ -189,7 +210,7 @@ html {
                 @include active-button();
 
                 &:before {
-                    content: "Set Active";
+                    content: "Set";
                 }
 
                 &:after {
@@ -216,125 +237,54 @@ html {
             }
         }
     }
-    &-footer {
-        background: rgba(0,0,0,0.5);
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        font-size: 30px;
-        text-align: center;
-        z-index:11;
-
-        &-language-button {
-            display: inline-block;
-            padding: 16px;
-            margin-top:22px;
-            border: 3px solid rgba(255,255,255,0.7);
-            font-size: 20px;
-            width: 250px;
-            text-transform: uppercase;
-            color: $white;
-            cursor: pointer;
-            @include rounded(5px);
-            overflow: hidden;
-            opacity:  0.7;
-            @include transition(all 0.2s linear);
-
-            &:hover {
-                opacity: 1;
-            }
-
-            &:before {
-                content: "switch to english";
-            }
-
-            &:after {
-                content: "switch to polish";
-                display:none;
-            }
-
-            &.eng {
-                &:before {
-                    display: none;
-                }
-
-                &:after {
-                    display: inline;
-                }
-            }
-        }
-    }
 
     &-list {
         color: $white;
         position: absolute;
         width: 100%;
-        bottom: 100px;
-        top: 210px;
+        bottom: 10px;
+        top: 130px;
         overflow:auto;
         font-size: 20px;
 
         &-item {
             @include linear-gradient-left(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
-            padding: 10px 10px 10px 10px;
-            margin: 15px 0.2%;
+            padding: 20px;
+            margin: 10px 0.2% 0;
             box-sizing: border-box;
             -webkit-box-sizing: border-box;
             vertical-align: middle;
             min-height: 120px;
             width: 24.6%;
-            height:300px;
+            height: 300px;
             display: inline-block;
             position: relative;
-            border:none;
-            overflow:hidden;
-
-            &:last-child {
-                border-bottom: none;
-            }
+            border: none;
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid transparent;
 
             &.active {
                 @include linear-gradient-left(rgba(0,0,0,0.05), rgba(0,0,0,0.33));
-
-                .hints-list-item-button {
-                    display: none;
-                }
+                border: 1px solid rgba(255,255,255,0.7)
             }
 
             &-title {
                 display: block;
                 text-transform: uppercase;
                 font-size: 20px;
+                font-weight: 400;
                 padding-bottom: 10px;
                 color: rgba(255,255,255,0.8);
             }
 
             &-text {
-                font-size: 18px;
+                font-size: 14px;
                 color: rgba(255,255,255,0.7);
-
-                &-small {
-                    display: block;
-                    font-size:10px;
-                    margin-top:5px;
-                    color: rgba(255,255,255,0.5);
-                }
             }
 
             &-image {
                 width:100%;
-            }
-
-            &-button {
-                @include active-button();
-                bottom:30px;
-                top:auto;
-                left:10px;
-                right:10px;
-                width:auto;
-                padding:10px;
             }
         }
     }

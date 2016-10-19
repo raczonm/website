@@ -24,15 +24,28 @@
   <body class="body">
       <section class="hints attic" data-room="attic">
           <header class="hints-header pl">
-              <h2 class="hints-header-title">Attic room<span class="hints-header-timer">--:--</span><a class="button hints-header-switch"></a></h2>
+              <h2 class="hints-header-title">
+                  <span class="hints-header-timer">--:--</span>
+                  <ul class="hints-header-levels">
+                      <li class="hints-header-levels-item active">0</li>
+                      <li class="hints-header-levels-item active">1</li>
+                      <li class="hints-header-levels-item">2</li>
+                      <li class="hints-header-levels-item">3</li>
+                      <li class="hints-header-levels-item">4</li>
+                  </ul>
+                  <a class="button hints-header-switch"></a>
+                  <ul class="hints-header-menu">
+                      <li class="hints-header-menu-item"><a class="hints-header-menu-item-link clear-active">Clear</a></li>
+                      <li class="hints-header-menu-item"><a class="hints-header-menu-item-link language-switch">PL</a></li>
+                      <li class="hints-header-menu-item"><a class="hints-header-menu-item-link add-time">Add time</a></li>
+                  </ul>
+              </h2>
               <div class="hints-header-adhoc">
-                  <textarea placeholder="place for adhoc hint" class="hints-header-adhoc-text"></textarea>
+                  <textarea placeholder="Hint..." class="hints-header-adhoc-text"></textarea>
                   <a class="button hints-header-adhoc-button"></a>
               </div>
+
           </header>
-          <footer class="hints-footer">
-              <a class="button hints-footer-language-button"></a>
-          </footer>
           <ul class="hints-list"></ul>
       </section>
       <!-- <section class="hints pirates" data-room="pirates">
