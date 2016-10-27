@@ -3,6 +3,76 @@
 @import 'elements';
 @import 'globals';
 
+//Promo
+.promo-splash {
+    position:fixed;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background: $black;
+
+    &-image {
+        max-width: 80vh;
+        display: block;
+        margin: 0 auto;
+        max-height: 75vh;
+
+        @media #{$media-phone} {
+            max-width: 100%;
+            margin-top: 30px;
+        }
+    }
+
+    &-action {
+        display: block;;
+        font-size: 5vh;
+        padding: 3vh 7vh;
+        margin: -1vh auto 0;
+        width: 40vh;
+        text-transform: uppercase;
+        @include font-sans();
+        background: #fc8505;
+        color: $white;
+        opacity: 0.8;
+        cursor: pointer;
+        border-bottom: 2px solid #ffd236;
+    }
+
+    &-description {
+        font-size: 12px;
+        color: $white;
+        font-weight: 100;
+        font-style: italic;
+        margin: 20px auto 0;
+        max-width: 500px;
+        opacity: 0.6;
+        line-height: 14px;
+        @media #{$media-phone} {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+    }
+
+    &-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #fc8505;
+        font-size: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+        opacity: 0.6;
+        @include font-sans;
+
+        &:hover {
+          opacity: 0.8;
+        }
+    }
+}
+
 //LOADER
 .loader {
     background: url('../images/blur.jpg') center center;

@@ -27,7 +27,9 @@
             mailFrom: $('#from_name'),
             mailMessage: $('#message_html'),
             mailSend: $('.form-button'),
-            mailHint: $('.hint')
+            mailHint: $('.hint'),
+            promoSplash: $('.promo-splash'),
+            closePromo: $('.promo-splash-close')
         };
 
         app.bindEvents = function() {
@@ -53,6 +55,10 @@
 
             this.ui.mailSend.on('click', function(){
                 this.sendMail();
+            }.bind(this));
+
+            this.ui.closePromo.on('click', function() {
+                this.ui.promoSplash.remove();
             }.bind(this));
         };
 
