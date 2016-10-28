@@ -16,7 +16,7 @@ $media-phone: "only screen and (max-width : 500px)";
     background-color: rgba(188,40,37,$opacity);
 }
 
-@mixin box-sizing(){
+@mixin box-sizing() {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

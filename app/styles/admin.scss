@@ -1,7 +1,7 @@
 @import 'bower_components/reset-css/_reset';
 @import 'elements';
 
-@mixin active-button(){
+@mixin active-button() {
     position: absolute;
     top: 10px;
     font-size: 13px;
@@ -48,7 +48,7 @@ html {
 .hints {
     display: inline-block;
     width: 100%;
-    min-height:100%;
+    min-height: 100%;
     font-size: 10vw;
     vertical-align: top;
     position: relative;
@@ -66,10 +66,10 @@ html {
 
     &-header {
         height: 130px;
-        background:rgba(0,0,0,0.8);
+        background: rgba(0,0,0,0.8);
         border-bottom: 1px solid rgba(255,255,255,0.7);
-        position:absolute;
-        width:100%;
+        position: absolute;
+        width: 100%;
         top: 0;
 
         &-title {
@@ -81,7 +81,7 @@ html {
         }
 
         &-timer {
-            display:inline-block;
+            display: inline-block;
             color: rgba(25,83,183,0.5);
         }
 
@@ -183,6 +183,7 @@ html {
             padding: 10px 120px 10px 10px;
             position: relative;
             font-size: 20px;
+
             &.active {
                 @include linear-gradient-left(rgba(255,255,255,0.05), rgba(255,255,255,0.1));
             }
@@ -195,7 +196,7 @@ html {
                 @include box-sizing;
                 font-weight: 100;
                 outline: none;
-                width:100%;
+                width: 100%;
                 color: rgba(255,255,255,0.7);
                 font-size: 16px;
 
@@ -244,7 +245,7 @@ html {
         width: 100%;
         bottom: 10px;
         top: 130px;
-        overflow:auto;
+        overflow: auto;
         font-size: 20px;
 
         &-item {
@@ -284,7 +285,7 @@ html {
             }
 
             &-image {
-                width:100%;
+                width: 100%;
             }
         }
     }
@@ -303,6 +304,7 @@ html {
 
             &-adhoc-button {
                 @include linear-gradient-left(rgba(232,175,6,0.2), rgba(232,175,6,0.6));
+
                 &:hover {
                       @include linear-gradient-left(rgba(232,175,6,0.4), rgba(232,175,6,0.8));
                 }
@@ -311,6 +313,7 @@ html {
 
         .hints-list-item-button {
             @include linear-gradient-left(rgba(232,175,6,0.2), rgba(232,175,6,0.6));
+
             &:hover {
                   @include linear-gradient-left(rgba(232,175,6,0.4), rgba(232,175,6,0.8));
             }
@@ -328,6 +331,7 @@ html {
 
             &-adhoc-button {
                 @include linear-gradient-left(rgba(0,124,6,0.2), rgba(0,124,6,0.6));
+
                 &:hover {
                       @include linear-gradient-left(rgba(0,124,6,0.4), rgba(0,124,6,0.8));
                 }
@@ -336,6 +340,7 @@ html {
 
         .hints-list-item-button {
             @include linear-gradient-left(rgba(0,124,6,0.2), rgba(0,124,6,0.6));
+
             &:hover {
                   @include linear-gradient-left(rgba(0,124,6,0.4), rgba(0,124,6,0.8));
             }
