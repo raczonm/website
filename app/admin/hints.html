@@ -24,56 +24,32 @@
   <body class="body">
       <section class="hints attic" data-room="attic">
           <header class="hints-header pl">
-              <h2 class="hints-header-title">
-                  <span class="hints-header-timer">--:--</span>
-                  <ul class="hints-header-levels">
-                      <li class="hints-header-levels-item active">0</li>
-                      <li class="hints-header-levels-item active">1</li>
-                      <li class="hints-header-levels-item">2</li>
-                      <li class="hints-header-levels-item">3</li>
-                      <li class="hints-header-levels-item">4</li>
-                  </ul>
-                  <a class="button hints-header-switch"></a>
-                  <ul class="hints-header-menu">
-                      <li class="hints-header-menu-item"><a class="hints-header-menu-item-link clear-active">Clear</a></li>
-                      <li class="hints-header-menu-item"><a class="hints-header-menu-item-link language-switch">PL</a></li>
-                      <li class="hints-header-menu-item"><a class="hints-header-menu-item-link add-time">Add time</a></li>
-                  </ul>
-              </h2>
+              <div class="hints-header-right">
+                  <a class="hints-header-button js-start">Start</a>
+                  <div class="hints-header-timer">--:--</div>
+              <div>
+              <ul class="hints-header-levels">
+                  <li class="hints-header-levels-label">Level</li>
+                  <li class="hints-header-levels-item active">0</li>
+                  <li class="hints-header-levels-item active">1</li>
+                  <li class="hints-header-levels-item">2</li>
+                  <li class="hints-header-levels-item">3</li>
+                  <li class="hints-header-levels-item">4</li>
+              </ul>
+              <!-- <a class="button hints-header-switch"></a> -->
+              <ul class="hints-header-menu">
+                  <li class="hints-header-menu-item"><a class="hints-header-menu-item-link clear-active">Clear</a></li>
+                  <li class="hints-header-menu-item"><a class="hints-header-menu-item-link language-switch">PL</a></li>
+                  <li class="hints-header-menu-item"><a class="hints-header-menu-item-link add-time">Add time</a></li>
+                  <li class="hints-header-menu-item"><a class="hints-header-menu-item-link add-pause">Pause</a></li>
+              </ul>
               <div class="hints-header-adhoc">
                   <textarea placeholder="Hint..." class="hints-header-adhoc-text"></textarea>
                   <a class="button hints-header-adhoc-button"></a>
               </div>
-
           </header>
           <ul class="hints-list"></ul>
       </section>
-      <!-- <section class="hints pirates" data-room="pirates">
-          <header class="hints-header pl">
-              <h2 class="hints-header-title">Pirates room<span class="hints-header-timer">--:--</span><a class="button hints-header-switch"></a></h2>
-              <div class="hints-header-adhoc">
-                  <textarea placeholder="place for adhoc hint" class="hints-header-adhoc-text"></textarea>
-                  <a class="button hints-header-adhoc-button"></a>
-              </div>
-          </header>
-          <footer class="hints-footer">
-              <a class="button hints-footer-language-button"></a>
-          </footer>
-          <ul class="hints-list"></ul>
-      </section>
-      <section class="hints garden" data-room="garden">
-          <header class="hints-header pl">
-              <h2 class="hints-header-title">Garden room<span class="hints-header-timer">--:--</span><a class="button hints-header-switch"></a></h2>
-              <div class="hints-header-adhoc">
-                  <textarea placeholder="place for adhoc hint" class="hints-header-adhoc-text"></textarea>
-                  <a class="button hints-header-adhoc-button"></a>
-              </div>
-          </header>
-          <footer class="hints-footer">
-              <a class="button hints-footer-language-button"></a>
-          </footer>
-          <ul class="hints-list"></ul>
-      </section> -->
       <!--[if lt IE 10]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
