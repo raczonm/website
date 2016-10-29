@@ -1,26 +1,6 @@
 @import 'bower_components/reset-css/_reset';
 @import 'elements';
 
-@mixin active-button() {
-    position: absolute;
-    top: 10px;
-    font-size: 13px;
-    right: 10px;
-    width: 100px;
-    text-align: center;
-    display: inline-block;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.7);
-    padding: 17px 12px;
-    cursor:pointer;
-    @include linear-gradient-left(rgba(25,83,183,0.7), rgba(25,83,183,0.9));
-
-    &:hover {
-          @include linear-gradient-left(rgba(25,83,183,0.4), rgba(25,83,183,0.8));
-          color:rgba(255,255,255,0.8);
-    }
-}
-
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -65,45 +45,75 @@ html {
     }
 
     &-header {
-        height: 130px;
+        height: 100px;
         background: rgba(0,0,0,0.8);
-        border-bottom: 1px solid rgba(255,255,255,0.7);
+        border-bottom: 1px solid $admin-header-border;
+        color: rgba(255,255,255,0.7);
         position: absolute;
+        text-transform: uppercase;
+        font-size: 40px;
         width: 100%;
         top: 0;
 
-        &-title {
-            color: rgba(255,255,255,0.7);
-            padding: 10px;
-            text-transform: uppercase;
+        &-right {
+            position: absolute;
+            width: 220px;
+            top: 0;
+            right: 0;
+            font-size: 0;
+        }
+        &-left {
+            padding-right: 220px;
+            width: 100%;
+        }
+        &-button {
+            line-height: 100px;
+            display: inline-block;
             font-size: 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding: 0 30px;
+            border-left: 1px solid $admin-header-border;
+            color: rgba(255,255,255,0.1);
+            cursor: pointer;
         }
 
         &-timer {
             display: inline-block;
-            color: rgba(25,83,183,0.5);
+            color: rgba(255,255,255,0.1);
+            font-size: 35px;
+            text-align: center;
+            width: 124px;
+            line-height: 100px;
         }
 
         &-levels {
             display: inline-block;
-            font-size: 14px;
-            margin: 0 10px;
+            font-size: 0;
             vertical-align: top;
 
-            &-item {
-                border: 1px solid rgba(255,255,255,0.3);
-                padding: 12px;
+            &-label, &-item  {
                 display: inline-block;
+                font-size: 12px;
+                padding: 0 20px 0 12px;
+                color: rgba(255,255,255,0.5);
+                line-height: 40px;
+                border-right: 1px solid $admin-header-border;
+                vertical-align: top;
+            }
+
+            &-item {
+                font-size: 16px;
+                padding: 0 20px;
                 cursor: pointer;
+                @include transition(all 0.3s linear);
 
                 &:hover {
                     background: rgba(255,255,255,0.1);
+                    color: $white;
                 }
 
                 &.active {
-                    background: rgba(255,255,255,0.15);
-                    border: 1px solid rgba(255,255,255,0.8);
+                    background: rgba(255,255,255,0.6);
+                    color: $black;
                 }
             }
         }
@@ -114,73 +124,43 @@ html {
             text-transform: none;
             display: inline-block;
             float: right;
-            margin: -10px 20px;
 
             &-item {
-                border-left: 1px solid rgba(255,255,255,0.3);
-                padding: 24px;
-                font-size: 12px;
+                border-left: 1px solid $admin-header-border;
+                padding: 0 20px;
+                line-height: 40px;
+                font-size: 16px;
                 display: inline-block;
                 cursor: pointer;
                 @include transition(all 0.3s linear);
+                color: rgba(255,255,255,0.5);
 
                 &:hover {
-                    background: rgba(255,255,255,0.15)
+                    background: rgba(255,255,255,0.15);
+                    color: $white;
                 }
 
                 &:last-child {
-                    border-right: 1px solid rgba(255,255,255,0.3);
+                    border-right: 1px solid $admin-header-border;
                 }
             }
         }
 
-        &-switch {
-            display: inline-block;
-            float: right;
-            padding: 11px 16px 9px;
-            border: 1px solid rgba(255,255,255,0.7);
-            font-size: 16px;
-            width: 82px;
-            position: relative;
+        &-clear {
+            position: absolute;
+            top: 8px;
+            right: 120px;
+            line-height: 37px;
+            padding: 0 15px;
+            z-index: 11;
+            opacity: 0.4;
             cursor: pointer;
-            overflow: hidden;
-            @include transition(all 0.2s linear);
-
-            &:hover {
-                background-color: rgba(255,255,255,1);
-                color: $black;
-            }
-
-            &:before {
-                display: inline-block;
-                content: "start";
-                width: 100%;
-                margin-left: 0;
-                @include transition(all 0.3s linear);
-            }
-
-            &:after {
-                display: inline-block;
-                position: absolute;
-                content: "stop";
-                left: 100%;
-                top: 0;
-                padding: 11px 0;
-                text-align: center;
-                width: 100%;
-                @include transition(all 0.3s linear);
-            }
-
-            &.on:before  {
-                margin-left: -94px;
-            }
-
-            &.on:after {
-                left: 0;
-            }
         }
+
         &-adhoc {
-            padding: 10px 120px 10px 10px;
+            border-top: 1px solid $admin-header-border;
+            border-right: 1px solid $admin-header-border;
+            padding: 9px 120px 9px 10px;
             position: relative;
             font-size: 20px;
 
@@ -191,8 +171,8 @@ html {
             &-text {
                 border: 1px solid rgba(255,255,255,0.3);
                 background: rgba(255,255,255,0.1);
-                height: 47px;
-                padding: 10px;
+                height: 37px;
+                padding: 8px;
                 @include box-sizing;
                 font-weight: 100;
                 outline: none;
@@ -208,7 +188,17 @@ html {
             }
 
             &-button {
-                @include active-button();
+                line-height: 37px;
+                position: absolute;
+                font-size: 16px;
+                text-transform: uppercase;
+                text-align: center;
+                cursor: pointer;
+                right: 10px;
+                top:9px;
+                width: 100px;
+                color: $black;
+                background: rgba(255,255,255,0.5);
 
                 &:before {
                     content: "Set";

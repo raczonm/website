@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Admin panel - attic hints</title>
+    <title>Admin panel - Hints</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -25,27 +25,35 @@
       <section class="hints attic" data-room="attic">
           <header class="hints-header pl">
               <div class="hints-header-right">
-                  <a class="hints-header-button js-start">Start</a>
-                  <div class="hints-header-timer">--:--</div>
-              <div>
-              <ul class="hints-header-levels">
-                  <li class="hints-header-levels-label">Level</li>
-                  <li class="hints-header-levels-item active">0</li>
-                  <li class="hints-header-levels-item active">1</li>
-                  <li class="hints-header-levels-item">2</li>
-                  <li class="hints-header-levels-item">3</li>
-                  <li class="hints-header-levels-item">4</li>
-              </ul>
-              <!-- <a class="button hints-header-switch"></a> -->
-              <ul class="hints-header-menu">
-                  <li class="hints-header-menu-item"><a class="hints-header-menu-item-link clear-active">Clear</a></li>
-                  <li class="hints-header-menu-item"><a class="hints-header-menu-item-link language-switch">PL</a></li>
-                  <li class="hints-header-menu-item"><a class="hints-header-menu-item-link add-time">Add time</a></li>
-                  <li class="hints-header-menu-item"><a class="hints-header-menu-item-link add-pause">Pause</a></li>
-              </ul>
-              <div class="hints-header-adhoc">
-                  <textarea placeholder="Hint..." class="hints-header-adhoc-text"></textarea>
-                  <a class="button hints-header-adhoc-button"></a>
+                  <div class="hints-header-timer">60:00</div>
+                  <a class="hints-header-button js-start"><i class="fa fa-power-off"></i></a>
+              </div>
+              <div class="hints-header-left">
+                  <ul class="hints-header-levels">
+                      <li class="hints-header-levels-label">Level</li>
+                      <li class="hints-header-levels-item active">0</li>
+                      <li class="hints-header-levels-item active">1</li>
+                      <li class="hints-header-levels-item">2</li>
+                      <li class="hints-header-levels-item">3</li>
+                      <li class="hints-header-levels-item">4</li>
+                  </ul>
+                  <!-- <a class="button hints-header-switch"></a> -->
+                  <ul class="hints-header-menu">
+                      <li class="hints-header-menu-item"><a class="hints-header-menu-item-link language-switch">PL</a></li>
+                      <li class="hints-header-menu-item js-add-time">
+                          <i class="fa fa-clock-o"></i>
+                      </li>
+                      <li class="hints-header-menu-item js-pause">
+                          <i class="fa fa-pause"></i>
+                      </li>
+                  </ul>
+                  <div class="hints-header-adhoc">
+                      <textarea placeholder="Hint..." class="hints-header-adhoc-text"></textarea>
+                      <a class="button hints-header-adhoc-button"></a>
+                      <a class="hints-header-clear js-clear">
+                          <i class="fa fa-remove"></i>
+                      </a>
+                  </div>
               </div>
           </header>
           <ul class="hints-list"></ul>
