@@ -34,11 +34,11 @@
         width: 40vh;
         text-transform: uppercase;
         @include font-sans();
-        background: #fc8505;
+        background: #ab232f;
         color: $white;
         opacity: 0.8;
         cursor: pointer;
-        border-bottom: 2px solid #ffd236;
+        border-bottom: 2px solid rgba(255,255,255,0.5);
     }
 
     &-description {
@@ -61,7 +61,7 @@
         position: absolute;
         top: 20px;
         right: 20px;
-        color: #fc8505;
+        color: #ab232f;
         font-size: 20px;
         text-transform: uppercase;
         cursor: pointer;
@@ -290,8 +290,6 @@
         padding-top: 0.8em;
         text-transform: uppercase;
 
-
-
         &-item {
             cursor: pointer;
             font-size: 0.2em;
@@ -299,6 +297,10 @@
             padding: 1em;
             opacity: 0.7;
             @include transition(all 0.4s ease);
+
+            &.red {
+                color: $main-red;
+            }
 
             @media #{$media-tablet} {
                 font-size: 0.4em;
@@ -788,25 +790,24 @@
             }
         }
 
-        &.pirates {
-            background: url('../images/menu-pirates.jpg') no-repeat;
-            background-size: 100%;
+        &-no-room {
+              background: url('../images/no-room.jpg') no-repeat;
+              background-size: 100%;
 
-            &:before {
-                //background: url('../images/menu-pirates-hover.png') no-repeat;
-                background-size: 100%;
-            }
+              &:before {
+                  background-size: 100%;
+              }
 
-            &:hover {
-                &:before {
-                    opacity: 0;
-                }
+              &:hover {
+                  &:before {
+                      opacity: 0;
+                  }
 
-                .rooms-column-image-label {
-                    @include scale(1);
-                    margin-left: 0;
-                }
-            }
+                  .rooms-column-image-label {
+                      @include scale(1);
+                      margin-left: 0;
+                  }
+              }
         }
 
         &.attic {
@@ -816,27 +817,6 @@
             &:before {
                 background: url('../images/menu-attic-hover.jpg') no-repeat;
                 background-size: 100%;
-            }
-        }
-
-        &.garden {
-            background: url('../images/menu-garden.jpg') no-repeat;
-            background-size: 100%;
-
-            &:before {
-                //background: url('../images/menu-garden-hover.png') no-repeat;
-                background-size: 100%;
-            }
-
-            &:hover {
-                &:before {
-                    opacity: 0;
-                }
-
-                .rooms-column-image-label {
-                    @include scale(1);
-                    margin-left: 0;
-                }
             }
         }
 

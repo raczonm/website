@@ -1,26 +1,40 @@
 {
   "hints" : {
     "attic" : {
-      "active" : false,
+      "active" : 15,
+      "active_level" : 1,
       "adhoc" : "",
       "language" : "pl",
+      "levels" : 4,
+      "paused" : false,
       "list" : [ {
         "id" : 1,
         "img" : "",
+        "level" : 1,
         "name" : "Światło",
-        "text" : "Lucius w liscie Ci napisał <br />Że w tej dziwnej posiadłości <br />Pewne rzeczy, pewne słowa <br />Dostrzegalne są w ciemności",
+        "text" : "Lucius w liscie Ci napisał <br />Że w tej dziwnej posiadłości <br />Pewne rzeczy oraz słowa <br />Dostrzegalne są w ciemności",
         "text_eng" : "In his letter Lucius wrote <br />That very wary you should be <br />There are things and also words <br />That in the darkness you can see",
+        "type" : "text"
+      }, {
+        "id" : 2,
+        "img" : "",
+        "level" : 1,
+        "name" : "Obrazy",
+        "text" : "Pięciu członków rodziny <br />Każdy zostawił pamiątkę <br /> Przyjrzyj się im uważnie <br /> A otrzymasz cyfr piątkę",
+        "text_eng" : "Five family heirlooms <br /> Left by five family members <br /> Look at them very carefully <br /> And You will have five numbers",
         "type" : "text"
       }, {
         "id" : 3,
         "img" : "",
+        "level" : 1,
         "name" : "Kolejność obrazów",
         "text" : "Miej na uwadze portrety podziwiając <br />że czasem szczegóły są najważniejsze <br />Pamiętaj rodzinne pamiątki oglądając <br />to co najstarsze jest zawsze pierwsze",
-        "text_eng" : "If You don't want to fail <br />pay attention to every detail <br />If You don't want to be cursed <br />remember: The oldest always comes first",
+        "text_eng" : "If You don't want to fail <br />Pay attention to the detail <br />If You don't want to be cursed <br />Remember: The oldest always comes first",
         "type" : "text"
       }, {
         "id" : 4,
         "img" : "",
+        "level" : 1,
         "name" : "Walizka",
         "text" : "Każdej nocy między marzeniami <br />Zabieram walizkę i podążam za śladami",
         "text_eng" : "Every night between my dreams <br />I take my case and follow prints",
@@ -28,69 +42,87 @@
       }, {
         "id" : 5,
         "img" : "",
-        "name" : "Puzzle",
-        "text" : "Dziwne cztery te składniki <br />Oznaczone symbolami <br />Teraz pomóc możesz sobie <br />Tylko skóry kawałkami",
-        "text_eng" : "Four components make four symbols <br /> You can see them on the leather <br /> To decipher this elixir <br />Find them and put all together",
+        "level" : 2,
+        "name" : "Przeoczony artykuł",
+        "text" : "Odnalazłeś tajne przejście <br />Lecz co dalej, cel zanika <br />Czego szukać w tej pracowni <br />Szalonego alchemika?  <br />By rozwiązać tę zagadkę <br />Zajrzyj znowu do dziennika",
+        "text_eng" : "Where are you? Is it a trap? <br />What to look for in this place <br />In alchemist's secret lab? <br />How to solve this new mystery? <br />Look at Lucius secret diary",
         "type" : "text"
       }, {
         "id" : 6,
         "img" : "",
-        "name" : "Przeoczony artykuł",
-        "text" : "Odnalazłeś tajne przejście <br />Lecz co dalej, cel zanika <br />Czego szukać w tej pracowni <br />Szalonego alchemika?  <br />By rozwiązać te zagadkę <br />Zajrzyj znowu do dziennika",
-        "text_eng" : "Where are you? Is it a trap? <br />What to look for in this place <br />In alchemist's secret lab? <br />How to start this new inquiry? <br />Look at Lucius secret diary",
+        "level" : 2,
+        "name" : "Potrzebne składniki",
+        "text" : "Lucius chciał stworzyć eliksir <br />Który czyni nieśmiertelnym <br />Znalazł przepis, cel miał ziścić <br />Odtworzeniem jego wiernym",
+        "text_eng" : "Weird lord  Lucius had a whim <br />That his immortality will begin <br />So he made this great elixir <br />Follow the receipe and that’s the trick, sir",
         "type" : "text"
       }, {
         "id" : 7,
         "img" : "",
-        "name" : "Potrzebne składniki",
-        "text" : "Lucius chciał stworzyć eliksir <br />Który czyni nieśmiertelnym <br />Znalazł przepis, cel miał ziścić <br />Odtworzeniem jego wiernym",
-        "text_eng" : "Lucius Cromwell had one desire <br />The immortality was his need <br />How to make this weird elixir? <br />Find the recipe and you'll succeed",
+        "level" : 2,
+        "name" : "Puzzle",
+        "text" : "Dziwne cztery te składniki <br />Oznaczone symbolami <br />Teraz pomóc możesz sobie <br />Tylko skóry kawałkami",
+        "text_eng" : "Four components with four symbols <br /> You can see them on the leather <br /> To decipher this elixir <br />Find them and put all together",
         "type" : "text"
       }, {
         "id" : 8,
         "img" : "",
-        "name" : "Encyklopedie",
-        "text" : "Gdy w głowie pustka zapanuje <br />I CHAOS wróżący tragedię <br />Tylko wiedza Cię uratuje <br />Więc sięgnij po encyklopedię",
-        "text_eng" : "When Your mind is blank <br /> and CHAOS is near <br /> My Encyklopedia, <br />will be usefull here ",
+        "level" : 3,
+        "name" : "Szyfr",
+        "text" : "Podążaj za symbolami <br /> One wskażą Ci słowo <br /> Gdy znajdziesz literę rusz w prawo <br /> I zacznij na nowo",
+        "text_eng" : "Follow the symbols to get the word <br /> When You find a letter use Your brain <br /> One step to the right and start again ",
         "type" : "text"
       }, {
         "id" : 9,
         "img" : "",
-        "name" : "Cyfry z telefonu",
-        "text" : "Jesteś już tak blisko wyjścia <br />Lecz brak cyfr Ci nie pomoże <br />Brakujących nie zobaczysz <br />Lecz usłyszeć o nich możesz",
-        "text_eng" : "Two missing letters, which You need to open the safe, comes from telephone",
+        "level" : 3,
+        "name" : "Skóra do szyfru",
+        "text" : "Ważne słowo z pięciu liter <br />W labiryncie jest schowane <br />Drogę wskażą Ci symbole <br />Te na skórze zapisane",
+        "text_eng" : "Letters, symbols, what a mess <br />What to do now, can you guess? <br />The word of five letters is hidden here <br />Take good old leather, the answer is near",
+        "type" : "text"
+      }, {
+        "id" : 91,
+        "img" : "",
+        "level" : 3,
+        "name" : "Szyfr - instrukcja",
+        "text" : "W lewym górnym rogu symbol <br />Do pierwszej litery Cię zaprowadzi <br />Symbol po jej prawej stronie <br />Dalszą drogę Ci zdradzi <br />Tę zasadę stosuj wciąż na nowo <br />Aż 5 liter złożysz w jedno słowo",
+        "text_eng" : "",
         "type" : "text"
       }, {
         "id" : 10,
         "img" : "",
-        "name" : "Tarot",
-        "text" : "Trzy kolory i trzy cyfry <br />Zamęt sieją w Twojej głowie <br /> Szukaj kluczy tej zagadki <br /> Tylko Tarot Ci podpowie",
-        "text_eng" : "Three different colours <br /> Three different numbers <br />Look for the keys that is the clue <br /> To win this game look at the cards <br /> Only Tarot will tell You the truth",
+        "level" : 3,
+        "name" : "Encyklopedie",
+        "text" : "Gdy w głowie pustka zapanuje <br />I CHAOS wróżący tragedię <br />Tylko wiedza Cię uratuje <br />Sięgnij po encyklopedię",
+        "text_eng" : "When Your mind is blank <br /> And CHAOS is near <br /> Take the Encyklopedias <br />They will be usefull here ",
         "type" : "text"
       }, {
         "id" : 11,
         "img" : "",
-        "name" : "Obrazy",
-        "text" : "Pięciu członków rodziny <br />Każdy zostawił pamiątkę <br /> Przyjrzyj się im uważnie <br /> A otrzymasz cyfr piątkę",
-        "text_eng" : "Five family heirlooms <br /> Left by five family members <br /> Look at them very carefully <br /> And You will see all five numbers",
+        "level" : 3,
+        "name" : "Tarot",
+        "text" : "Trzy kolory i trzy cyfry <br />Zamęt sieją w Twojej głowie <br /> Szukaj kluczy tej zagadki <br /> Tylko Tarot Ci podpowie",
+        "text_eng" : "Three different colours <br /> Three different numbers <br />Look for the keys - they are the clue <br /> To win this game look at the cards <br /> Only Tarot will tell You the truth",
         "type" : "text"
       }, {
         "id" : 12,
         "img" : "",
-        "name" : "Szyfr",
-        "text" : "Podążaj za symbolami <br /> One wskażą Ci słowo <br /> Gdy znajdziez literę rusz w prawo <br /> I zacznij na nowo",
-        "text_eng" : "Follow the symbols to get the word <br /> When You find a letter use Your brain <br /> One step to the right and start again ",
+        "level" : 4,
+        "name" : "Cyfry z telefonu",
+        "text" : "Jesteś już tak blisko wyjścia <br />Lecz brak cyfr Ci nie pomoże <br />Tych dwóch jednak nie zobaczysz <br />Lecz usłyszeć o nich możesz",
+        "text_eng" : "The symbol is almost complete <br />But two digits are still missing here <br /> You won't see them, deal with it <br />Don't use your eyes, just use your ear",
         "type" : "text"
       }, {
         "id" : 13,
         "img" : "",
-        "name" : "Skóra do szyfru",
-        "text" : "Ważne słowo z pięciu liter <br />W labiryncie jest schowane <br />Drogę wskażą Ci symbole <br />Te na skórze zapisane",
-        "text_eng" : "Follow the symbols to get the word <br /> When You find a letter use Your brain <br /> One step to the right and start again ",
+        "level" : 4,
+        "name" : "Sejf",
+        "text" : "Wszystkie cyfry do symbolu  <br />Są w pokoju rozrzucone   <br />Lecz przydadzą Ci się tylko  <br />W kolejności ułożone <br />By otworzyć sejfu drzwiczki <br />Patrz na strzałkę na tabliczce <br />Aby nie pomylić się  <br />Na sam koniec dodaj 'E'",
+        "text_eng" : "All the digits in the symbol <br />Need to be in the right order <br />So to win, set yourselves free <br />Insert the cipher and press button 'E'",
         "type" : "text"
       }, {
         "id" : 14,
         "img" : "images/hints/skull.jpg",
+        "level" : 0,
         "name" : "Czaszka",
         "text" : "",
         "text_eng" : "",
@@ -98,6 +130,7 @@
       }, {
         "id" : 15,
         "img" : "images/hints/ouija.jpg",
+        "level" : 1,
         "name" : "Ouija",
         "text" : "",
         "text_eng" : "",
@@ -105,6 +138,7 @@
       }, {
         "id" : 16,
         "img" : "images/hints/pharmacy.jpg",
+        "level" : 4,
         "name" : "Pudełko Pharmacy",
         "text" : "",
         "text_eng" : "",
@@ -112,6 +146,7 @@
       }, {
         "id" : 17,
         "img" : "images/hints/hat.jpg",
+        "level" : 1,
         "name" : "Obraz - Kapelusz",
         "text" : "",
         "text_eng" : "",
@@ -119,6 +154,7 @@
       }, {
         "id" : 18,
         "img" : "images/hints/cup.jpg",
+        "level" : 1,
         "name" : "Obraz - Kielich",
         "text" : "",
         "text_eng" : "",
@@ -126,6 +162,7 @@
       }, {
         "id" : 19,
         "img" : "images/hints/ring.jpg",
+        "level" : 1,
         "name" : "Obraz - Pierścień",
         "text" : "",
         "text_eng" : "",
@@ -133,6 +170,7 @@
       }, {
         "id" : 20,
         "img" : "images/hints/staff.jpg",
+        "level" : 1,
         "name" : "Obraz - Laska",
         "text" : "",
         "text_eng" : "",
@@ -140,6 +178,7 @@
       }, {
         "id" : 21,
         "img" : "images/hints/potions.jpg",
+        "level" : 2,
         "name" : "Alchemia - składniki",
         "text" : "",
         "text_eng" : "",
@@ -147,6 +186,7 @@
       }, {
         "id" : 22,
         "img" : "images/hints/scrolls.jpg",
+        "level" : 2,
         "name" : "Alchemia - receptury",
         "text" : "",
         "text_eng" : "",
@@ -154,6 +194,7 @@
       }, {
         "id" : 23,
         "img" : "images/hints/code.jpg",
+        "level" : 3,
         "name" : "Zagadka z szyfrem",
         "text" : "",
         "text_eng" : "",
@@ -161,6 +202,7 @@
       }, {
         "id" : 24,
         "img" : "images/hints/tarot.jpg",
+        "level" : 3,
         "name" : "Tarot",
         "text" : "",
         "text_eng" : "",
@@ -168,6 +210,7 @@
       }, {
         "id" : 25,
         "img" : "images/hints/davinci.jpg",
+        "level" : 4,
         "name" : "Davinci",
         "text" : "",
         "text_eng" : "",
@@ -175,6 +218,7 @@
       }, {
         "id" : 26,
         "img" : "images/hints/5numbers.jpg",
+        "level" : 1,
         "name" : "Kłódla 5 cyfrowa",
         "text" : "",
         "text_eng" : "",
@@ -182,6 +226,7 @@
       }, {
         "id" : 27,
         "img" : "images/hints/books.jpg",
+        "level" : 3,
         "name" : "Encyklopedie",
         "text" : "",
         "text_eng" : "",
@@ -189,6 +234,7 @@
       }, {
         "id" : 28,
         "img" : "images/hints/box.jpg",
+        "level" : 2,
         "name" : "Kłódka 4 cyfrowa",
         "text" : "",
         "text_eng" : "",
@@ -196,6 +242,7 @@
       }, {
         "id" : 29,
         "img" : "images/hints/cage.jpg",
+        "level" : 1,
         "name" : "Klatka",
         "text" : "",
         "text_eng" : "",
@@ -203,6 +250,7 @@
       }, {
         "id" : 30,
         "img" : "images/hints/empty_painting.jpg",
+        "level" : 4,
         "name" : "Obraz do ultrafioletu",
         "text" : "",
         "text_eng" : "",
@@ -210,6 +258,7 @@
       }, {
         "id" : 31,
         "img" : "images/hints/mortar.jpg",
+        "level" : 2,
         "name" : "Moździerz",
         "text" : "",
         "text_eng" : "",
@@ -217,6 +266,7 @@
       }, {
         "id" : 32,
         "img" : "images/hints/scarf.jpg",
+        "level" : 1,
         "name" : "Szalik",
         "text" : "",
         "text_eng" : "",
@@ -224,13 +274,14 @@
       }, {
         "id" : 33,
         "img" : "images/hints/small_closet.jpg",
+        "level" : 1,
         "name" : "Nakastlik",
         "text" : "",
         "text_eng" : "",
         "type" : "image"
-      }],
-      "started" : false,
-      "timer" : false
+      } ],
+      "started" : true,
+      "timer" : 1477823574093
     }
   }
 }

@@ -55,6 +55,22 @@ html {
         width: 100%;
         top: 0;
 
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 220px;
+            height: 99px;
+            background: rgba(0,0,0,0.8);
+            z-index: 11;
+            @include transition(all 0.3s linear);
+
+            .running & {
+                right: 100%;
+            }
+        }
+
         &-right {
             position: absolute;
             width: 220px;
@@ -74,6 +90,19 @@ html {
             border-left: 1px solid $admin-header-border;
             color: rgba(255,255,255,0.1);
             cursor: pointer;
+            @include transition(all 0.3s linear);
+
+            &:hover {
+                color: rgba(255,255,255,0.7);
+            }
+
+            &.on {
+                color: $main-attic;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
         }
 
         &-timer {
@@ -83,6 +112,10 @@ html {
             text-align: center;
             width: 124px;
             line-height: 100px;
+
+            .running & {
+                color: rgba(255,255,255,0.8);
+            }
         }
 
         &-levels {
@@ -112,8 +145,12 @@ html {
                 }
 
                 &.active {
-                    background: rgba(255,255,255,0.6);
-                    color: $black;
+                    background: $main-attic;
+                    color: $white;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
                 }
             }
         }
@@ -135,6 +172,10 @@ html {
                 @include transition(all 0.3s linear);
                 color: rgba(255,255,255,0.5);
 
+                &.language-switch {
+                    color: $main-attic;
+                }
+
                 &:hover {
                     background: rgba(255,255,255,0.15);
                     color: $white;
@@ -155,6 +196,10 @@ html {
             z-index: 11;
             opacity: 0.4;
             cursor: pointer;
+
+            &:hover {
+              opacity: 0.8;
+            }
         }
 
         &-adhoc {
@@ -165,7 +210,7 @@ html {
             font-size: 20px;
 
             &.active {
-                @include linear-gradient-left(rgba(255,255,255,0.05), rgba(255,255,255,0.1));
+                background-color: rgba(25,83,183,0.5);
             }
 
             &-text {
@@ -199,31 +244,14 @@ html {
                 width: 100px;
                 color: $black;
                 background: rgba(255,255,255,0.5);
+                @include transition(all 0.3s linear);
+
+                &:hover {
+                    background: rgba(255,255,255,0.8);
+                }
 
                 &:before {
                     content: "Set";
-                }
-
-                &:after {
-                    content: "Change";
-                    display: none;
-                }
-
-                .active & {
-                    @include linear-gradient-left(rgba(25,83,183,0.4), rgba(25,83,183,0.8));
-
-                    &:hover {
-                          @include linear-gradient-left(rgba(25,83,183,0.6), rgba(25,83,183,1));
-                          color:rgba(255,255,255,0.8);
-                    }
-
-                    &:before {
-                        display: none;
-                    }
-
-                    &:after {
-                        display: inline;
-                    }
                 }
             }
         }
@@ -234,7 +262,7 @@ html {
         position: absolute;
         width: 100%;
         bottom: 10px;
-        top: 130px;
+        top: 110px;
         overflow: auto;
         font-size: 20px;
 
@@ -254,9 +282,10 @@ html {
             overflow: hidden;
             text-align: center;
             border: 1px solid transparent;
+            cursor: pointer;
 
             &.active {
-                @include linear-gradient-left(rgba(0,0,0,0.05), rgba(0,0,0,0.33));
+                background: rgba(25,83,183,0.7);
                 border: 1px solid rgba(255,255,255,0.7)
             }
 
@@ -270,7 +299,9 @@ html {
             }
 
             &-text {
-                font-size: 14px;
+                padding-top: 10px;
+                font-size: 15px;
+                line-height: 24px;
                 color: rgba(255,255,255,0.7);
             }
 
@@ -282,58 +313,5 @@ html {
 
     &.attic {
         @include linear-gradient-left(rgba(25,83,183,0.2), rgba(25,83,183,0.6));
-    }
-
-    &.pirates {
-        @include linear-gradient-left(rgba(232,175,6,0.2), rgba(232,175,6,0.6));
-
-        .hints-header {
-            &-timer {
-                color: rgba(232,175,6,0.5);
-            }
-
-            &-adhoc-button {
-                @include linear-gradient-left(rgba(232,175,6,0.2), rgba(232,175,6,0.6));
-
-                &:hover {
-                      @include linear-gradient-left(rgba(232,175,6,0.4), rgba(232,175,6,0.8));
-                }
-            }
-        }
-
-        .hints-list-item-button {
-            @include linear-gradient-left(rgba(232,175,6,0.2), rgba(232,175,6,0.6));
-
-            &:hover {
-                  @include linear-gradient-left(rgba(232,175,6,0.4), rgba(232,175,6,0.8));
-            }
-        }
-    }
-
-    &.garden {
-        width: 33.34%;
-        @include linear-gradient-left(rgba(0,124,6,0.2), rgba(0,124,6,0.6));
-
-        .hints-header {
-            &-timer {
-                color: rgba(0,124,6,0.5);
-            }
-
-            &-adhoc-button {
-                @include linear-gradient-left(rgba(0,124,6,0.2), rgba(0,124,6,0.6));
-
-                &:hover {
-                      @include linear-gradient-left(rgba(0,124,6,0.4), rgba(0,124,6,0.8));
-                }
-            }
-        }
-
-        .hints-list-item-button {
-            @include linear-gradient-left(rgba(0,124,6,0.2), rgba(0,124,6,0.6));
-
-            &:hover {
-                  @include linear-gradient-left(rgba(0,124,6,0.4), rgba(0,124,6,0.8));
-            }
-        }
     }
 }

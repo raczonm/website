@@ -633,9 +633,11 @@ html {
         &.facebook {
             z-index: 14;
         }
-        &.lockme {
+        &.lockme, &.gift {
           margin-top: 1vh;
         }
+
+
 
         &-icon {
             background: $black;
@@ -678,6 +680,30 @@ html {
                 background: $black;
             }
         }
+    }
+}
+
+.gift {
+    &-link {
+        display: box;
+        text-align: center;
+        color: $white;
+        cursor: pointer;
+        @include font-sans();
+    }
+
+    &-header {
+        padding: 15px;
+        font-size: 24px;    
+        text-transform: uppercase;
+    }
+
+    &-photo {
+        width: 100%;
+    }
+
+    &-info {
+        padding: 15px;
     }
 }
 

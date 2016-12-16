@@ -1,0 +1,156 @@
+@import 'bower_components/reset-css/_reset';
+
+@import 'elements';
+@import 'globals';
+
+$voucher-red: #c42e27;
+
+html {
+    width: 100%;
+    height: 100%;
+}
+.body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: url('../images/woodBgr.jpg');
+    background-size: cover;
+
+    @media #{$media-tablet}  {
+        height: auto;
+        background-size: auto 100%;
+    }
+}
+
+.wrapper {
+    position: relative;
+
+    @media #{$media-tablet} {
+        width: 100%;
+    }
+}
+
+.voucher {
+    border: 0.15em solid $voucher-red;
+    height: 5.8em;
+    margin-top: 0.5em;
+    position: relative;
+    @include box-sizing();
+    @include font-sans();
+    text-align: center;
+
+    @media #{$media-tablet}  {
+        border-width: 0 0 0.15em 0;
+        height: auto;
+        padding-bottom: 1em;
+    }
+
+    &:after {
+        top: -0.17em;
+        left: -0.17em;
+        width: 9.06em;
+        height: 5.86em;
+        content: "";
+        position: absolute;
+        border: 0.205em solid $black;
+        z-index: -1;
+        @include box-sizing();
+
+        @media #{$media-tablet} {
+            border: 0;
+            left: 0;
+            width: 100%;
+            bottom: -0.1em;
+            top: auto;
+            height: 0.205em;
+            background: $black;
+        }
+    }
+
+    &-bow {
+        width: 1.6em;
+        position: absolute;
+        left: 50%;
+        margin-left: -0.8em;
+        bottom: -1em;
+    }
+
+    &-photo {
+        display: inline-block;
+        width: 45%;
+        vertical-align: middle;
+
+        @media #{$media-tablet} {
+            width: 7em;
+            margin-bottom: 0.5em;
+        }
+    }
+
+    &-header {
+        font-size: 0.6em;
+        margin: 0.5em 0;
+        color: $voucher-red;
+        text-transform: uppercase;
+        text-shadow: 0.1em 0.1em 0.15em rgba(0,0,0,0.6);
+
+        @media #{$media-tablet} {
+            font-size: 1.2em;
+        }
+    }
+
+    &-subheader {
+        font-size: 0.195em;
+        display: inline-block;
+        width: 48%;
+        vertical-align: middle;
+        line-height: 1.4;
+        text-align: left;
+        color: $white;
+        text-transform: none;
+
+        @media #{$media-tablet} {
+            width: 100%;
+            padding: 0 3em;
+            font-size: 0.35em;
+            text-align: center;
+        }
+
+        @media #{$media-phone} {
+            font-size: 0.55em;
+        }
+    }
+
+    &-white {
+        color: $white;
+
+        @media #{$media-tablet}  {
+            display: block;
+        }
+    }
+
+    &-home {
+        border: 4px solid $white;
+        font-size: 0.3em;
+        padding: 0.5em 1em;
+        text-transform: uppercase;
+        color: $white;
+        background: rgba(255,255,255,0);
+        @include transition(all 0.5s linear);
+
+        &:hover {
+            background: rgba(255,255,255,255);
+            color: $black;
+        }
+
+        @media #{$media-tablet}  {
+            font-size: 0.4em;
+            margin-top: 0.3em auto;
+            display: inline-block;
+
+            @media #{$media-phone} {
+                font-size: 0.55em;
+                margin-top: 1em
+            }
+        }
+    }
+}

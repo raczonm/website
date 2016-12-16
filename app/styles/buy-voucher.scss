@@ -1,0 +1,276 @@
+@import 'bower_components/reset-css/_reset';
+
+@import 'elements';
+@import 'globals';
+
+$voucher-red: #c42e27;
+.body {
+    font-size: 20px;
+}
+.voucher-info {
+    background: url('../images/woodBgr.jpg');
+    background-size: cover;
+    height: 100vh;
+    box-shadow: 0 0 0.1em 0.1em rgba(0,0,0,0.5);
+    padding-top: 2em;
+
+    &-logo {
+        width: 2.5em;
+        top: 0.2em;
+        position: absolute;
+        right: 0.5em;
+    }
+
+    &-home {
+        border: 2px solid $white;
+        font-size: 0.15em;
+        padding: 1.5em 2em;
+        @include font-sans();
+        text-transform: uppercase;
+        color: $white;
+        top: 2em;
+        left: 2em;
+        position: absolute;
+        @include transition(all 0.2s linear);
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &-description {
+        position: relative;
+    }
+
+    &-photo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4em;
+    }
+
+    &-text {
+        color: $white;
+        font-size: 0.2em;
+        line-height: 1.5em;
+        padding-left: 22em;
+        text-shadow: 0.1em 0.1em 0.5em rgba(0,0,0,1);
+        font-style: italic;
+
+        &-paragraph {
+            margin-bottom: 2em;
+        }
+    }
+
+    &-cta {
+        display: block;
+        font-size: 0.3em;
+        color: $white;
+        background: $voucher-red;
+        width: 11em;
+        padding: 1em 0;
+        margin: 2em auto;
+        text-align: center;
+        text-transform: uppercase;
+        @include font-sans();
+        cursor: pointer;
+        opacity: 0.8;
+        @include transition(all 0.2s linear);
+        @include scale(1);
+
+        &:hover {
+            opacity: 1;
+            @include scale(1.1);
+        }
+    }
+}
+
+.voucher-form {
+    padding-top: 0.5em;
+    display: none;
+    padding-bottom: 0.5em;
+
+    &-header {
+        font-size: 0.35em;
+        padding: 0.5em 0;
+        border-bottom: 3px solid $black;
+        margin-bottom: 0.6em;
+    }
+    &-column-wrapper {
+        font-size: 0;
+    }
+
+    &-column {
+        &.column {
+            width: 50%;
+            display: inline-block;
+            vertical-align: top;
+
+            &.first {
+                padding-right: 0.3em;
+                border-right: 1px solid $black;
+            }
+
+            &.last {
+                padding-left: 0.3em;
+            }
+        }
+        > .voucher-form-item:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &-input {
+        font-size: 1em;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 2em;
+        border: 1px solid rgba(0,0,0,0.7);
+        padding: 0 1em;
+        outline: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.1);
+
+        &:focus {
+            background:rgba(0,0,0,0)
+        }
+
+        &.product {
+            width: 4em;
+            text-align: right;
+            padding: 0 0.1em;
+        }
+
+        &.textarea {
+            height: 9.25em;
+        }
+    }
+
+    &-item {
+        font-size: 0.2em;
+        width: 100%;
+        margin-bottom: 0.7em;
+
+        > .voucher-form-input {
+            font-size: 0.7em;
+            padding: 1em;
+        }
+
+        &.hause, &.flat, &.city, &.code {
+            width: 50%;
+            float: left;
+            display: inline-block;
+            vertical-align: top;
+            @include box-sizing();
+        }
+
+        &.hause {
+            padding-right: 1em;
+        }
+
+        &.code {
+            width: 30%;
+            padding-right: 1em;
+        }
+
+        &.city {
+            width: 70%;
+        }
+    }
+
+    &-product {
+        font-size: 0.2em;
+        width: 100%;
+        margin-bottom: 0.7em;
+
+        &-label {
+            line-height: 2em;
+            vertical-align: middle;
+            padding-right: 1em;
+
+            &-bold {
+                font-weight: bold;
+            }
+        }
+
+        &-add {
+            background-color: #456f0d;
+        }
+
+        &-remove {
+            background-color: #d41212;
+        }
+
+        &-add, &-remove {
+            display: inline-block;
+            line-height: 2.1em;
+            height: 2.1em;
+            width: 2.1em;
+            text-align: center;
+            vertical-align: top;
+            color: $white;
+            opacity: 0.8;
+            font-weight: bold;
+            cursor: pointer;
+            @include transition(all 0.2s linear);
+            @include scale(1);
+
+            &:hover {
+                opacity: 1;
+                @include scale(1.1);
+            }
+        }
+    }
+
+    &-actions {
+        text-align: right;
+        margin-top: 0.3em;
+    }
+
+    &-invoice-info {
+        font-size: 0.13em;
+        line-height: 1.3em;
+        display: inline-block;
+        vertical-align: middle;
+        width: 40em;
+
+    }
+
+    &-toggle-invoice {
+        font-size: 0.2em;
+        display: inline-block;
+        cursor: pointer;
+        opacity: 0.7;
+        @include scale(1);
+        @include transition(all 0.2s linear);
+
+        &:hover {
+            opacity: 1;
+            @include scale(1.1);
+        }
+    }
+
+    &-submit {
+        font-size: 0.2em;
+        padding: 0 4em;
+        margin-left: 1em;
+        height: 4em;
+        line-height: 4em;
+        color: $white;
+        opacity: 0.8;
+        @include transition(all 0.2s linear);
+        @include scale(1);
+        background: #456f0d;
+        @include font-sans();
+        border: none;
+        vertical-align: middle;
+        text-transform: uppercase;
+
+        &:hover {
+            opacity: 1;
+            @include scale(1.1);
+        }
+    }
+
+}
