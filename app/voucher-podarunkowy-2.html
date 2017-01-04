@@ -6,6 +6,7 @@
     <meta name="description" content="Escape game w centrum Krakowa. Unikalne pokoje o dopracowanym wystroju, oryginalnych zagadkach i zaskakujących mechanizmach. Itsatrapcracow.pl">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta content="Michał Raczoń" name="Author">
+    <meta property="og:image" content="/images/favicons/favicon_310.png"/>
     <title>Voucher Prezentowy - It's a Trap - Escape Game Kraków</title>
 
     <link rel="shortcut icon" type="image/png" sizes="16x16" href="/images/favicons/favicon_16.png">
@@ -110,7 +111,7 @@
                                 <input type="text" class="voucher-form-input text optional"  name="k24_firma" placeholder="Nazwa firmy (opcjonalnie dla kuriera)"/>
                             </div>
                             <div class="voucher-form-item">
-                                <input type="number" class="voucher-form-input text" name="k24_telefon" placeholder="Numer telefonu" reqiured/>
+                                <input type="number" class="voucher-form-input text" name="k24_telefon" placeholder="Numer telefonu" required/>
                             </div>
                             <div class="voucher-form-item">
                                 <input type="email" class="voucher-form-input text" name="k24_email" placeholder="Adres email" required/>
@@ -141,8 +142,10 @@
                     </div>
                 </div>
                 <div class="voucher-form-actions">
-                    <p class="voucher-form-invoice-info">Jeżeli chcesz otzrymać fakturę VAT skontaktuj się z nami mailowo pod adresem biuro@itsatrapcracow.com lub telefonicznie pod numerem 667 562 208 po zakończeniu transakcji.</p>
-                    <!-- <a class="voucher-form-toggle-invoice">Chcę otrzymać fakturę VAT</a> -->
+                    <div class="voucher-form-invoice-info-wrapper">
+                        <p class="voucher-form-invoice-info big"><input class="voucher-form-invoice-info-chb" type="checkbox" required/>Oświadczam, że zapoznałem/am się i akceptuję <a target="_blank" class="voucher-form-invoice-info-rules" href="/regulamin.html">Regulamin</a></p>
+                        <p class="voucher-form-invoice-info">Jeżeli chcesz otzrymać fakturę VAT skontaktuj się z nami mailowo pod adresem biuro@itsatrapcracow.com lub telefonicznie pod numerem 667 562 208 po zakończeniu transakcji.</p>
+                    </div>
                     <button type="submit" class="voucher-form-submit js-submit">Przejdź do Płatności</button>
                 </div>
             </form>

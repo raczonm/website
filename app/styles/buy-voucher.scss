@@ -229,12 +229,31 @@ $voucher-red: #c42e27;
     }
 
     &-invoice-info {
-        font-size: 0.13em;
-        line-height: 1.3em;
-        display: inline-block;
-        vertical-align: middle;
-        width: 40em;
+        padding: 0.3em 0;
 
+        &-rules {
+            text-decoration: underline;
+            color: $main-red;
+        }
+
+        &.big {
+            font-size: 1.2em;
+        }
+
+        &-chb {
+            padding-right: 5px;
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: top;
+        }
+
+        &-wrapper {
+            display: inline-block;
+            vertical-align: middle;
+            width: 40em;
+            font-size: 0.13em;
+            line-height: 1.3em;
+        }
     }
 
     &-toggle-invoice {
