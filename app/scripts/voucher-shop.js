@@ -35,6 +35,7 @@
             product: '.product',
             product1: '.js-product-1',
             product2: '.js-product-2',
+            shipping: '.js-shipping',
             showAmount: '.js-amount-show',
             amountField: '.js-amount-field',
             submit: '.js-submit',
@@ -51,9 +52,15 @@
         };
 
         shop.changeCashAmount = function() {
-            var value = $(shop.ui.product1).val() * 109 + $(shop.ui.product2).val() * 139;
+            var value = $(shop.ui.product1).val() * 109 + $(shop.ui.product2).val() * 139 + $(shop.ui.shipping).closest('.active').data('value');
             $(shop.ui.showAmount).text(value + 'zł');
             $(shop.ui.amountField).val(value * 100);
+        };
+
+        shop.changeShipping = function(e) {
+              $(shop.ui.shipping).removeClass('active');
+              $(e.currentTarget).addClass('active');
+              shop.changeCashAmount();
         };
 
         shop.showForm = function() {
@@ -67,6 +74,7 @@
             $(this.ui.product).on('change', shop.changeCashAmount);
             $(this.ui.submit).on('click', shop.changeCashAmount);
             $(this.ui.cta).on('click', shop.showForm);
+            $(this.ui.shipping).on('click', shop.changeShipping);
         };
 
         return shop;

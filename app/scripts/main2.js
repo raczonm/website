@@ -4,6 +4,21 @@
     function prepareApp() {
         var app = {};
 
+        app.getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
         app.isMobile = function() {
             if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
                return true;
@@ -29,7 +44,9 @@
             mailSend: $('.form-button'),
             mailHint: $('.hint'),
             promoSplash: $('.promo-splash'),
-            closePromo: $('.promo-splash-close')
+            promoBadge: $('.promo-badge'),
+            closePromo: $('.promo-splash-close'),
+            closeBadge: $('.promo-badge-close')
         };
 
         app.bindEvents = function() {
@@ -59,6 +76,10 @@
 
             this.ui.closePromo.on('click', function() {
                 this.ui.promoSplash.remove();
+            }.bind(this));
+
+            this.ui.closeBadge.on('click', function() {
+                this.ui.promoBadge.remove();
             }.bind(this));
         };
 
@@ -250,11 +271,24 @@
             });
         };
 
+        app.detectLanguage = function() {
+            var isPlLanguage = (window.navigator.userLanguage || window.navigator.language) === 'pl';
+            var isPlUrl = !(window.location.pathname.indexOf('en') !== -1);
+            if (app.getUrlParameter('lang') !== 'true') {
+                if (isPlLanguage && !isPlUrl) {
+                    window.location.href = '/?lang=true';
+                } else if (!isPlLanguage && isPlUrl){
+                    window.location.href = '/en/?lang=true';
+                }
+            }
+        };
+
         return app;
     }
 
     $(document).ready(function(){
         var app = prepareApp();
+        app.detectLanguage();
         app.setPanelSnap();
         app.checkProportions();
         app.bindEvents();

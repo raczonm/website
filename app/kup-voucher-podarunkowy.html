@@ -63,7 +63,7 @@
                     </p>
                 </div>
             </div>
-            <a class="voucher-info-cta js-cta">Zamów teraz!</a>
+            <a class="voucher-info-cta" href="mailto:biuro@itsatrapcracow.com">Zamów teraz!</a>
         </div>
     </section>
     <section class="voucher-form js-form">
@@ -91,8 +91,13 @@
                             </div>
                         </div>
                         <div class="voucher-form-column column last">
-                            <div class="js-amount-show">0zł</div>
+                            <div class="js-amount-show voucher-form-price">0zł</div>
                         </div>
+                    </div>
+                    <div class="voucher-form-shipping">
+                        <label class="voucher-form-shipping-label">Wysyłka:</label>
+                        <div class="voucher-form-shipping-checkbox js-shipping active" data-value="8"><i class="fa fa-check voucher-form-shipping-checkbox-icon "></i>Poczta polska - 8zł</div>
+                        <div class="voucher-form-shipping-checkbox js-shipping" data-value="16"><i class="fa fa-check voucher-form-shipping-checkbox-icon "></i>Przesyłka kurierska - 16zł</div>
                     </div>
                 </div>
                 <div class="voucher-form-section">
@@ -100,9 +105,9 @@
                     <div class="voucher-form-column-wrapper">
                         <div class="voucher-form-column column first">
                             <input type="hidden" name="z24_id_sprzedawcy" value="54722" />
-                            <input type="hidden" class="js_name_field" name="z24_nazwa" value="TEST" />
+                            <input type="hidden" class="js_name_field" name="z24_nazwa" value="It's a Trap - Vouchery Podarunkowe" />
                             <input type="hidden" name="z24_crc" value="152428e86b6260d7" />
-                            <input type="hidden" name="z24_return" value="http://www.wp.pl" />
+                            <input type="hidden" name="z24_return" value="http://itsatrapcracow.pl" />
                             <input type="hidden" class="js-amount-field" name="z24_kwota" value="" />
                             <div class="voucher-form-item">
                                 <input type="text" class="voucher-form-input text js_client_name" name="k24_nazwa" placeholder="Imię i Nazwisko" required />
@@ -144,7 +149,7 @@
                 <div class="voucher-form-actions">
                     <div class="voucher-form-invoice-info-wrapper">
                         <p class="voucher-form-invoice-info big"><input class="voucher-form-invoice-info-chb" type="checkbox" required/>Oświadczam, że zapoznałem/am się i akceptuję <a target="_blank" class="voucher-form-invoice-info-rules" href="/regulamin.html">Regulamin</a></p>
-                        <p class="voucher-form-invoice-info">Jeżeli chcesz otzrymać fakturę VAT skontaktuj się z nami mailowo pod adresem biuro@itsatrapcracow.com lub telefonicznie pod numerem 667 562 208 po zakończeniu transakcji.</p>
+                        <p class="voucher-form-invoice-info">Jeżeli chcesz otrzymać fakturę VAT skontaktuj się z nami mailowo pod adresem biuro@itsatrapcracow.com lub telefonicznie pod numerem 667 562 208 po zakończeniu transakcji.</p>
                     </div>
                     <button type="submit" class="voucher-form-submit js-submit">Przejdź do Płatności</button>
                 </div>
@@ -203,6 +208,9 @@
     <!-- build:js scripts/vendor-2.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/panelsnap/jquery.panelSnap.js"></script>
+    <script src="/bower_components/Snap.svg/dist/snap.svg-min.js"></script>
+    <script src="/bower_components/firebase/firebase.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

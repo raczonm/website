@@ -11,6 +11,70 @@ html {
     }
 }
 
+
+.promo-splash {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background: $black;
+
+    &-image {
+        max-width: 80vh;
+        display: block;
+        margin: 10vh auto;
+        max-height: 75vh;
+
+        @media #{$media-phone} {
+            max-width: 100%;
+            max-height: 200px;
+            margin-top: 30px;
+        }
+    }
+
+    &-fp {
+        color: #ecad03;
+        text-decoration: underline;
+    }
+
+    &-description {
+        font-size: 30px;
+        color: $white;
+        font-weight: 100;
+        font-style: italic;
+        margin: 20px auto 0;
+        max-width: 80%;
+        opacity: 1;
+        line-height: 40px;
+
+        @media #{$media-phone} {
+            max-width: 100%;
+            font-size: 20px;
+            line-height: 24px;
+            padding: 0 20px;
+        }
+    }
+
+    &-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #ab232f;
+        font-size: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+        opacity: 0.6;
+        @include font-sans;
+
+        &:hover {
+          opacity: 0.8;
+        }
+    }
+}
+
 .body {
     width: 100%;
     height: 100%;
@@ -18,23 +82,57 @@ html {
     background: url('../images/attic-bgr.jpg') no-repeat;
     background-size: 100%;
 
-    @media #{$media-tablet}  {
+    @media #{$media-tablet} {
         height: auto;
         background-size: auto 100%;
     }
 }
 
-.left {
-    width: 600px;
-    height: 100%;
-    color: $white;
+.legend {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 15px;
+    right: 30px;
+    font-size: 14px;
+    line-height: 20px;
+    color: $white;
+    @include font-sans();
+
+    @media (max-width: 960px) {
+        display: none;
+    }
+
+    &-item {
+        text-transform: uppercase;
+        display: inline-block;
+        margin-left: 20px;
+
+        &-text {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 20px;
+        }
+
+        &:before {
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+            background: $main-attic;
+            content: '';
+        }
+
+        &.occupied:before {
+            background: #990000;
+        }
+    }
+}
+
+.left {
+    width: 100%;
+    height: auto;
+    color: $white;
     background: rgba(0,0,0,0.5);
-    box-shadow: 5px 0px 20px rgba(0,0,0,0.7);
-    z-index: 2;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 
     @media #{$media-tablet}  {
         position: static;
@@ -45,52 +143,38 @@ html {
 }
 
 .logo-trap {
-    width: 200px;
-    height: 87px;
-    margin: 30px;
-
-    @media (min-width:1030px) and (max-width: 1400px) {
-        width: 100px;
-        height: 43px
-    }
-    @media #{$media-tablet}  {
-        margin: 30px auto;
-    }
+    width: 150px;
+    height: 63px;
+    top: 30px;
+    right: 30px;
+    position: absolute;
 }
 
 .room {
     text-align: center;
     font-style: italic;
-    margin-top: 50px;
-    padding: 0 40px;
-
-    @media (min-width: 1030px) and (max-width: 1400px) {
-        margin-top:20px;
-    }
+    padding: 30px 40px 0;
 
     &-title {
         font-size: 32px;
 
-        @media (min-width: 1030px) and (max-width: 1400px) {
-            font-size: 20px;
-        }
-
-        @media #{$media-phone}  {
-            font-size: 20px;
+        @media (max-width: 980px) {
+            padding-top: 120px;
         }
     }
 
+    &-subtitle {
+        font-size: 16px;
+        margin-top: 15px;
+        color: $main-red;
+    }
+
     &-desc {
-        font-size: 20px;
-        margin-top: 50px;
+        font-size: 16px;
+        margin-top: 30px;
         line-height:30px;
         opacity: 0.8;
-
-        @media (min-width: 1030px) and (max-width: 1400px) {
-            font-size: 16px;
-            line-height: 22px;
-            margin-top: 20px;
-        }
+        display: none;
 
         @media #{$media-phone}  {
             display:none;
@@ -98,9 +182,8 @@ html {
     }
 
     &-stats {
-        margin-top: 50px;
+        margin-top: 20px;
         font-size: 20px;
-        text-align: left;
         font-style: italic;
 
         @media (min-width: 1030px) and (max-width: 1400px) {
@@ -109,7 +192,8 @@ html {
         }
 
         &-item {
-          padding: 5px 0;
+          padding: 5px 30px;
+          display: inline-block;
         }
 
         &-strong {
@@ -124,16 +208,13 @@ html {
 
 .calendar {
     position: relative;
-    height: 100%;
-    padding-left: 600px;
 
-    @media #{$media-tablet}  {
-        height: auto;
-        padding-left: 0;
-        padding-top: 0;
+    iframe {
+        margin-top: 30px;
+        height: 700px;
 
-        .calendar-iframe {
-            height: 900px;
+        @media (max-width: 920px)  {
+            min-height: 900px;
         }
     }
 }
@@ -145,23 +226,16 @@ html {
     font-size: 16px;
     text-transform: uppercase;
     @include font-sans;
-    padding: 40px;
+    padding: 20px;
     display: block;
-    width: 280px;
+    width: 220px;
     text-align: center;
-    margin: 70px auto 0;
     cursor: pointer;
     @include transition(all 0.5s linear);
     text-decoration: none;
-
-    @media (min-width: 1030px) and (max-width: 1400px) {
-        padding: 20px;
-        margin-top: 40px;
-    }
-
-    @media #{$media-phone}  {
-          padding: 20px;
-    }
+    position: absolute;
+    left: 30px;
+    top: 30px;
 
     &:hover {
         background: $white;

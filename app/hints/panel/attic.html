@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Hints panel - Attic</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css /styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/reset-css/reset.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css /styles/mainPanel.css -->
+    <link rel="stylesheet" href="/styles/panel.css">
+    <link rel="stylesheet" href="/styles/font-awesome.css" />
+    <!-- endbuild -->
+
+  </head>
+  <body class="body panel attic">
+      <ul class="panel-list js-panel-list"></ul>
+      <nav class="panel-nav js-panel-nav">
+          <ul class="panel-nav-list">
+              <li class="panel-nav-list-item js-level active" data-level="false">All</li>
+              <li class="panel-nav-list-item js-level" data-level="0">0</li>
+              <li class="panel-nav-list-item js-level" data-level="1">1</li>
+              <li class="panel-nav-list-item js-level" data-level="2">2</li>
+              <li class="panel-nav-list-item js-level" data-level="3">3</li>
+              <li class="panel-nav-list-item js-level" data-level="4">4</li>
+              <li class="panel-nav-list-item js-level" data-level="5">5</li>
+          </ul>
+          <ul class="panel-nav-list">
+              <li class="panel-nav-list-item js-type active" data-type="false">Both</li>
+              <li class="panel-nav-list-item js-type" data-type="text">Text</li>
+              <li class="panel-nav-list-item js-type" data-type="image">Zdjęcie</li>
+          </ul>
+      </nav>
+      <form class="panel-add js-panel-add">
+          <h3 class="panel-add-title js-panel-title">Dodaj podpowiedź</h3>
+          <input type="text" placeholder="Nazwa podpowiedzi" class="panel-add-field js-form-name" required/>
+          <label class="panel-add-label">Typ</label>
+          <select class="panel-add-field select js-form-type" required>
+              <option value="text">Text</option>
+              <option value="img">Zdjęcie</option>
+          </select>
+          <textarea type="text" placeholder="Tekst PL" class="panel-add-field textarea js-form-text" required></textarea>
+          <textarea type="text" placeholder="Tekst Eng" class="panel-add-field textarea js-form-text-eng" required></textarea>
+          <input type="file" placeholder="Obrazek" class="panel-add-field file js-form-file hidden"/>
+          <label class="panel-add-label">Poziom</label>
+          <select class="panel-add-field select js-form-level" required>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+          </select>
+          <button class="panel-add-button js-panel-add-button">Dodaj</button>
+      </form>
+      <!--[if lt IE 10]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+      <!-- build:js /scripts/vendorPanel.js -->
+      <!-- bower:js -->
+      <script src="/bower_components/jquery/dist/jquery.js"></script>
+      <script src='/bower_components/firebase/firebase.js'></script>
+      <!-- endbower -->
+      <!-- endbuild -->
+      <!-- build:js /scripts/mainPanel.js -->
+      <script src="/scripts/hints/panel/attic.js"></script>
+      <!-- endbuild -->
+  </body>
+</html>

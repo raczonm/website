@@ -5,7 +5,7 @@
       "active_level" : 1,
       "adhoc" : "",
       "language" : "pl",
-      "levels" : 4,
+      "levels" : 5,
       "paused" : false,
       "list" : [ {
         "id" : 1,
@@ -118,6 +118,14 @@
         "name" : "Sejf",
         "text" : "Wszystkie cyfry do symbolu  <br />Są w pokoju rozrzucone   <br />Lecz przydadzą Ci się tylko  <br />W kolejności ułożone <br />By otworzyć sejfu drzwiczki <br />Patrz na strzałkę na tabliczce <br />Aby nie pomylić się  <br />Na sam koniec dodaj 'E'",
         "text_eng" : "All the digits in the symbol <br />Need to be in the right order <br />So to win, set yourselves free <br />Insert the cipher and press button 'E'",
+        "type" : "text"
+      }, {
+        "id" : 133,
+        "img" : "",
+        "level" : 4,
+        "name" : "Zwłoki",
+        "text" : "Chociaż jesteś już zmęczony <br />Czas ucieka, śpieszy strasznie <br />Aby symbol był skończony <br />Przyjrzyj zwłokom się uważnie",
+        "text_eng" : "",
         "type" : "text"
       }, {
         "id" : 14,
@@ -242,7 +250,7 @@
       }, {
         "id" : 29,
         "img" : "images/hints/cage.jpg",
-        "level" : 1,
+        "level" : 2,
         "name" : "Klatka",
         "text" : "",
         "text_eng" : "",
@@ -279,7 +287,55 @@
         "text" : "",
         "text_eng" : "",
         "type" : "image"
-      } ],
+      }, {
+        "id" : 34,
+        "img" : "",
+        "level" : 5,
+        "name" : "Otwieranie sejfu",
+        "text" : "Kod jest dobry, aby otworzyć sejf należy przekręcić pokrętło w prawo i pociągnąć do siebie",
+        "text_eng" : "You have the right code, to open the safe You have to turn knob to the right and pull",
+        "type" : "text"
+      }, {
+        "id" : 35,
+        "img" : "",
+        "level" : 5,
+        "name" : "Telefony",
+        "text" : "Prosimy nie używać telefonów",
+        "text_eng" : "Please don't use Your phones",
+        "type" : "text"
+      }, {
+        "id" : 36,
+        "img" : "",
+        "level" : 5,
+        "name" : "Ściąganie",
+        "text" : "Prosimy nie ściągać niczego ze ścian",
+        "text_eng" : "Please don't take off things from the wall",
+        "type" : "text"
+      }, {
+        "id" : 37,
+        "img" : "",
+        "level" : 5,
+        "name" : "Źle usłyszane liczby",
+        "text" : "Sześć jeden =  six one - dwie wersje językowe",
+        "text_eng" : "There are only two numbers - six one - repeated in english and polish language",
+        "type" : "text"
+      }, {
+        "id" : 38,
+        "img" : "",
+        "level" : 5,
+        "name" : "Wskazówka",
+        "text" : "Może chcielibyście skorzystać z podpowiedzi?",
+        "text_eng" : "Maybe You want to use a hint?",
+        "type" : "text"
+      }, {
+        "id" : 39,
+        "img" : "",
+        "level" : 5,
+        "name" : "Klucz",
+        "text" : "Klucz do wyjścia jest schowany razem z testamentem",
+        "text_eng" : "Key to the exit is hidden with testament",
+        "type" : "text"
+      }],
       "started" : true,
       "timer" : 1477823574093
     }

@@ -1,8 +1,17 @@
- /* global $ Firebase*/
+ /* global $ firebase*/
 'use strict';
 (function () {
+    var config = {
+       apiKey: 'AIzaSyC-npR_tEgAs6b1cIFA-6tLne_WRbtQTTc',
+       authDomain: 'its-a-trap-2.firebaseapp.com',
+       databaseURL: 'https://its-a-trap-2.firebaseio.com',
+       projectId: 'its-a-trap-2',
+       storageBucket: 'its-a-trap-2.appspot.com',
+       messagingSenderId: '506853544039'
+    };
+    firebase.initializeApp(config);
 
-    var source = new Firebase('https://itsatrap.firebaseio.com/hints/attic');
+    var source = firebase.database().ref('hints/attic');
 
     $(document).on('ready', function(){
         var timerStarted = false,
@@ -55,15 +64,14 @@
                 if (data.active === 0) {
                     $('.hint-bgr').html('<p class="hint-text">' + data.adhoc + '</p>');
                 } else {
-                    for (var i = 0; i < data.list.length; i++) {
-                        var item = data.list[i];
-                        if(item.id === data.active) {
+                    $.each(data.list, function(key, item) {
+                        if (key == data.active) {
                             var text = data.language === 'PL' ? item.text : item.text_eng,
-                                content = (item.type === 'text') ? '<p class="hint-text">' + text + '</p>' : '<img class="hint-img" src="../' + item.img + '" />';
+                                content = (item.type === 'text') ? '<p class="hint-text">' + text + '</p>' : '<img class="hint-img" src="' + item.img + '" />';
                             $('.hint-bgr').html(content);
                             return false;
                         }
-                    }
+                    });
                 }
             } else {
                 $('.hint-bgr').html('');

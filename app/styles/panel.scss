@@ -1,0 +1,230 @@
+@import 'bower_components/reset-css/_reset';
+@import 'elements';
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+html {
+    height: 100%;
+    background: #d1d1d1;
+}
+
+.panel {
+    height: 100%;
+    padding-right: 400px;
+    font-family: calibri;
+    color: $white;
+
+    &-nav {
+        position: fixed;
+        left: -311px;
+        top: 320px;
+        @include rotate(90);
+
+        &-list {
+            margin-right: 50px;
+            display: inline-block;
+
+            &-item {
+                display: inline-block;
+                line-height: 30px;
+                background: #2b2b2b;
+                margin-right: 5px;
+                text-align: center;
+                padding: 0 15px;
+                cursor: pointer;
+
+                &.active {
+                    background: #61d352;
+                }
+
+            }
+        }
+    }
+
+    &-list {
+        background: white;
+        font-size: 0;
+        color: #2b2b2b;
+        width: 800px;
+        margin: 0 auto;
+
+        &-item {
+            padding: 10px 10px 10px 60px;
+            border-bottom: 1px solid #e1e1e1;
+            position: relative;
+            display: none;
+
+            &:hover {
+                background: #f1f1f1;
+            }
+
+            &.visible {
+                display: block;
+            }
+        }
+
+        &-id {
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: #2b2b2b;
+            color: white;
+            width: 50px;
+            font-size: 20px;
+            line-height: 40px;
+            vertical-align: top;
+            text-align: center;
+        }
+
+        &-content {
+            display: inline-block;
+            width: 100%;
+            font-size: 16px;
+            line-height: 20px;
+            vertical-align: top;
+            padding: 10px;
+
+            &-name {
+                font-size: 20px;
+                margin-bottom: 15px;
+                font-weight: bold;
+            }
+
+            &-p {
+                width: 47.5%;
+                padding-right: 4%;
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            &-img {
+                max-width: 200px;
+            }
+
+            .header & {
+                font-size: 20px;
+                padding: 0;
+                line-height: 40px;
+            }
+        }
+
+        &-nav {
+            width: 200px;
+            position: absolute;
+            right: 0;
+            top: 10px;
+            font-size: 20px;
+            line-height: 40px;
+            vertical-align: top;
+            display: inline-block;
+            text-align: right;
+            padding-right: 20px;
+
+            .header & {
+                text-align: center;
+            }
+        }
+
+        &-button {
+            display: inline-block;
+            @include rounded(5px);
+            text-transform: uppercase;
+            line-height: 30px;
+            font-size: 14px;
+            text-align: center;
+            width: 80px;
+            float: right;
+            margin-left: 5px;
+            padding-top: 2px;
+            color: $white;
+            cursor: pointer;
+
+            &.red {
+                background: #dd1a2c;
+            }
+
+            &.blue {
+                background: #1887ef;
+            }
+        }
+    }
+
+    &-add {
+        position: fixed;
+        padding: 20px;
+        top: 0;
+        bottom: 0;
+        width: 400px;
+        background: #2b2b2b;
+        right: 0;
+
+        &-title {
+            color: $white;
+            padding: 20px;
+            font-size: 32px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        &-label {
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+
+        &-field {
+            display: block;
+            line-height: 40px;
+            height: 40px;
+            padding: 0 10px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            @include rounded(3px);
+            color: $white;
+            width: 100%;
+            border: 0;
+            margin-bottom: 20px;
+
+            &.textarea {
+                line-height: 20px;
+                padding: 10px;
+                height: 100px;
+            }
+
+            &:focus {
+                background: rgba(255, 255, 255, 0.3);
+                outline: none;
+            }
+
+            &.hidden {
+                display: none;
+            }
+        }
+
+        &-button {
+            background: #61d352;
+            @include rounded(5px);
+            line-height: 60px;
+            font-size: 20px;
+            text-align: center;
+            display: block;
+            border: none;
+            width: 100%;
+            color: $white;
+            cursor: pointer;
+            text-transform: uppercase;
+            opacity: 0.8;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

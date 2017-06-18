@@ -4,6 +4,88 @@
 @import 'globals';
 
 //Promo
+.promo-badge {
+    position: fixed;
+    height: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.9);
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.9);
+    z-index: 31;
+    padding: 10px;
+    line-height: 80px;
+    border-top: 3px solid $main-red;
+
+    &-inner {
+        width: 1024px;
+        padding-left: 200px;
+        height: 80px;
+        margin: auto;
+        position: relative;
+
+    }
+
+    &-image {
+        height: 100px;
+        width: auto;
+        display: block;
+        position: absolute;
+        top: -10px;
+        left: 0;
+    }
+
+    &-description {
+        font-size: 24px;
+        color: $white;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 30px;
+        vertical-align: top;
+        font-style: italic;
+        padding-top: 10px;
+
+        &-span {
+          display: block
+        }
+    }
+
+    &-action {
+        margin-top: 10px;
+        display: inline-block;
+        float:right;
+        vertical-align: middle;
+        font-size: 20px;
+        text-align: center;
+        margin-left: 20px;
+        width: 150px;
+        text-transform: uppercase;
+        @include font-sans();
+        background: $main-red;
+        color: $white;
+        opacity: 0.8;
+        cursor: pointer;
+        line-height: 50px;
+    }
+
+    &-close {
+        margin-top: 10px;
+        float: right;
+        margin-left: 20px;
+        line-height: 50px;
+        color: $white;
+        font-size: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+        opacity: 0.6;
+        @include font-sans;
+
+        &:hover {
+          opacity: 0.8;
+        }
+    }
+}
+
 .promo-splash {
     position: fixed;
     z-index: 100;
@@ -284,6 +366,34 @@
     .with-splash-book &.splash-bookjs {
         opacity: 1;
         @include translate(0, 0);
+    }
+
+    &-nav-lang {
+        color: $white;
+        position: absolute;
+        font-size: 0.3em;
+        display: block;
+        padding: 1em;
+        opacity: 0.5;
+        @include transition(all 0.4s ease);
+        top: 0.5em;
+        left: 0.5em;
+
+        @media #{$media-tablet} {
+            font-size: 0.5em;
+        }
+
+        @media #{$media-phone} {
+            font-size: 3.5vh;
+            top: 2vh;
+            left: 2vh;
+            padding: 0;
+        }
+
+        &:hover {
+            opacity: 1;
+            @include scale(1.4);
+        }
     }
 
     &-menu {
@@ -1013,7 +1123,7 @@
     padding-top: 0.1em;
 
     @media #{$media-phone} {
-        margin-top: 3em;
+        margin-top: 1.5em;
 
         .button {
             font-size: 0.9em;
@@ -1032,6 +1142,40 @@
 
 .column-4 .rooms-column-image {
     background-size: cover;
+}
+
+//VOUCHER
+
+.section-voucher {
+    margin-top: 1.5em;
+
+    @media #{$media-phone} {
+        margin-top: 3em;
+
+        .button {
+            font-size: 0.9em;
+            margin-top: 1em
+        }
+    }
+
+    &-photo {
+        margin: 0.4em auto;
+        display: block;
+        width: 4em;
+
+        @media #{$media-phone} {
+            width: 9em;
+        }
+    }
+
+
+    &-paragraph {
+        margin-top: 2em;
+    }
+
+    &-button {
+        margin-top: 1em;
+    }
 }
 
 //FOOTER

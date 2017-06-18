@@ -1,15 +1,24 @@
- /* global $ Firebase*/
+ /* global $ firebase*/
 
 'use strict';
 (function () {
+    var config = {
+       apiKey: 'AIzaSyC-npR_tEgAs6b1cIFA-6tLne_WRbtQTTc',
+       authDomain: 'its-a-trap-2.firebaseapp.com',
+       databaseURL: 'https://its-a-trap-2.firebaseio.com',
+       projectId: 'its-a-trap-2',
+       storageBucket: 'its-a-trap-2.appspot.com',
+       messagingSenderId: '506853544039'
+    };
+    firebase.initializeApp(config);
 
     var admin = {};
     admin.rooms = ['attic', 'pirates', 'garden'];
-    admin.data = new Firebase('https://itsatrap.firebaseio.com/hints');
+    admin.data = firebase.database();
 
     admin.createRoom = function(name){
         var room = {};
-        room.data = admin.data.child(name);
+        room.data = admin.data.ref('hints/' + name);
         room.sectionClass = '.hints.' + name;
         room.ui = {
             $section: $(room.sectionClass),
@@ -23,7 +32,11 @@
             $levels: $(room.sectionClass + ' .js-level'),
             $pause: $(room.sectionClass + ' .js-pause'),
             $pauseIcon: $(room.sectionClass + ' .js-pause-icon'),
-            $clear: $(room.sectionClass + ' .js-clear')
+            $clear: $(room.sectionClass + ' .js-clear'),
+            $customTimeToggle: $(room.sectionClass + ' .js-custom-time i.fa-clock-o'),
+            $customTimeTrigger: $(room.sectionClass + ' .js-custom-time-trigger'),
+            $customTimeInner: $(room.sectionClass + ' .js-custom-time-inner'),
+            $customTimeInput: $(room.sectionClass + ' .js-custom-time-input')
         };
         room.isZeroActive = true;
 
@@ -72,12 +85,26 @@
             room.ui.$section.addClass('running');
         };
 
-        room.startGame = function(){
-            room.addActiveClasses();
+        room.toggleCustomTime = function() {
+            room.ui.$customTimeInput.val('');
+            room.ui.$customTimeInner.toggleClass('active');
+        };
+
+        room.startGame = function(customTime) {
+            var currentTime = Date.now();
+            var timeToShow;
+            if (customTime) {
+                var timeLeft = (60 - customTime) * 60000;
+                timeToShow = currentTime - timeLeft;
+                room.timeGone = timeLeft / 1000;
+            } else {
+                timeToShow = currentTime;
+            }
             room.ui.$adhocInput.val('');
             room.data.on('value', room.printHints);
-            room.data.update({'active_level': 1, 'started': true, 'timer': Date.now(), 'active': false, 'adhoc': ''});
-            room.startTimer();
+            room.data.update({'active_level': 1, 'started': true, 'timer': timeToShow, 'active': false, 'adhoc': ''});
+            room.startTimer(timeToShow);
+            room.addActiveClasses();
         };
 
         room.restartGame = function(data){
@@ -155,22 +182,20 @@
         };
 
         room.printHints = function(snapshot){
-            var list = room.ui.$list,
-                data = snapshot.val(),
-                isPl = data.language === 'PL' ? true : false;
+            var list = room.ui.$list;
+            var data = snapshot.val();
+            var isPl = data.language === 'PL' ? true : false;
             list.html('');
 
-            for (var i = 0; i < data.list.length; i++) {
-                var item = data.list[i];
-
-                if (item.level === 0 || item.level === data.active_level) {
-                    var active = item.id === data.active ? 'active' : '',
+            $.each(data.list, function(key, item) {
+                if (item.level == 0 || item.level == data.active_level) {
+                    var active = key == data.active ? 'active' : '',
                         textPrimary = isPl ? item.text : item.text_eng,
-                        content = item.type === 'text' ? '<p class="hints-list-item-text">' + textPrimary + '</p>' : '<img class="hints-list-item-image" src="/' + item.img + '" />',
-                        el = $('<li data-id="' + item.id + '" class="hints-list-item ' + active + '"> <h4 class="hints-list-item-title">' + item.name + '</h4>' + content + '</li>');
+                        content = item.type === 'text' ? '<p class="hints-list-item-text">' + textPrimary + '</p>' : '<img class="hints-list-item-image" src="' + item.img + '" />',
+                        el = $('<li data-id="' + key + '" class="hints-list-item ' + active + '"> <h4 class="hints-list-item-title">' + item.name + '</h4>' + content + '</li>');
                     list.append(el);
                 }
-            }
+            });
 
             list.find('li').on('click', function(){
                 room.setActiveHint($(this).data('id'));
@@ -195,6 +220,15 @@
         room.ui.$levels.on('click', room.setActiveLevel);
         room.ui.$pause.on('click', room.pause);
         room.ui.$clear.on('click', room.clearHint);
+        room.ui.$customTimeToggle.on('click', room.toggleCustomTime);
+        room.ui.$customTimeTrigger.on('click', function() {
+            var customTime = room.ui.$customTimeInput.val();
+            if (customTime && customTime !== 0) {
+                room.stopGame();
+                room.startGame(customTime);
+            }
+        });
+        //room.ui.$clear.on('click', room.toggleCustomTime);
 
         return room;
     };

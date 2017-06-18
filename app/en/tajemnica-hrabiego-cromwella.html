@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pl">
+<html lang="">
   <head>
     <meta charset="utf-8">
     <meta name="keywords" content="pokój zagadek, escape game, escape room, It's a Trap, real life escape game, itsatrapcracow.pl">
@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta content="Michał Raczoń" name="Author">
     <meta property="og:image" content="/images/favicons/favicon_310.png"/>
-    <title>Voucher Prezentowy - It's a Trap - Escape Game Kraków</title>
+    <title>Booking - It's a Trap - Escape Game Kraków</title>
 
     <link rel="shortcut icon" type="image/png" sizes="16x16" href="/images/favicons/favicon_16.png">
     <link rel="shortcut icon" type="image/png" sizes="32x32" href="/images/favicons/favicon_32.png">
@@ -21,18 +21,23 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/favicon_144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/favicon_152.png">
 
-
-    <!-- build:css styles/voucher.css -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/reset-css/reset.css" />
-    <link rel="stylesheet" href="styles/voucher.css">
-    <link rel="stylesheet" href="styles/font-awesome.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/mainRoom.css -->
+    <link rel="stylesheet" href="/styles/room.css">
+    <link rel="stylesheet" href="/styles/font-awesome.css" />
     <!-- endbuild -->
 
   </head>
   <body class="body">
-    <!--[if lt IE 10]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+    <ul class="legend">
+        <li class="legend-item free"> <span class="legend-item-text">- Available</span></li>
+        <li class="legend-item occupied"> <span class="legend-item-text">- Occupied</span></li>
+    </ul>
     <ul class="right-nav">
         <li class="right-nav-item facebook">
           <a class="right-nav-item-icon"><i class="fa fa-facebook" ></i></a>
@@ -47,21 +52,28 @@
           </div>
         </li>
     </ul>
-    <div class="wrapper">
-        <div class="voucher">
-            <h1 class="voucher-header"> Brak pomysłu <span class="voucher-white">na prezent?</span></h1>
-            <img class="voucher-photo" src="/images/voucher/vouchers.png" />
-            <p class="voucher-header voucher-subheader">
-                Vouchery podarunkowe są już dostępne do nabycia w naszym lokalu przy ulicy Karmelickiej 54/7. <br /><br />
-                Wkrótce wprowadzimy możliwość zamawiania online! Zachęcamy do kontaktu pod numerem telefonu 667 562 208. <br /><br />
-                Vouchery dostępne w cenie:
-                <br />- dla grup 2-3 osobowych - 109 zł
-                <br />- dla grup 4-5 osobowych - 139 zł
+    <aside class="left">
+        <h1 class="logo-trap">It's a trap</h1>
+        <div class="room">
+            <h2 class="room-title">Mystery of Count Cromwell </h2>
+            <p class="room-desc">
+              Count Cromwell was a very mysterious man and so were the circumstances of his death. It turns out that he wanted to pass you
+              his estate.  Unfortunately, no one knows where he left his last will and testament. It’s probably hidden somewhere in his workshop.
+              This seemingly ordinary attic hides many dark secrets. Can you find Cromwell’s will and get out of his room? And will you make
+              it on time?
             </p>
-            <img class="voucher-bow" src="/images/voucher/bow.png" />
-            <a href="/" class="voucher-home">Powrót do strony głównej</a>
+            <p class="room-desc">Thriller dedicated for players aged above 16</p>
+            <ul class="room-stats">
+                <li class="room-stats-item"><strong class="room-stats-strong">69%</strong> - Did escape</li>
+                <li class="room-stats-item"><strong class="room-stats-strong">51min</strong> - Average escape time</li>
+                <li class="room-stats-item"><strong class="room-stats-strong">26min</strong> - Best escape time</li>
+            </ul>
         </div>
-    </div>
+        <a class="home" href="index.html">Back to Homepage</a>
+    </aside>
+    <main class="calendar">
+        <iframe src="http://rezerwator.pl/Calendar/Index?id=1339&language=en" class="calendar-iframe" width="100%" height="100%"></iframe>
+    </main>
 
     <div id="fb-root"></div>
 
@@ -92,27 +104,22 @@
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-83517726-1', 'auto');
-        ga('send', 'pageview');
+      ga('create', 'UA-83517726-1', 'auto');
+      ga('send', 'pageview');
 
     </script>
 
-    <!-- build:js scripts/vendor-3.js -->
+    <!-- build:js scripts/vendorAttic.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/panelsnap/jquery.panelSnap.js"></script>
-    <script src="/bower_components/Snap.svg/dist/snap.svg-min.js"></script>
-    <script src="/bower_components/firebase/firebase.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
-    <!-- build:js scripts/voucher.js -->
-    <script src="scripts/voucher.js"></script>
+    <!-- build:js scripts/mainAttic.js -->
     <!-- endbuild -->
   </body>
 </html>

@@ -7,7 +7,7 @@
     "reset-css": "~2.0.2",
     "fontawesome": "~4.5.0",
     "Snap.svg": "~0.4.1",
-    "firebase": "~2.4.2"
+    "firebase": "~4.1.2"
   },
   "devDependencies": {
     "chai": "~3.5.0",

@@ -7,6 +7,18 @@ $voucher-red: #c42e27;
 .body {
     font-size: 20px;
 }
+
+.body:not(.full-page) .wrapper {
+    padding: 0 20px;
+    width: 100%;
+}
+
+@media #{$media-phone} {
+    .body:not(.full-page) {
+        font-size: 20vw !important;
+    }
+}
+
 .voucher-info {
     background: url('../images/woodBgr.jpg');
     background-size: cover;
@@ -14,11 +26,24 @@ $voucher-red: #c42e27;
     box-shadow: 0 0 0.1em 0.1em rgba(0,0,0,0.5);
     padding-top: 2em;
 
+    @media #{$media-phone} {
+        padding-top: 20px;
+    }
+
+    .body:not(.full-page) & {
+        height: auto;
+        padding-bottom: 1em;
+    }
+
     &-logo {
         width: 2.5em;
         top: 0.2em;
         position: absolute;
         right: 0.5em;
+
+        @media #{$media-phone} {
+            display: none;
+        }
     }
 
     &-home {
@@ -37,6 +62,13 @@ $voucher-red: #c42e27;
         &:hover {
             opacity: 1;
         }
+
+        @media #{$media-phone} {
+            position: static;
+            text-align: center;
+            display: block;
+            margin: 0 20px 20px;
+        }
     }
 
     &-description {
@@ -48,6 +80,13 @@ $voucher-red: #c42e27;
         top: 0;
         left: 0;
         width: 4em;
+
+        @media #{$media-phone} {
+            position: static;
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+        }
     }
 
     &-text {
@@ -60,6 +99,11 @@ $voucher-red: #c42e27;
 
         &-paragraph {
             margin-bottom: 2em;
+        }
+
+        @media #{$media-phone} {
+            padding: 0;
+            text-align: center;
         }
     }
 
@@ -83,6 +127,10 @@ $voucher-red: #c42e27;
             opacity: 1;
             @include scale(1.1);
         }
+
+        .body:not(.full-page) & {
+            display: none;
+        }
     }
 }
 
@@ -91,12 +139,73 @@ $voucher-red: #c42e27;
     display: none;
     padding-bottom: 0.5em;
 
+    .body:not(.full-page) & {
+        display: block;
+    }
+
+    &-section {
+        @media #{$media-phone} {
+            position: relative;
+        }
+    }
+
+    &-shipping {
+        font-size: 0.2em;
+        text-align: left;
+
+        @media #{$media-phone} {
+            font-size: 0.22em;
+        }
+
+        &-label {
+            line-height: 2em;
+            padding-right: 5px;
+            font-weight: bold;
+            display: inline-block;
+            vertical-align: middle;
+
+            @media #{$media-phone} {
+                display: block;
+            }
+        }
+
+        &-checkbox {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 1em;
+
+            @media #{$media-phone} {
+                display: block;
+                margin-bottom: 0.5em;
+            }
+
+            &-icon {
+                display: inline-block;
+                vertical-align: middle;
+                line-height: 2em !important;
+                text-align: center;
+                margin-right: 5px;
+                height: 2em;
+                width: 2em;
+                background: #c1c1c1;
+                color: #c1c1c1;
+                cursor: pointer;
+
+                .active & {
+                    background: #456f0d;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
     &-header {
         font-size: 0.35em;
         padding: 0.5em 0;
         border-bottom: 3px solid $black;
         margin-bottom: 0.6em;
     }
+
     &-column-wrapper {
         font-size: 0;
     }
@@ -107,13 +216,27 @@ $voucher-red: #c42e27;
             display: inline-block;
             vertical-align: top;
 
+            @media #{$media-phone} {
+                width: 100%;
+            }
+
             &.first {
                 padding-right: 0.3em;
                 border-right: 1px solid $black;
+
+                @media #{$media-phone} {
+                    padding: 0;
+                    border: 0;
+                }
             }
 
             &.last {
                 padding-left: 0.3em;
+
+                @media #{$media-phone} {
+                    padding: 0;
+                    margin-top: 10px;
+                }
             }
         }
         > .voucher-form-item:last-child {
@@ -152,9 +275,13 @@ $voucher-red: #c42e27;
         width: 100%;
         margin-bottom: 0.7em;
 
+        @media #{$media-phone} {
+            font-size: 0.5em;
+        }
+
         > .voucher-form-input {
-            font-size: 0.7em;
-            padding: 1em;
+            font-size: 0.6em;
+            padding: 0.8em;
         }
 
         &.hause, &.flat, &.city, &.code {
@@ -179,10 +306,23 @@ $voucher-red: #c42e27;
         }
     }
 
+    &-price {
+        @media #{$media-phone} {
+            position: absolute;
+            top: 10px;
+            right: 0;
+        }
+    }
+
     &-product {
         font-size: 0.2em;
         width: 100%;
         margin-bottom: 0.7em;
+        text-align: left;
+
+        @media #{$media-phone} {
+            font-size: 0.45em;
+        }
 
         &-label {
             line-height: 2em;
@@ -225,7 +365,7 @@ $voucher-red: #c42e27;
 
     &-actions {
         text-align: right;
-        margin-top: 0.3em;
+        margin-top: 0.1em;
     }
 
     &-invoice-info {
@@ -253,6 +393,10 @@ $voucher-red: #c42e27;
             width: 40em;
             font-size: 0.13em;
             line-height: 1.3em;
+
+            @media #{$media-phone} {
+                width: auto;
+            }
         }
     }
 
