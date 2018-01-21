@@ -93,7 +93,8 @@
                 windowHeight = $(window).height(),
                 proportions = windowWidth / windowHeight;
 
-            if (proportions > 1.50 && windowWidth > 1024 && !this.isMobile()) {
+            //if (proportions > 1.50 && windowWidth > 1024 && !this.isMobile()) {
+            if (false) {
                 var fontSize = windowHeight * 0.135;
                 $('body').addClass('full-page');
                 $('body, .column').css('font-size', fontSize + 'px');

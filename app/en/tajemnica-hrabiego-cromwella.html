@@ -34,24 +34,6 @@
 
   </head>
   <body class="body">
-    <ul class="legend">
-        <li class="legend-item free"> <span class="legend-item-text">- Available</span></li>
-        <li class="legend-item occupied"> <span class="legend-item-text">- Occupied</span></li>
-    </ul>
-    <ul class="right-nav">
-        <li class="right-nav-item facebook">
-          <a class="right-nav-item-icon"><i class="fa fa-facebook" ></i></a>
-          <div class="right-nav-item-box">
-              <div class="fb-page" data-href="https://www.facebook.com/itsatrapcracow/" data-tabs="timeline" data-width="320" data-height="320" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/itsatrapcracow/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/itsatrapcracow/">It&#039;s a Trap</a></blockquote></div>
-          </div>
-        </li>
-        <li class="right-nav-item lockme">
-          <a class="right-nav-item-icon"><i class="ico ico-lockme" ></i></a>
-          <div class="right-nav-item-box">
-                <div data-lockme="full"></div>
-          </div>
-        </li>
-    </ul>
     <aside class="left">
         <h1 class="logo-trap">It's a trap</h1>
         <div class="room">
@@ -72,7 +54,11 @@
         <a class="home" href="index.html">Back to Homepage</a>
     </aside>
     <main class="calendar">
-        <iframe src="http://rezerwator.pl/Calendar/Index?id=1339&language=en" class="calendar-iframe" width="100%" height="100%"></iframe>
+        <ul class="legend">
+            <li class="legend-item free"> <span class="legend-item-text">- wolny termin</span></li>
+            <li class="legend-item occupied"> <span class="legend-item-text">- zajęty termin</span></li>
+        </ul>
+        <iframe id="iframe_calendar_a5aacae740157ec3a8d5331f245b7582_419_1006" src="https://widget.lockme.pl/calendar/a5aacae740157ec3a8d5331f245b7582_419_1006.html" border="0" width="100%" scrolling="no" style="border:none;"></iframe>
     </main>
 
     <div id="fb-root"></div>

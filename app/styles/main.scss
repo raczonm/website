@@ -17,6 +17,10 @@
     line-height: 80px;
     border-top: 3px solid $main-red;
 
+    @media #{$media-tablet} {
+        display: none;
+    }
+
     &-inner {
         width: 1024px;
         padding-left: 200px;

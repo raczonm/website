@@ -187,14 +187,18 @@
             var isPl = data.language === 'PL' ? true : false;
             list.html('');
 
-            $.each(data.list, function(key, item) {
-                if (item.level == 0 || item.level == data.active_level) {
-                    var active = key == data.active ? 'active' : '',
-                        textPrimary = isPl ? item.text : item.text_eng,
-                        content = item.type === 'text' ? '<p class="hints-list-item-text">' + textPrimary + '</p>' : '<img class="hints-list-item-image" src="' + item.img + '" />',
-                        el = $('<li data-id="' + key + '" class="hints-list-item ' + active + '"> <h4 class="hints-list-item-title">' + item.name + '</h4>' + content + '</li>');
-                    list.append(el);
-                }
+            admin.data.ref('hints/' + name + '/list/').orderByChild('sort').on('value', function(items) {
+                items.forEach(function(el) {
+                    var item = el.val();
+                    var key = el.key;
+                    if (item.level == 0 || item.level == data.active_level) {
+                        var active = key == data.active ? 'active' : '',
+                            textPrimary = isPl ? item.text : item.text_eng,
+                            content = item.type === 'text' ? '<p class="hints-list-item-text">' + textPrimary + '</p>' : '<img class="hints-list-item-image" src="' + item.img + '" />',
+                            el = $('<li data-id="' + key + '" class="hints-list-item ' + active + '"> <h4 class="hints-list-item-title">' + item.name + '</h4>' + content + '</li>');
+                        list.append(el);
+                    }
+                });
             });
 
             list.find('li').on('click', function(){

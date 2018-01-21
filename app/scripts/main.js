@@ -73,7 +73,7 @@
                slideSpeed: 300
            };
 
-           $('body').panelSnap(options);
+           $('.panels').panelSnap(options);
        };
 
        return app;

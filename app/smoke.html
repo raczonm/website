@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="pokój zagadek, escape game, escape room, It's a Trap, real life escape game, itsatrapcracow.pl">
+    <meta name="description" content="Escape game w centrum Krakowa. Unikalne pokoje o dopracowanym wystroju, oryginalnych zagadkach i zaskakujących mechanizmach. Itsatrapcracow.pl">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta content="Michał Raczoń" name="Author">
+    <meta property="og:image" content="/images/favicons/favicon_310.png"/>
+    <title>It's a Trap - Escape Game Kraków</title>
+
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="/images/favicons/favicon_16.png">
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="/images/favicons/favicon_32.png">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="/images/favicons/favicon_48.png">
+    <link rel="shortcut icon" type="image/png" sizes="64x64" href="/images/favicons/favicon_64.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/favicon_48.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/images/favicons/favicon_48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/favicon_72.pngg">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/favicon_114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/favicon_120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/favicon_144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/favicon_152.png">
+
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="/bower_components/reset-css/reset.css" />
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/font-awesome.css" />
+    <!-- endbuild -->
+    <style type="text/css">
+
+      @font-face {
+          font-family: 'butcher';
+          src: url('../fonts/butcher.woff2') format('woff2'),
+               url('../fonts/butcher.woff') format('woff'),
+               url('../fonts/butcher.svg') format('svg');
+          font-weight: normal;
+          font-style: normal;
+      }
+
+      .body {
+          background: black;
+          font-family: 'butcher';
+      }
+      #js_smoke {
+          width: 100%;
+          height: 100%;
+          position: fixed;
+          top: 0;
+          left: 0;
+      }
+      #txt {
+          width: 100%;
+          height: 100%;
+          position: fixed;
+          top: 0;
+          left: 0;
+          font-size: 10vh;
+          text-align: center;
+          margin-top:30vh;
+          letter-spacing: 20px;
+          opacity:0.75;
+          text-shadow: 0 0 10px rgba(0,0,0,0.75)
+      }
+    </style>
+  </head>
+  <body class="body">
+    <canvas id="js_smoke"></canvas>
+    <div id="txt"> Vita bravis pento longa<br /> de la muerte!<br />A polus to gej...</div>
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+    <script src="scripts2/smoke.js"></script>
+    <script src="scripts2/mysmoke.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

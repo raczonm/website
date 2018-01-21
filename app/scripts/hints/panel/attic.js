@@ -33,7 +33,6 @@
             $title: $('.js-panel-title'),
             $levelLink: $('.js-level'),
             $typeLink: $('.js-type')
-
         },
 
         prepareHtmlNode: function(key, hint) {
@@ -49,7 +48,10 @@
 
             htmlNode =
                 '<li class="panel-list-item" data-key=' + key + ' data-type=' + hint.type + ' data-level=' + hint.level + '>\
-                    <div class="panel-list-id">' + hint.level + '</div>\
+                    <div class="panel-list-id">'
+                        + hint.level +
+                        '<span class="panel-list-sort">(' + hint.sort + ')</span>\
+                    </div>\
                     <div class="panel-list-content">\
                         <h4 class="panel-list-content-name">' + hint.name + '</h4>'
                         + content +
@@ -64,6 +66,7 @@
 
         showHints: function(snapshot) {
             panel.ui.$list.empty();
+            console.log(snapshot.val());
             snapshot.forEach(function(item) {
                 panel.ui.$list.append(panel.prepareHtmlNode(item.key, item.val()));
             });
@@ -73,9 +76,9 @@
         toggleActiveFields: function() {
             if (panel.ui.$typeSelect.val() === 'text') {
                 panel.ui.$textInputs.removeClass('hidden').attr('required', true);
-                panel.ui.$fileInputs.addClass('hidden').attr('required', false);
+                panel.ui.$fileInputs.addClass('hidden');
             } else {
-              panel.ui.$fileInputs.removeClass('hidden').attr('required', true);
+              panel.ui.$fileInputs.removeClass('hidden');
               panel.ui.$textInputs.addClass('hidden').attr('required', false);
             }
         },
@@ -106,7 +109,8 @@
                     type: panel.ui.$newForm.find('.js-form-type').val(),
                     text: panel.ui.$newForm.find('.js-form-text').val(),
                     text_eng: panel.ui.$newForm.find('.js-form-text-eng').val(),
-                    level: panel.ui.$newForm.find('.js-form-level').val()
+                    level: panel.ui.$newForm.find('.js-form-level').val(),
+                    sort: parseInt(panel.ui.$newForm.find('.js-form-sort').val())
                 };
 
                 if (panel.ui.$typeSelect.val() === 'text') {
@@ -134,39 +138,48 @@
             var key = $(e.currentTarget).closest('li').data('key');
             panel.ui.$title.text('EDYCJA PODPOWIEDZI');
             panel.ui.$addNewButton.text('ZMIEŃ');
+
             panel.data.ref(panel.config.listRef + key).once('value', function(snapshot) {
                 var data = snapshot.val();
                 panel.ui.$newForm.data('key', key);
                 panel.ui.$newForm.find('.js-form-name').val(data.name);
                 panel.ui.$newForm.find('.js-form-type').val(data.type);
                 panel.ui.$newForm.find('.js-form-level').val(data.level);
+                panel.ui.$newForm.find('.js-form-sort').val(data.sort);
 
                 if (panel.ui.$typeSelect.val() === 'text') {
                     panel.ui.$newForm.find('.js-form-text').val(data.text);
                     panel.ui.$newForm.find('.js-form-text-eng').val(data.text_eng);
                 } else {
-                    panel.ui.$newForm.find('.js-form-file').val('');
+                    panel.ui.$newForm.find('.js-form-file').val('').attr('data-old', data.img);
                 }
-
+                panel.toggleActiveFields();
             });
         },
 
         deleteHint: function(e) {
             var key = $(e.currentTarget).closest('li').data('key');
-            panel.data.ref(panel.config.listRef + key).remove();
+            if (window.confirm("Napewno chcesz mnie zesłać do otchłani :( ?")) {
+                panel.data.ref(panel.config.listRef + key).remove();
+            }
         },
 
         saveFile: function(data, file) {
-            var uploadTask = firebase.storage().ref('hints/' + panel.config.roomName + '/' + file.name).put(file, panel.config.fileMeta);
+            if (file) {
+                var uploadTask = firebase.storage().ref('hints/' + panel.config.roomName + '/' + file.name).put(file, panel.config.fileMeta);
 
-            uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
-                function(snapshot) {
-                }, function(error) {
-                    console.error(error);
-                }, function() {
-                    data.img = uploadTask.snapshot.downloadURL;
-                    panel.finishSaveHint(data);
-            });
+                uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+                    function(snapshot) {
+                    }, function(error) {
+                        console.error(error);
+                    }, function() {
+                        data.img = uploadTask.snapshot.downloadURL;
+                        panel.finishSaveHint(data);
+                });
+            } else {
+                data.img = panel.ui.$newForm.find('.js-form-file').attr('data-old');
+                panel.finishSaveHint(data);
+            }
         },
 
         changeActiveType: function(e) {
@@ -186,7 +199,7 @@
 
     $(document).on('ready', function() {
         panel.toggleActiveFields();
-        panel.data.ref(panel.config.listRef).on('value', panel.showHints);
+        panel.data.ref(panel.config.listRef).orderByChild('sort').on('value', panel.showHints);
         panel.ui.$newForm.on('submit', panel.saveHint);
         panel.ui.$list.on('click', '.js-edit', panel.editHint);
         panel.ui.$list.on('click', '.js-delete', panel.deleteHint);

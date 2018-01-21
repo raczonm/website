@@ -76,9 +76,15 @@ html {
             color: white;
             width: 50px;
             font-size: 20px;
-            line-height: 40px;
+            line-height: 20px;
+            padding-top: 10px;
             vertical-align: top;
             text-align: center;
+        }
+
+        &-sort {
+            display: block;
+            font-size: 12px;
         }
 
         &-content {
