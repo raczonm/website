@@ -255,3 +255,46 @@ html {
         width: auto;
     }
 }
+
+.confirmation {
+    &-box {
+      font-size: 20px;
+      color: white;
+      width: 700px;
+      margin: 50px auto;
+      text-align: center;
+      background: rgba(0,0,0,0.50);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    &-header {
+        font-size: 24px;
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+
+    &-text {
+        font-size: 16px;
+        font-style: italic;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+
+    &-data {
+        font-style: italic;
+        font-size: 18px;
+        line-height: 30px;
+        text-align: left;
+        margin-bottom: 20px;
+
+        &-item-key {
+            color: $main-red;
+            display: inline-block;
+            width: 240px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    }
+}

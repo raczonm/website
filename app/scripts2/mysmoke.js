@@ -3,6 +3,7 @@ var ctx = canvas.getContext('2d');
 
 var screenWidth = window.innerWidth;
 var screenHeight = window.innerHeight;
+var topPos = screenHeight + 200;
 
 canvas.width = screenWidth;
 canvas.height = screenHeight;
@@ -12,39 +13,40 @@ var party = smokemachine(ctx, [255, 255, 255])
 
 party.start() // start animating
 
-runSmoke = function() {
-    setTimeout(function(){
-
-        party.addsmoke(screenWidth*0, 0, 10, 8000, true);
-    		party.addsmoke(screenWidth*0.1, 0, 10, 8000, true);
-    		party.addsmoke(screenWidth*0.2, 0, 10, 8000, true);
-        party.addsmoke(screenWidth*0.3, 0, 10, 8000, true);
-    		party.addsmoke(screenWidth*0.4, 0, 10, 8000, true);
-        party.addsmoke(screenWidth*0.5, 0, 10, 8000, true);
-    		party.addsmoke(screenWidth*0.6, 0, 10, 8000, true);
-        party.addsmoke(screenWidth*0.7, 0, 10, 8000, true);
-    		party.addsmoke(screenWidth*0.8, 0, 10, 8000, true);
-        party.addsmoke(screenWidth*0.9, 0, 10, 8000, true);
-    		party.addsmoke(screenWidth, 0, 10, 8000, true);
-        party.addsmoke(screenWidth*0, screenHeight+200, 10, 8000);
-    		party.addsmoke(screenWidth*0.1, screenHeight+200, 10, 8000);
-    		party.addsmoke(screenWidth*0.2, screenHeight+200, 10, 8000);
-        party.addsmoke(screenWidth*0.3, screenHeight+200, 10, 8000);
-    		party.addsmoke(screenWidth*0.4, screenHeight+200, 10, 8000);
-        party.addsmoke(screenWidth*0.5, screenHeight+200, 10, 8000);
-    		party.addsmoke(screenWidth*0.6, screenHeight+200, 10, 8000);
-        party.addsmoke(screenWidth*0.7, screenHeight+200, 10, 8000);
-    		party.addsmoke(screenWidth*0.8, screenHeight+200, 10, 8000);
-        party.addsmoke(screenWidth*0.9, screenHeight+200, 10, 8000);
-    		party.addsmoke(screenWidth, screenHeight+200, 10, 8000);
-
-        runSmoke();
-
-    },2000);
+var addSmokeItem =function(positionHorizontal, isTop, timeout) {
+  setTimeout(function(){
+      setInterval(function() {
+          party.addsmoke(
+              screenWidth * positionHorizontal,
+              isTop ? topPos : 0,
+              10,
+              8000,
+              !isTop
+          );
+      }, 2000);
+  }, timeout);
 }
+
+runSmoke = function() {
+    addSmokeItem(1, false, 2000);
+    addSmokeItem(1, true, 4000);
+    addSmokeItem(0.8, false, 6000);
+    addSmokeItem(0.6, false, 8000);
+    addSmokeItem(0.8, true, 10000);
+    addSmokeItem(0, true, 12000);
+    addSmokeItem(0.2, true, 14000);
+    addSmokeItem(0.4, false, 16000);
+    addSmokeItem(0.6, true, 18000);
+    addSmokeItem(0.2, false, 18000);
+    addSmokeItem(0.4, true, 20000);
+    addSmokeItem(0, false, 22000);
+
+
+}
+
 setTimeout(function(){
     runSmoke();
-}, 3000);
+}, 1000);
 
 
 // var startX = 50;
