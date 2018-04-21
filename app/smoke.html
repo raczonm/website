@@ -55,23 +55,31 @@
           position: fixed;
           top: 0;
           left: 0;
+          right: 0;
           font-size: 10vh;
+          line-height: 18vh;
           text-align: center;
-          margin-top:30vh;
+          margin-top: 0;
           letter-spacing: 20px;
           opacity:0.75;
           text-shadow: 0 0 10px rgba(0,0,0,0.75);
-          -moz-transform: scale(-1, 1);
-          -webkit-transform: scale(-1, 1);
-          -o-transform: scale(-1, 1);
-          -ms-transform: scale(-1, 1);
-          transform: scale(-1, 1);
+          /* -moz-transform: scale(-1, 1) rotate(90deg);
+          -webkit-transform: scale(-1, 1) rotate(90deg);
+          -o-transform: scale(-1, 1) rotate(90deg);
+          -ms-transform: scale(-1, 1) rotate(90deg);
+          transform: scale(-1, 1) rotate(90deg); */
+          -moz-transform: rotate(-90deg);
+          -webkit-transform: rotate(-90deg);
+          -o-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+          margin-left: -10vh;
       }
     </style>
   </head>
   <body class="body">
     <canvas id="js_smoke"></canvas>
-    <div id="txt"> Vita bravis pento longa<br /> de la muerte!<br />A polus to gej...</div>
+    <div id="txt">Noctibus<br />quae tales<br />ut ea sunt,<br />solum<br />plorationem<br />earum audire<br />volo.</div>
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->

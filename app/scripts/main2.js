@@ -273,8 +273,9 @@
         };
 
         app.detectLanguage = function() {
-            var isPlLanguage = (window.navigator.userLanguage || window.navigator.language) === 'pl';
+            var isPlLanguage = (window.navigator.userLanguage || window.navigator.language).indexOf('pl') !== -1;
             var isPlUrl = !(window.location.pathname.indexOf('en') !== -1);
+
             if (app.getUrlParameter('lang') !== 'true') {
                 if (isPlLanguage && !isPlUrl) {
                     window.location.href = '/?lang=true';
